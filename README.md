@@ -4,6 +4,17 @@
 
 **论文写作请从 [共享 LaTeX 入口与三人分工](PAPER_WRITING.md) 开始。**
 
+前向物理、两帧反演与独立盲测已交付。[冻结 v1](releases/upc2026-wp3-v1/) 是当前可复现的证据快照。团队正在修订 v2 的选型标准，正式题例结果待新的 `run_id` 冻结后统一更新。[复现入口](releases/README.md)
+
+复核环境使用 Python 3.13。求解、推断和评分使用 Python 标准库，制图另需 NumPy 和 Matplotlib（已核对 Matplotlib 3.10.8）。从仓库根目录运行：
+
+```sh
+python -B -m unittest discover -s physics/tests -v
+python -B -m unittest discover -s inference/tests -v
+python -B -m unittest discover -s validation/tests -v
+python -B -m unittest discover -s figures/tests -v
+```
+
 | 文件 | 用途 |
 |---|---|
 | [spec/plan.zh-CN.md](spec/plan.zh-CN.md) | 中文总体方案、文献、22 个任务、F1–F6 图单 |

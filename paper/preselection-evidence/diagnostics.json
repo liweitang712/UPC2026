@@ -1,0 +1,265 @@
+{
+  "release": "upc2026-wp3-v1",
+  "selection_predictions_sha256": "435bff7844b395dc6fb4bae6e51fa47910558fd921d5a068b5e28d66b4b3881a",
+  "fixed_velocity_m_s": [
+    29.679999999999993,
+    8.68,
+    6.801299249999999
+  ],
+  "cd_0_27_initial_drag_m_s2": 14.65622408884781,
+  "timing": {
+    "B0_deterministic": {
+      "arrival_s": 0.3706199460916443,
+      "after_second_frame_s": 0.2706199460916443
+    },
+    "B1_deterministic": {
+      "arrival_s": 0.405008361227395,
+      "after_second_frame_s": 0.30500836122739494
+    },
+    "M1_v1_candidate_median": {
+      "arrival_s": 0.40027344774585544,
+      "after_second_frame_s": 0.3002734477458554
+    },
+    "M2_v1_candidate_median": {
+      "arrival_s": 0.3968963781695321,
+      "after_second_frame_s": 0.29689637816953207
+    }
+  },
+  "M1_fixed_velocity_cd_sweep": [
+    {
+      "cd": 0.15,
+      "arrival_s": 0.3887155905365946,
+      "after_second_frame_s": 0.28871559053659457,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.16,
+      "arrival_s": 0.38996279984712623,
+      "after_second_frame_s": 0.28996279984712625,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.17,
+      "arrival_s": 0.3912152472138407,
+      "after_second_frame_s": 0.29121524721384073,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.18,
+      "arrival_s": 0.39247295767068885,
+      "after_second_frame_s": 0.2924729576706888,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.19,
+      "arrival_s": 0.3937359550595286,
+      "after_second_frame_s": 0.29373595505952854,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.2,
+      "arrival_s": 0.39500426381826426,
+      "after_second_frame_s": 0.2950042638182643,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.21,
+      "arrival_s": 0.3962779083848002,
+      "after_second_frame_s": 0.29627790838480017,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.22,
+      "arrival_s": 0.3975569137930873,
+      "after_second_frame_s": 0.29755691379308724,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.23,
+      "arrival_s": 0.3988413044810298,
+      "after_second_frame_s": 0.29884130448102975,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.24,
+      "arrival_s": 0.40013110607862495,
+      "after_second_frame_s": 0.3001311060786249,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.25,
+      "arrival_s": 0.4014263430237773,
+      "after_second_frame_s": 0.30142634302377724,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.26,
+      "arrival_s": 0.40272704035043744,
+      "after_second_frame_s": 0.3027270403504374,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.27,
+      "arrival_s": 0.40403322428464916,
+      "after_second_frame_s": 0.3040332242846492,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.28,
+      "arrival_s": 0.4053449192643168,
+      "after_second_frame_s": 0.30534491926431684,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.29,
+      "arrival_s": 0.40666215091943764,
+      "after_second_frame_s": 0.3066621509194376,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.3,
+      "arrival_s": 0.4079849454760554,
+      "after_second_frame_s": 0.30798494547605537,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.31,
+      "arrival_s": 0.4093133285641673,
+      "after_second_frame_s": 0.30931332856416727,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.32,
+      "arrival_s": 0.41064732581377056,
+      "after_second_frame_s": 0.3106473258137705,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.33,
+      "arrival_s": 0.41198696404695534,
+      "after_second_frame_s": 0.31198696404695536,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.34,
+      "arrival_s": 0.4133322682976725,
+      "after_second_frame_s": 0.31333226829767247,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.35,
+      "arrival_s": 0.41468326598405864,
+      "after_second_frame_s": 0.3146832659840586,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.36,
+      "arrival_s": 0.4160399827361109,
+      "after_second_frame_s": 0.3160399827361109,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.37,
+      "arrival_s": 0.4174024453759196,
+      "after_second_frame_s": 0.31740244537591955,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.38,
+      "arrival_s": 0.4187706807255748,
+      "after_second_frame_s": 0.3187706807255748,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.39,
+      "arrival_s": 0.420144716203213,
+      "after_second_frame_s": 0.32014471620321294,
+      "refinement_delta_s": 5.9604643443123e-10
+    },
+    {
+      "cd": 0.4,
+      "arrival_s": 0.4215245774388316,
+      "after_second_frame_s": 0.32152457743883156,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.41,
+      "arrival_s": 0.4229102924466136,
+      "after_second_frame_s": 0.3229102924466136,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.42,
+      "arrival_s": 0.42430188864469554,
+      "after_second_frame_s": 0.32430188864469556,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.43,
+      "arrival_s": 0.42569939225912123,
+      "after_second_frame_s": 0.32569939225912126,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.44,
+      "arrival_s": 0.4271028324961665,
+      "after_second_frame_s": 0.32710283249616645,
+      "refinement_delta_s": 0.0
+    },
+    {
+      "cd": 0.45,
+      "arrival_s": 0.4285122355818751,
+      "after_second_frame_s": 0.32851223558187514,
+      "refinement_delta_s": 0.0
+    }
+  ],
+  "M3_fixed_velocity_shot": {
+    "goff2026_trionda_b": {
+      "knots": [
+        100900,
+        495800
+      ],
+      "anchor_re": 446685.08287292824,
+      "trace_re": [
+        392480.2584614632,
+        471436.1925710932
+      ],
+      "solver_domains": [
+        "in_domain"
+      ]
+    },
+    "goff2026_jabulani_b": {
+      "knots": [
+        99900,
+        495800
+      ],
+      "anchor_re": 446685.08287292824,
+      "trace_re": [
+        389535.07333553466,
+        471436.1925710932
+      ],
+      "solver_domains": [
+        "in_domain"
+      ]
+    }
+  },
+  "M3_all_selection_cases": 260,
+  "M3_all_selection_full_failures": 86,
+  "M3_full_failure_domain_triggers": [
+    {
+      "side": "above",
+      "knots": [
+        100900.0,
+        495800.0
+      ],
+      "count": 81,
+      "first_recorded_re": [
+        495806.0,
+        558275.0
+      ]
+    }
+  ],
+  "M3_other_full_failures": {
+    "No proposals with finite posterior weight.": 5
+  }
+}

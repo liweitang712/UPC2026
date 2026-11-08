@@ -1,0 +1,6 @@
+claim_id,run_id,version,source_artifact,source_key_or_filter,statistic,population,condition,display_unit,owner
+C-PHYS-TIME-POINT,WAIT_SELECTION,pending,diagnostics.json,"timing.B0_deterministic; timing.B1_deterministic",arrival and remaining time,supplied kick,deterministic point-fit plane crossing,s,physics
+C-PHYS-TIME-CANDIDATE,upc2026-wp3-v1,v1,../T2-candidates.json,"m1.plane_intervals.t_s[1]; m2.plane_intervals.t_s[1]; subtract case.json second frame time",median arrival and remaining time,supplied kick,plane arrival under each exploratory candidate,s,physics
+C-PHYS-TIME-SWEEP,WAIT_SELECTION,pending,diagnostics.json,M1_fixed_velocity_cd_sweep,arrival and remaining time sensitivity,supplied kick,fixed fitted launch velocity and constant drag scenarios,s,physics
+C-PHYS-M3-RE-TRIGGER,WAIT_SELECTION,pending,diagnostics.json,"M3_full_failure_domain_triggers; M3_other_full_failures",trigger counts and first rejected Reynolds ranges,full frozen selection split,fully failed M3 cases,count and dimensionless Reynolds,physics
+C-PHYS-M3-RE-KICK,WAIT_SELECTION,pending,diagnostics.json,M3_fixed_velocity_shot,curve bounds and sampled flight and anchor Reynolds ranges,supplied kick,fixed launch velocity and strict curve policy,dimensionless Reynolds,physics

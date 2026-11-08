@@ -1,0 +1,11 @@
+{
+  "run_id": "upc2026-wp3-v1",
+  "kind": "presentation derivatives",
+  "inputs_sha256": {
+    "T2-candidates.json": "0a0cb3c232b930e8d5fed5bd11c0b7e72fed48e431a2223f0ca1e1a600f4d4e2",
+    "figures/F5_reliability.csv": "71ed77340a62e715e4cfded3ae1d0de5b4011c816622f8b8ae94aea59f3459ac",
+    "figures/F5_failures.csv": "3f9a53a324e86ff935373ad22894c0f196363fb826d17c9ab15f9ae51445cdf4",
+    "figures/F6_coverage.csv": "10ee83443d1e87133d57e501057e5b13a49f056a5a8c8b88e672345c223e1d25",
+    "figures/F6_paired_rmse.csv": "414c9950092f99d6cb766dc62fe71a61b9f8b54d77a80ede6d97d8e37f4616c7"
+  }
+}
