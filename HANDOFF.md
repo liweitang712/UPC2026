@@ -8,9 +8,9 @@
 
 | 工作包 | 建议分支 | 负责范围与交付 |
 |---|---|---|
-| **WP1 · Physics** | `team/physics` | `physics/` 的 B0–B2/M1–M3 前向接口、事件定位、解析及步长检查。为 F1 提供轨迹和基线数据，为 WP2 提供接口 |
-| **WP2 · Inference** | `team/inference` | `inference/` 的观测模型、后验与敏感性。给 WP3 交 `predictions.csv`，并交 F2–F4 所需结果与图稿 |
-| **WP3 · Validation & release** | `team/validation-paper` | `validation/` 的封存真值、盲测和评分，`figures/` 的 F5–F6，`paper/` 的英文稿。维护冻结发布并由 WP1 或 WP2 独立复核 |
+| **WP1 · Physics** [#1](https://github.com/liweitang712/UPC2026/issues/1) | `team/physics` | `physics/` 的 B0–B2/M1–M3 前向接口、事件定位、解析及步长检查。为 F1 提供轨迹和基线数据，为 WP2 提供接口 |
+| **WP2 · Inference** [#2](https://github.com/liweitang712/UPC2026/issues/2) | `team/inference` | `inference/` 的观测模型、后验与敏感性。给 WP3 交 `predictions.csv`，并交 F2–F4 所需结果与图稿 |
+| **WP3 · Validation & release** [#3](https://github.com/liweitang712/UPC2026/issues/3) | `team/validation-paper` | `validation/` 的封存真值、盲测和评分，`figures/` 的 F5–F6，`paper/` 的英文稿。维护冻结发布并由 WP1 或 WP2 独立复核 |
 
 ### 可直接粘贴到 Codex
 
