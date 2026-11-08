@@ -1,0 +1,7 @@
+model_id,model_name,role,provides_time
+B0,Gravity-only ballistic fit,baseline,yes
+B1,Three-point constant acceleration,baseline,yes
+B2,Distance-domain geometric extrapolation,baseline,no
+M1,Gravity and constant quadratic drag,fit_candidate,yes
+M2,Constant quadratic drag and effective transverse force,fit_candidate,yes
+M3,Literature-constrained variable drag and effective transverse force,fit_candidate,yes
