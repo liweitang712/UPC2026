@@ -51,13 +51,14 @@ def latex_table(blind, models, conditional):
             rows.append(" & ".join(str(value) for value in values) + r" \\")
     return "\n".join([
         r"\begin{table}[htbp]", r"\centering",
-        r"\caption{T3. Locked blind evaluation by stratum. Eligible truth excludes truth-solver failures. "
+        r"\renewcommand{\thetable}{T3}",
+        r"\caption{Locked blind evaluation by stratum. Eligible truth excludes truth-solver failures. "
         r"The penalized entry score uses all eligible cases. The ordinary score gives the exact-probability "
         r"denominator in parentheses. Forecast failures are shown as any unresolved or invalid forecast "
         r"versus entirely invalid. Abstentions are counted among resolved forecasts. "
         r"Coverage uses the supported regions among true plane crossings. "
         r"Energy scores condition on plane crossing, with the scored count in parentheses.}",
-        r"\label{tab:T3}", r"\resizebox{\linewidth}{!}{%",
+        r"\label{tab:validation}\label{tab:T3}", r"\resizebox{\linewidth}{!}{%",
         r"\begin{tabular}{llrrrrrrrr}", r"\hline",
         r"Stratum & Model & Truth eligible/total & Penalized Brier & Ordinary Brier ($n$) & "
         r"Failures any/full & Abstentions/resolved & Regions/truth plane & 95\% coverage & Energy, m ($n$) \\",
@@ -88,7 +89,7 @@ def wp3_section(release, selection, blind, protocol, conditional, captions):
     return "\n\n".join([
         f"% Run {release['run_id']}; selection-results.json; blind-results.json; metrics.csv; "
         f"blind-conditional.csv; models {selected}/{comparator}; scenario {release['scenario_id']}.",
-        r"\section{Synthetic validation and model comparison}",
+        r"\section{Validation and model choice}\label{sec:validation}",
         r"\subsection{Design and sealing}",
         f"The development, selection, and blind sets contained {count['development']}, {count['selection']}, "
         f"and {count['blind']} distinct synthetic shots, respectively. The nominal forecast used the two "
@@ -138,12 +139,14 @@ def wp3_section(release, selection, blind, protocol, conditional, captions):
         r"with crossing error on the common valid cases. Sparse reliability bins and unsupported "
         r"comparisons are marked in the figure evidence.",
         "\n".join([r"\begin{figure}[htbp]", r"\centering",
+                   r"\renewcommand{\thefigure}{F5}",
                    r"\includegraphics[width=\linewidth]{figures/F5.pdf}",
-                   r"\caption{F5. " + tex(captions["F5"]) + "}",
+                   r"\caption{" + tex(captions["F5"]) + "}",
                    r"\label{fig:F5}", r"\end{figure}"]),
         "\n".join([r"\begin{figure}[htbp]", r"\centering",
+                   r"\renewcommand{\thefigure}{F6}",
                    r"\includegraphics[width=\linewidth]{figures/F6.pdf}",
-                   r"\caption{F6. " + tex(captions["F6"]) + "}",
+                   r"\caption{" + tex(captions["F6"]) + "}",
                    r"\label{fig:F6}", r"\end{figure}"]),
     ]) + "\n"
 

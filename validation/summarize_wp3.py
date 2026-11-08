@@ -236,3 +236,23 @@ def compare_kick(primary, repeat):
         "intervals_stable": not interval_missing and max(interval_deltas.values(), default=0) <= 0.03,
         "entry_mode_stable": mode_distance is not None and max(mode_distance, maximum_bandwidth_distance) <= 0.10,
     }
+
+
+def write_kick_table(path, run_id, records):
+    """Write the selected and comparator supplied-kick rows without flattening conditions."""
+    import json
+
+    from validation.generate_cases import write_csv
+
+    rows = []
+    for record in records:
+        row = {key: record[key] for key in (
+            "case_id", "model_id", "scenario_id", "p_reach", "p_goal", "p_clearance_goal",
+            "p_ground_first", "p_no_reach", "p_failure", "p_goal_given_reach",
+        )}
+        row.update(run_id=run_id, **{key: json.dumps(record[key], separators=(",", ":")) for key in (
+            "probability_bounds", "entry_mode_yz_m", "entry_mode", "plane_intervals", "goal_intervals",
+        )})
+        row["repeat_check"] = json.dumps(record["diagnostics"]["repeat"], separators=(",", ":"))
+        rows.append(row)
+    write_csv(path, tuple(rows[0]), rows)

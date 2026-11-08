@@ -194,7 +194,13 @@ def build(args, output):
             args, output, case, protocol, pair, models["selection"][recommended]
         )
         records.extend(dict(record, split="supplied_kick") for record in kick_records)
-    write_json(output / "summary.json", {"run_id": run_id, "results": records, "supplied_kick_repeat": kick_repeats})
+    payload = {"run_id": run_id, "results": records, "supplied_kick_repeat": kick_repeats}
+    (output / "summary.json").write_text(json.dumps(payload, separators=(",", ":"), sort_keys=True) + "\n",
+                                        encoding="utf-8", newline="\n")
+    if kick_provenance:
+        from validation.summarize_wp3 import write_kick_table
+
+        write_kick_table(output / "T2.csv", run_id, kick_records)
     entry = freeze["splits"]["blind"]
     figure_hashes = {"cases": entry["scoring_cases_sha256"], "truth": entry["truth_sha256"],
                      "predictions": blind["predictions_sha256"], "point_status": blind["point_status_sha256"],
