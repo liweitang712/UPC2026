@@ -36,6 +36,8 @@ def verify_lock(lock, split, manifest):
         raise ValueError("Prediction lock belongs to a different case freeze")
     check_hash(lock / "predictions.csv", metadata["predictions_sha256"])
     check_hash(lock / "forecast.json", metadata["forecast_sha256"])
+    if metadata.get("point_status_sha256"):
+        check_hash(lock / "point-status.csv", metadata["point_status_sha256"])
     return metadata, read_json(lock / "forecast.json")
 
 
@@ -55,8 +57,10 @@ def selection_record(private, manifest):
     return path, pair
 
 
-def freeze_predictions(private, public, split, predictions, config):
+def freeze_predictions(private, public, split, predictions, config, point_status=None):
     manifest = verify_inputs(public, split)
+    if split == "blind" and point_status is None:
+        raise ValueError("Blind prediction freeze requires point status for F5")
     destination = private / f"{split}-predictions"
     if destination.exists():
         raise ValueError("This split already has a prediction lock")
@@ -65,6 +69,8 @@ def freeze_predictions(private, public, split, predictions, config):
         stage.mkdir()
         shutil.copyfile(predictions, stage / "predictions.csv")
         shutil.copyfile(config, stage / "forecast.json")
+        if point_status is not None:
+            shutil.copyfile(point_status, stage / "point-status.csv")
         forecast = read_json(stage / "forecast.json")
         models = forecast["models"]
         if not re.fullmatch(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", forecast["source_commit"]):
@@ -89,6 +95,7 @@ def freeze_predictions(private, public, split, predictions, config):
             "forecast_sha256": sha256(stage / "forecast.json"),
             "predictions_sha256": sha256(stage / "predictions.csv"),
             "selection_decision_sha256": decision_hash,
+            "point_status_sha256": sha256(stage / "point-status.csv") if point_status is not None else None,
         })
         stage.rename(destination)
 
@@ -120,6 +127,7 @@ def main():
     freeze = commands.add_parser("freeze")
     freeze.add_argument("--predictions", required=True, type=Path)
     freeze.add_argument("--config", required=True, type=Path)
+    freeze.add_argument("--point-status", type=Path)
     commands.add_parser("score")
     args = parser.parse_args()
     private = args.private.resolve()
@@ -127,7 +135,7 @@ def main():
         parser.error("Private validation artifacts must stay outside the repository")
     try:
         if args.command == "freeze":
-            freeze_predictions(private, PUBLIC, args.split, args.predictions, args.config)
+            freeze_predictions(private, PUBLIC, args.split, args.predictions, args.config, args.point_status)
         else:
             score_locked(private, PUBLIC, args.split)
     except (OSError, ValueError, KeyError, TypeError, csv.Error) as error:
