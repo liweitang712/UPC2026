@@ -1,0 +1,17 @@
+run_id,scenario_id,group,model,n_truth,n_technical,n_entirely_invalid,n_point_assessed,n_abstained
+upc2026-wp3-v1,nominal_gaussian_10mm,matched,B0,80,0,0,80,40
+upc2026-wp3-v1,nominal_gaussian_10mm,matched,B2,80,1,0,80,20
+upc2026-wp3-v1,nominal_gaussian_10mm,wind,B0,80,0,0,80,45
+upc2026-wp3-v1,nominal_gaussian_10mm,wind,B2,80,2,0,80,20
+upc2026-wp3-v1,nominal_gaussian_10mm,drag,B0,80,0,0,80,47
+upc2026-wp3-v1,nominal_gaussian_10mm,drag,B2,80,2,0,80,35
+upc2026-wp3-v1,nominal_gaussian_10mm,lift,B0,80,0,0,80,37
+upc2026-wp3-v1,nominal_gaussian_10mm,lift,B2,80,0,0,80,23
+upc2026-wp3-v1,nominal_gaussian_10mm,sensor,B0,80,1,0,80,46
+upc2026-wp3-v1,nominal_gaussian_10mm,sensor,B2,80,3,0,80,32
+upc2026-wp3-v1,nominal_gaussian_10mm,combined,B0,80,0,0,80,37
+upc2026-wp3-v1,nominal_gaussian_10mm,combined,B2,80,0,0,80,29
+upc2026-wp3-v1,nominal_gaussian_10mm,challenge,B0,40,0,0,40,32
+upc2026-wp3-v1,nominal_gaussian_10mm,challenge,B2,40,5,0,40,30
+upc2026-wp3-v1,nominal_gaussian_10mm,single_factor,B0,320,1,0,320,175
+upc2026-wp3-v1,nominal_gaussian_10mm,single_factor,B2,320,7,0,320,110

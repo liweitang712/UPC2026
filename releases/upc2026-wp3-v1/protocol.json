@@ -1,0 +1,135 @@
+{
+  "run_id": "upc2026-wp3-v1",
+  "core_strata": [
+    "matched",
+    "wind",
+    "drag",
+    "lift",
+    "sensor",
+    "combined"
+  ],
+  "challenge_stratum": "challenge",
+  "counts": {
+    "development": {
+      "core": 12,
+      "challenge": 12
+    },
+    "selection": {
+      "core": 40,
+      "challenge": 20
+    },
+    "blind": {
+      "core": 80,
+      "challenge": 40
+    }
+  },
+  "minimum_counts": {
+    "selection": 40,
+    "blind": 80
+  },
+  "scenario_id": "nominal_gaussian_10mm",
+  "models": [
+    "B0",
+    "B1",
+    "B2",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "launch": {
+    "speed_m_s": [
+      20,
+      38
+    ],
+    "azimuth_deg": [
+      -25,
+      25
+    ],
+    "elevation_deg": [
+      3,
+      23
+    ],
+    "cd": [
+      0.23,
+      0.42
+    ],
+    "cy": [
+      -0.18,
+      0.18
+    ],
+    "cz": [
+      -0.1,
+      0.14
+    ]
+  },
+  "challenge": [
+    {
+      "azimuth_deg": [
+        -35,
+        -22
+      ]
+    },
+    {
+      "azimuth_deg": [
+        22,
+        35
+      ]
+    },
+    {
+      "elevation_deg": [
+        3,
+        5
+      ]
+    },
+    {
+      "elevation_deg": [
+        84,
+        89
+      ]
+    }
+  ],
+  "stress": {
+    "wind_x_m_s": [
+      -4,
+      4
+    ],
+    "crosswind_abs_m_s": [
+      2,
+      6
+    ],
+    "drag_amplitude": 0.1,
+    "drag_transition_m_s": 26,
+    "drag_width_m_s": 3,
+    "lift_amplitude": 0.12,
+    "lift_period_s": 0.32,
+    "sensor_sigma_m": 0.025,
+    "sensor_frame_correlation": 0.65
+  },
+  "solver": {
+    "step_s": 0.004,
+    "refined_step_s": 0.002,
+    "root_bracket_s": 1e-9,
+    "convergence_time_s": 0.00001,
+    "convergence_position_m": 0.0001
+  },
+  "decision": {
+    "stratum_weighting": "equal_core_only",
+    "minimum_brier_gain": 0.01,
+    "maximum_core_brier_degradation": 0.02,
+    "coverage_level": 0.95,
+    "maximum_undercoverage": 0.05,
+    "maximum_entirely_invalid_fraction": 0.01,
+    "selection_bootstrap_se_multiplier": 1,
+    "blind_ci_level": 0.95,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 267301,
+    "minimum_reliability_bin_cases": 10,
+    "reliability_bin_count": 10,
+    "minimum_paired_truth_plane_cases": 20,
+    "minimum_conditional_effective_draws": 100,
+    "forecast_retry": "none",
+    "fallback": "strongest eligible simpler model",
+    "joint_region": "weighted highest-mass cells on the fixed 0.10 m square grid with origin (0,0); include all cells tied at the mass cutoff",
+    "joint_region_grid_m": 0.1
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "artifact_sha256": {
+    "T1.csv": "78a0435223a92cc05d8f9a33859c8c82f299a66f13f86d0c19dbfef2542e77ea",
+    "T2-candidates.json": "0a0cb3c232b930e8d5fed5bd11c0b7e72fed48e431a2223f0ca1e1a600f4d4e2",
+    "T2.csv": "893c3b48ca1273a651360674a5aad1be1d03cffd8190deda23eb23d4e303bf73",
+    "blind-conditional.csv": "135a73d9b76799ec2bab262534649ea34feb5a8df3fc2de90b1059d7728295f9",
+    "blind-paired-conditional.csv": "a3ee963885188105da419cb549aed5a4624a7d0bfa746e5dc1e295e6a0a0bd9e",
+    "blind-predictions/forecast.json": "0fdad61f69f2bc6b44b275c030c686f883125a2addbdac30d56f5d6bc190831b",
+    "blind-predictions/lock.json": "db0d864ea0cff38ca5556889faff7d3b90797777b8582f449b20a578337e4aa3",
+    "blind-results.json": "479ca93e49b55616ff003c0150b65cd6307736d20a0e44500d77c9fba6ae654d",
+    "case.json": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+    "cases/blind/cases.csv": "17cef584731195978af3b66399a3db111fca16530e3cf00d8f0f76b927f14bf7",
+    "cases/development/cases.csv": "28eef84428d44813bd69afd254b522b2d7b79e97ce2687a2fe0630decf2c090f",
+    "cases/development/truth.csv": "39076259785b4a114409a9ae048d4733427cfa84edbcb82821c9cd79655bff3d",
+    "cases/selection/cases.csv": "898df22b8365b03d9194191bc20bc89c575eddb612b7f4b53f6eae08afa00d16",
+    "figures/F1-traces.json": "dfdd1888195bef9d78f334830afba00e1bd9d8a6adc4c626105001db884856ce",
+    "figures/F1.pdf": "7ff4eff47317e175ff6afaa5f3c921f0b76f88d9a57740a6c2ce3f0a2911a524",
+    "figures/F1.png": "eaf4ed371e3ea76a07b2e9ab80df0e48e0c1b16cbf0c2b676e16be3959289518",
+    "figures/F1_caption.md": "97320671389455bad0a32702b0dfde69f15d170cf2d70ca67862c4e6dce035f5",
+    "figures/F2-plane-grid.csv": "afd93ebc3e63481040ed830b6613fe7b53d9c34b0f1c848bcfc34fee2b93a95f",
+    "figures/F2.pdf": "4607119aa16ac315c0507b0ed37c2b1e9acd43f6552355e2669c553999b3c764",
+    "figures/F2.png": "564be88d1d8afe7a30336dbb64d35518dae20e8f8752d7d25837df69e6cb3b48",
+    "figures/F2_caption.md": "44bb763ae7b7db6cf7d069e1e1229df3defa0ec38abbcf3ba94cb5feec7d0d4c",
+    "figures/F3-data.json": "5ab9104a281587fdea8a0d7d2f43555a2d5cdfd0929c9496f9fa12c66f2ff896",
+    "figures/F3.pdf": "72c662cd2ce61d38e380925e788771a14eafbfc174c8dc73fa66034948c9207f",
+    "figures/F3.png": "27c319052f133774080931d32d1e1aa852f4421ebcf14a37c29ac1ffee828c0b",
+    "figures/F3_caption.md": "21cb5fe4927261243cb938e752a6464675371199f5787795ed9474c543e81961",
+    "figures/F4.pdf": "9b5fc6f21d60f68a4981b1f9f346221eafa4daf3503e9c4579d4cf4049978ef3",
+    "figures/F4.png": "3c355153cdf1259204e7daebfc7719ba992aab47a5e2123a3ba8c3b39b30efc3",
+    "figures/F4_caption.md": "c795e51cfd850650187267652b1ac09abaad6db860831b557941735e80b10e23",
+    "figures/F5.pdf": "13e8f06a16aa586e037fbb6ccd8d71ff049054a5d269715257ab61c856163109",
+    "figures/F5.png": "c9073c6cf24824f950fbf809860247eff10d02cc5268f052119ce77438d8ea37",
+    "figures/F5_caption.md": "f344559f210b7916c42e13374d7879e8fe3561e63d6fad19ef34a97272536130",
+    "figures/F5_failures.csv": "3f9a53a324e86ff935373ad22894c0f196363fb826d17c9ab15f9ae51445cdf4",
+    "figures/F5_reliability.csv": "71ed77340a62e715e4cfded3ae1d0de5b4011c816622f8b8ae94aea59f3459ac",
+    "figures/F6.pdf": "4435e7e6ba804fae9fb9377ff2e9a14da88b7a44e05d502e7c949e2f7aa011e5",
+    "figures/F6.png": "72abccfc29f60ae2b28398cff6bcee97a65efb51d38080423937602419325841",
+    "figures/F6_caption.md": "d1972c52a0cb3fdace93d38dd46b6939cf342bf3f628bceb2f40995f9105ccfb",
+    "figures/F6_coverage.csv": "10ee83443d1e87133d57e501057e5b13a49f056a5a8c8b88e672345c223e1d25",
+    "figures/F6_paired_rmse.csv": "414c9950092f99d6cb766dc62fe71a61b9f8b54d77a80ede6d97d8e37f4616c7",
+    "figures/T2-candidates.json": "0a0cb3c232b930e8d5fed5bd11c0b7e72fed48e431a2223f0ca1e1a600f4d4e2",
+    "figures/figures_manifest.csv": "a95c07e02ad6840d0d7726b7c77786f8b613530650d6ce2c4d6345c026138c56",
+    "input-freeze.json": "6c8e3358167b2b912d237f92928bde74bea846f672f2caf8119beaa9ceef68b1",
+    "kick/cases.csv": "003ecd7583ac22380d96c7f8e0019f61e3d8e742d4fe7dde2de5f70694a8d2d8",
+    "kick/primary/diagnostics.json": "8c2274f4912f5a8143c7469795a056fac14a588850c75adb9c63d2165bb26ef7",
+    "kick/primary/predictions.csv": "28a6e59a1180a51e17bf7fc04210c533cdfb191ce3a54d143dea4c1955bcf424",
+    "kick/repeat/diagnostics.json": "219ad6d4570acf280d8b4812ff283c5fc93da3093a2345ce00cdadd18059571e",
+    "kick/repeat/predictions.csv": "179d59e6c36b7040b937db570c90a776bf2b385b97456e7f055990467a8f55c4",
+    "kick/scenarios.json": "a35cd7888d648313ebea6b332b65b0f8963eafd5dde46488b0b554b006a3bcb5",
+    "metrics.csv": "e0ded5c931b5ae3c5acb9f1990a304667cc1a689e75910230994a0d3a4aec521",
+    "paper/T3.csv": "bad4ebb8c1fb9bbb2c27e48e91aa84a41e1fb4bdd73c0925791f81ec3e1f3264",
+    "paper/claims.csv": "f1fc4bc88621aac87fe43bbad5ab73d7e50b1f37b2f14b0f8c9be87ee356cf5a",
+    "paper/sections/04-wp3-validation.tex": "6a34f4a45f9eac146539e55de030f6b7f3c113ff1a6bbe019587c43c7a1d47e4",
+    "paper/wp3-abstract.tex": "d842a1a43d03f36c695b675cead67d45855c2e8b2a484ee8a19990bf86498948",
+    "paper/wp3-ai-note.tex": "4125279e27ddd0464d97b56d2fa0e58501a3e1f768128b92c50ec077a15d40dd",
+    "paper/wp3-discussion.tex": "dc5908dd7477de19ca06a08ad9958c7119dde7122d6820bee5211b7a3faaceb4",
+    "protocol.json": "f935254a320dad045e5f6363053129a2c155e1d2a62b10415bb20bd1824df36b",
+    "selection-decision.json": "effa0fe85841e6990742b645052b2fb0d3cf397531cc6bcc3190aaa236c4acf2",
+    "selection-predictions/forecast.json": "595bb73e31f1af2065bd41fda8ba968b52dd629ca7169fd4b9e516fcace0ef21",
+    "selection-predictions/lock.json": "1184a41b51ad6e55efe667d95f4c453ad154dc8e25f33c0af09aaf8e3b98d4e5",
+    "selection-results.json": "bbb6395cba591a7adf950226aa5055caaf9f5271be34a1ca022022be8b1ffbb1",
+    "summary.json": "a772fed65f8e0115e2f1e41517b60cee236f8679c6ddb2548af956e9beae8b77"
+  },
+  "case_id": "upc2026-b",
+  "comparator_model": "B2",
+  "confirmed_aggregate_improvement": false,
+  "custody": {
+    "blind": {
+      "predictions": "blind-predictions/predictions.csv",
+      "predictions_sha256": "114efba3736e518e20b8317a07f9670a22fa27952e03c221b11fc97f6e3f80a2",
+      "scoring_cases": "blind-cases.csv",
+      "truth": "blind-truth.csv"
+    },
+    "selection": {
+      "predictions": "selection-predictions/predictions.csv",
+      "predictions_sha256": "435bff7844b395dc6fb4bae6e51fa47910558fd921d5a068b5e28d66b4b3881a",
+      "scoring_cases": "selection-cases.csv",
+      "truth": "selection-truth.csv"
+    }
+  },
+  "figure_manifest_path": "figures/figures_manifest.csv",
+  "input_freeze": {
+    "case_spec_sha256": "102ed4b68d4ce032aa8764b227c2a568f43cc0cedd539665628065ad7172bb27",
+    "generator_sha256": "4a131923271f00d69f164a620799074bdcd83b1c93c00a62048503c201f23c04",
+    "hash_algorithm": "sha256",
+    "protocol_sha256": "f935254a320dad045e5f6363053129a2c155e1d2a62b10415bb20bd1824df36b",
+    "run_id": "upc2026-wp3-v1",
+    "splits": {
+      "blind": {
+        "n_cases": 520,
+        "public_cases_sha256": "17cef584731195978af3b66399a3db111fca16530e3cf00d8f0f76b927f14bf7",
+        "scoring_cases_sha256": "a7c4174c3387b3251c4434a77adf154e0c77b84c92c0ea82ece06aa5bba71d04",
+        "truth_sha256": "f0451f9323b1bb21e08fa7e9f17cc39f9b8439ab5a2649860c414830ef2805a8"
+      },
+      "development": {
+        "n_cases": 84,
+        "public_cases_sha256": "28eef84428d44813bd69afd254b522b2d7b79e97ce2687a2fe0630decf2c090f",
+        "scoring_cases_sha256": "28eef84428d44813bd69afd254b522b2d7b79e97ce2687a2fe0630decf2c090f",
+        "truth_sha256": "39076259785b4a114409a9ae048d4733427cfa84edbcb82821c9cd79655bff3d"
+      },
+      "selection": {
+        "n_cases": 260,
+        "public_cases_sha256": "898df22b8365b03d9194191bc20bc89c575eddb612b7f4b53f6eae08afa00d16",
+        "scoring_cases_sha256": "2977960761db9f80952523d508182be385569046ddcd170b1b67a29ee3ed76af",
+        "truth_sha256": "6ed216091fa20c74dbe10e6ffdebd8dbf32028edd2c8b73bd36312ce6b6b1cef"
+      }
+    },
+    "status": "inputs_frozen"
+  },
+  "metrics_path": "metrics.csv",
+  "model_configurations": {
+    "blind": {
+      "B0": {
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "prior": "flat velocity",
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "B2": {
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "prior": "flat latent coordinates",
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "selection": {
+      "B0": {
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "prior": "flat velocity",
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "B1": {
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "prior": "flat latent coordinates",
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "B2": {
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "prior": "flat latent coordinates",
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "M1": {
+        "drag_mean": 0.27,
+        "drag_nominal_bounds": [
+          0.08,
+          0.55
+        ],
+        "drag_sd": 0.14,
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "proposal_velocity_scale": 1.25,
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "velocity_prior_bounds": [
+          [
+            8,
+            48
+          ],
+          [
+            -20,
+            20
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "M2": {
+        "drag_mean": 0.27,
+        "drag_nominal_bounds": [
+          0.08,
+          0.55
+        ],
+        "drag_sd": 0.14,
+        "draw_budget": 1024,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "proposal_velocity_scale": 1.25,
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "transverse_radius": 0.55,
+        "transverse_sd": 0.22,
+        "velocity_prior_bounds": [
+          [
+            8,
+            48
+          ],
+          [
+            -20,
+            20
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      },
+      "M3": {
+        "curve": "goff2026_trionda_b",
+        "curve_policy": "error",
+        "drag_mean": 0.27,
+        "drag_nominal_bounds": [
+          0.08,
+          0.55
+        ],
+        "drag_sd": 0.14,
+        "draw_budget": 1024,
+        "dynamic_viscosity_pa_s": 1.81e-05,
+        "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+        "minimum_conditional_ess": 100,
+        "proposal_velocity_scale": 1.25,
+        "reference_speed_m_s": 30,
+        "retry": "none",
+        "scenario_id": "nominal_gaussian_10mm",
+        "sigma_m": 0.01,
+        "solver": {
+          "horizon_s": 2.0,
+          "max_step_s": 0.01,
+          "root_tolerance_s": 1e-09,
+          "spatial_tie_tolerance_m": 1e-06,
+          "tie_tolerance_s": 1e-06
+        },
+        "transverse_radius": 0.55,
+        "transverse_sd": 0.22,
+        "velocity_prior_bounds": [
+          [
+            8,
+            48
+          ],
+          [
+            -20,
+            20
+          ],
+          [
+            0,
+            20
+          ]
+        ],
+        "wind_m_s": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "numerical_tolerances": {
+    "prediction": {
+      "event_position_convergence_target_m": 0.001,
+      "event_tie_tolerance_s": 1e-06,
+      "event_time_convergence_target_s": 0.0001,
+      "horizon_s": 2.0,
+      "rounding_bin_width_m": 0.01,
+      "spatial_event_tie_tolerance_m": 1e-06
+    },
+    "validation": {
+      "convergence_position_m": 0.0001,
+      "convergence_time_s": 1e-05,
+      "refined_step_s": 0.002,
+      "root_bracket_s": 1e-09,
+      "step_s": 0.004
+    }
+  },
+  "recommended_model": "B0",
+  "run_id": "upc2026-wp3-v1",
+  "scenario_id": "nominal_gaussian_10mm",
+  "schema_version": 1,
+  "seeds": {
+    "bootstrap": 267301,
+    "generation_and_observation_noise_sha256": "7898c88749786ea2ec1220c4bf3755ec7e93d9dc5b28dad9b6a10c5542f9ee4e",
+    "inference": {
+      "blind": 2028,
+      "selection": 2026
+    }
+  },
+  "selected_model": "B0",
+  "status": "validation_and_supplied_kick",
+  "summary_path": "summary.json",
+  "supplied_kick": {
+    "primary": {
+      "draw_budget": 4000,
+      "seed": 2026
+    },
+    "repeat": {
+      "draw_budget": 8000,
+      "seed": 2027
+    }
+  },
+  "wp1_commit": "02b67b2a8e1e7fda974385c98b76f66b33dbfaa0",
+  "wp2_bundle_revision": "3fc351ae889947e3782a7c02c1f89d65c60fa94f",
+  "wp2_commit": "98d6970b05220c26e725a7550313acb703753efb",
+  "wp3_commit": "c1c51de408ec5365532a2db3ceccfec255cbeea0"
+}

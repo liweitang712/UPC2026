@@ -1,0 +1,1 @@
+Figure F1. Supplied kick under the B0 nominal two-frame forecast. Filled circles mark release and observed ball centres. The shaded interval ends at the 0.10 s observation. The blue fan contains 80 resolved draws selected systematically with trace seed 506. Deterministic point-fit baselines share the same observations. Each trace ends at its first event.

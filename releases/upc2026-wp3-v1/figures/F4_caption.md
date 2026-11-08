@@ -1,0 +1,1 @@
+Each public scenario was refitted to both frames. The left panel gives unconditional goal probabilities. The other panels give conditional 95% crossing intervals. These are supplied-kick candidate diagnostics from WP2; the locked event reference is B0.

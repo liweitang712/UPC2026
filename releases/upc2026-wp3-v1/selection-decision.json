@@ -1,0 +1,10 @@
+{
+  "comparator_model": "B2",
+  "forecast_sha256": "595bb73e31f1af2065bd41fda8ba968b52dd629ca7169fd4b9e516fcace0ef21",
+  "protocol_sha256": "f935254a320dad045e5f6363053129a2c155e1d2a62b10415bb20bd1824df36b",
+  "rationale": "No richer model passed every gate. Retain B0, the strongest technically eligible baseline. Use the runner-up baseline B2 as the descriptive blind comparator.",
+  "run_id": "upc2026-wp3-v1",
+  "selected_model": "B0",
+  "selection_predictions_sha256": "435bff7844b395dc6fb4bae6e51fa47910558fd921d5a068b5e28d66b4b3881a",
+  "upgrade_adopted": false
+}
