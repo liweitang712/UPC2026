@@ -4,6 +4,8 @@
 
 **论文写作请从 [共享 LaTeX 入口与三人分工](PAPER_WRITING.md) 开始。**
 
+当前论文采用 **M2** 预测入门位置与不确定性，M1 和 B0 用于对照。题例、位置优先的合成留出评估、图表和复现入口见 [upc2026-location-v2](releases/upc2026-location-v2/README.md)。
+
 | 文件 | 用途 |
 |---|---|
 | [spec/plan.zh-CN.md](spec/plan.zh-CN.md) | 中文总体方案、文献、22 个任务、F1–F6 图单 |

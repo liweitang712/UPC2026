@@ -1,37 +1,37 @@
-% Target shared-project file: sections/05-wp2-case.tex
-% Evidence: releases/upc2026-wp3-v1/T2.csv at f0f6b618.
-\section{Prediction for the supplied kick}
-The retained B0 reference gives an entry-conditioned modal crossing point
-of approximately $(Y,Z)=(3.21,1.95)\,\mathrm m$.
-For the 4,000 nominal public-case draws, the conditional median arrival
-time is $0.37060\,\mathrm s$, leaving approximately
-$0.27060\,\mathrm s$ after the second observation.
-The marginal 95\% intervals, conditional on plane arrival, are
-$[3.1467,3.2864]\,\mathrm m$ for $Y$,
-$[1.8915,2.0245]\,\mathrm m$ for $Z$, and
-$[0.36836,0.37284]\,\mathrm s$ for arrival time.
-All nominal B0 draws reach the plane, enter the rectangle, and satisfy the
-radius-clearance criterion. These values describe the sampled model
-distribution. The independent public-case repetition leaves the modal grid
-point unchanged.
+% Evidence: upc2026-location-v2/T2.json and T2-sensitivity.json, F2 and F4.
+\section{Forecast for the supplied kick}\label{sec:case}
 
-B2 gives a center-entry probability of $0.7970$ and a radius-clearance
-probability of $0.72475$. Its plane-conditioned marginal 95\% intervals are
-$[1.6762,3.5670]\,\mathrm m$ for $Y$ and
-$[1.0931,3.0045]\,\mathrm m$ for $Z$.
-Its nominal entry mode is $(2.59,2.19)\,\mathrm m$, but increasing the
-kernel bandwidth moves it by about $0.161\,\mathrm m$.
-This sensitivity is recorded with the estimate.
+Under M2 with zero wind and independent 10\,mm Gaussian coordinate errors, the modeled probability of plane arrival is 100.0\%, the probability of center entry is 89.8\%, and the one-radius clearance probability is 83.0\%. The median plane arrival is \(0.398\,\second\) from the kick, about \(0.298\,\second\) after the second observation.
 
-The uncertainty intervals require a qualification from the independent
-synthetic benchmark. The nominal 95\% joint regions cover only
-31 of 437 eligible B0 crossings and 271 of 432 eligible B2 crossings in
-the frozen blind evaluation. Both methods therefore substantially
-undercover that benchmark distribution. The narrow B0 supplied-kick cloud
-does not provide a calibrated estimate of total physical uncertainty.
-Candidate aerodynamic refits, alternative ball curves, and observation
-scenarios are reported as sensitivity analyses in the frozen release.
+\begin{table}[htbp]
+\centering
+\renewcommand{\thetable}{T2}
+\caption{Supplied-kick M2 forecast from 64,000 proposals. Intervals are marginal posterior 95\% intervals under the stated assumptions.}\label{tab:case}
+\begin{tabular}{lcc}
+\toprule
+Quantity & Given plane arrival & Given entry \\
+\midrule
+Time from kick (s) & [0.378, 0.419] & [0.378, 0.418] \\
+Lateral \(Y\) (m) & [2.17, 3.62] & [2.16, 3.51] \\
+Height \(Z\) (m) & [1.23, 2.66] & [1.22, 2.39] \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-% F2-F4 must come from the frozen release figure manifest.
-% Earlier inference/wp2-public candidate figures use different conditioning
-% and region choices and require their exploratory labels.
+The 0.10\,m Gaussian-smoothed density conditional on entry peaks at \((2.83,1.91)\,\metre\). With an independent seed and 32,000 proposals the same smoothing gives \((2.83,1.89)\,\metre\). The two 0.05\,m-smoothed peaks differ by \(0.146\,\metre\), so we give the coarser peak as an approximate location and report its resolution. The joint plane-crossing region in Figure~\ref{fig:wp2-f2} includes possible wide crossings. Table~\ref{tab:case} also gives intervals conditional on entry.
+
+Separate refits under 5, 10 and 20\,mm independent coordinate errors give M2 entry probabilities of approximately 99\%, 90\% and 74\%. Tightening the transverse prior standard deviation from 0.22 to 0.12 gives approximately 96\% under the 10\,mm assumption. These refits use the same frames. Their spread reflects sensitivity to observation and force assumptions that the data cannot settle.
+
+\begin{figure}[htbp]
+\centering
+\renewcommand{\thefigure}{F2}
+\includegraphics[width=\linewidth]{figures/F2.pdf}
+\caption{Supplied kick under M2. Grid probabilities and the nominal 95\% joint region condition on plane arrival. The star marks the entry-conditioned peak at 0.10\,m smoothing. The dashed inset shows one-radius clearance. Positive \(Y\) is to the kicker's left when facing the goal.}\label{fig:wp2-f2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\renewcommand{\thefigure}{F4}
+\includegraphics[width=\linewidth]{figures/F4.pdf}
+\caption{Supplied-kick sensitivity to independently refitted measurement and aerodynamic assumptions. Entry estimates use all assigned weight. Crossing intervals condition on plane arrival.}\label{fig:wp2-f4}
+\end{figure}

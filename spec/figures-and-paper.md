@@ -1,6 +1,6 @@
 # Problem B figures and paper specification
 
-Status: planned. The entries below specify what to generate from future locked runs. They report no new numerical results.
+The current manuscript uses [upc2026-location-v2](../releases/upc2026-location-v2/README.md). F1 and F2 show the M2 supplied-shot forecast. F3 and F4 use the integrated WP2 identifiability and sensitivity evidence. F5 shows secondary event scores and technical failures by stratum. F6 shows core crossing-region coverage and paired conditional energy scores. The register below also documents the original event-first figure design.
 
 Use [`case.json`](case.json) for the supplied observations, [`schema.md`](schema.md) for field names and units, and [`validation.md`](validation.md) for the scoring, split, and selection rules. Use F1–F6 and T1–T3 as stable asset IDs.
 
