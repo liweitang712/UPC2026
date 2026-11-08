@@ -7,3 +7,4 @@
 5. Handoff in an issue or PR with commit, changed files, exact reproduction command, checks, open questions, and next owner. Put data and code in Git. Messages should point to the relevant files and run ID.
 6. Figures, manuscript, and abstract use the integrator's same frozen release. Any new configuration or data release requires recomputing affected claims and plots. Never describe a simulated or historical case as a new real-world result.
 7. For the team's eventual AI disclosure, save original prompts and full outputs used in the entry in a team-controlled log. Make team members able to verify, explain and defend their portions.
+8. For manuscript work, use [PAPER_WRITING.md](PAPER_WRITING.md) for the shared LaTeX entry, section ownership, and work-package prompts. Use the shared project for the manuscript and this repository for reproducible evidence and handoffs.
