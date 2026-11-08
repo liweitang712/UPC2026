@@ -3,3 +3,5 @@ upc2026-location-v2,"summary, T2 and discussion",T2.json,"entry_mode_assessment,
 upc2026-location-v2,"validation, T3 and discussion",T3.csv,"group=core: n_truth_plane, n_supported, n_hit_95, area_95_m2, energy_m, entry_brier_failure_penalized"
 upc2026-location-v2,validation,paired-energy.csv,"group=core: n_paired, energy_difference_m, lo_m, hi_m"
 upc2026-location-v2,case sensitivity,T2-sensitivity.json,"sigma5, m2, sigma20, transverse-prior"
+upc2026-location-v2,"case sensitivity, drag prior center 0.35",T2-sensitivity.json,"drag-prior.p_goal, drag-prior.plane_intervals.t_s[1]"
+upc2026-location-v2,"case sensitivity figure, rounding-only effective sample size",T2-sensitivity.json,"rounding.diagnostics.ess"
