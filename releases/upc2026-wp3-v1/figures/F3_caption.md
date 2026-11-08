@@ -1,0 +1,1 @@
+Public M2 local sensitivities and two candidate trajectories compatible with the same early observations under the stated 10 mm error scale. These are supplied-kick candidate diagnostics from WP2; the locked event reference is B0.

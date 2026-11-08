@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "case_id": "upc2026-b",
+  "source": "https://university-physics-competition.com/2026-competition",
+  "frame": {
+    "position_unit": "m",
+    "time_unit": "s",
+    "x_positive": "from the penalty mark toward the goal",
+    "y_positive": "to the kicker's left while facing the goal",
+    "z_positive": "up"
+  },
+  "initial": {"t_s": 0.0, "x_m": 0.0, "y_m": 0.0, "z_m": 0.11},
+  "observations": [
+    {"t_s": 0.05, "x_m": 1.50, "y_m": 0.45, "z_m": 0.44},
+    {"t_s": 0.10, "x_m": 2.96, "y_m": 0.86, "z_m": 0.74}
+  ],
+  "goal": {
+    "x_m": 11.0,
+    "y_min_m": -3.66,
+    "y_max_m": 3.66,
+    "z_min_m": 0.0,
+    "z_max_m": 2.44,
+    "strict_center_bounds": true
+  },
+  "nominal_assumptions": {
+    "radius_m": 0.11,
+    "ball_mass_kg": 0.43,
+    "gravity_m_s2": 9.80665,
+    "air_density_kg_m3": 1.225,
+    "wind_m_s": [0.0, 0.0, 0.0],
+    "gaussian_coordinate_sigma_m": 0.01
+  },
+  "protocol_defaults": {
+    "horizon_s": 2.0,
+    "event_tie_tolerance_s": 0.000001,
+    "spatial_event_tie_tolerance_m": 0.000001,
+    "event_time_convergence_target_s": 0.0001,
+    "event_position_convergence_target_m": 0.001,
+    "rounding_bin_width_m": 0.01
+  }
+}

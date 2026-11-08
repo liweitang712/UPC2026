@@ -1,0 +1,9 @@
+claim_id,run_id,version,source_artifact,source_key_or_filter,statistic,population,condition,display_unit,owner
+C-WP3-design,upc2026-wp3-v1,v1,../protocol.json,"counts, solver, decision",design and preregistration,synthetic benchmark,frozen design,cases and SI units,WP3
+C-WP3-selection,upc2026-wp3-v1,v1,../selection-results.json,"models, comparisons, selected_model, comparator_model",selection scores and gates,selection split,equal core strata,Brier loss,WP3
+C-WP3-blind-difference,upc2026-wp3-v1,v1,../blind-results.json,"comparisons[candidate=B0,comparator=B2]",paired Brier gain and 95% interval,blind core strata,paired eligible truth,Brier loss,WP3
+C-WP3-blind-B0,upc2026-wp3-v1,v1,../blind-results.json,"models.B0.core, models.B0.strata","entry loss, truth counts, failure counts and region denominators",blind split,resolved truth or supported region as applicable,Brier loss and cases,WP3
+C-WP3-blind-B2,upc2026-wp3-v1,v1,../blind-results.json,"models.B2.core, models.B2.strata","entry loss, truth counts, failure counts and region denominators",blind split,resolved truth or supported region as applicable,Brier loss and cases,WP3
+C-WP3-conditional,upc2026-wp3-v1,v1,../blind-conditional.csv,all blind strata for locked pair,conditional location and time errors and availability,blind split,truth crossed plane,m and s,WP3
+C-WP3-F5,upc2026-wp3-v1,v1,../figures/figures_manifest.csv,asset_id=F5,figure evidence,blind split,see figure-specific conditions,percentage and SI units,WP3
+C-WP3-F6,upc2026-wp3-v1,v1,../figures/figures_manifest.csv,asset_id=F6,figure evidence,blind split,see figure-specific conditions,percentage and SI units,WP3

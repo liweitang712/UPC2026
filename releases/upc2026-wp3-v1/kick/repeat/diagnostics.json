@@ -1,0 +1,31 @@
+{
+  "cases_sha256": "003ecd7583ac22380d96c7f8e0019f61e3d8e742d4fe7dde2de5f70694a8d2d8",
+  "scenario_sha256": "a35cd7888d648313ebea6b332b65b0f8963eafd5dde46488b0b554b006a3bcb5",
+  "seed": 2027,
+  "diagnostics": [
+    {
+      "case_id": "upc2026-b",
+      "model_id": "B0",
+      "scenario_id": "nominal_gaussian_10mm",
+      "seed": 15091729907790867124,
+      "budget": 8000,
+      "rows": 8000,
+      "ess": 8000.0,
+      "max_weight": 0.000125,
+      "failure_reasons": {},
+      "p_failure": 0.0
+    },
+    {
+      "case_id": "upc2026-b",
+      "model_id": "B2",
+      "scenario_id": "nominal_gaussian_10mm",
+      "seed": 15091729907790867124,
+      "budget": 8000,
+      "rows": 8000,
+      "ess": 8000.0,
+      "max_weight": 0.000125,
+      "failure_reasons": {},
+      "p_failure": 0.0
+    }
+  ]
+}

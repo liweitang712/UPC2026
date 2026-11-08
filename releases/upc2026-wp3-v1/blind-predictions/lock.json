@@ -1,0 +1,9 @@
+{
+  "cases_sha256": "17cef584731195978af3b66399a3db111fca16530e3cf00d8f0f76b927f14bf7",
+  "forecast_sha256": "8443892120b079e82a263c12d024cc0ce121401d83193d6424f404f3cff07ce7",
+  "point_status_sha256": "852e2016545238c85e9c8a78ce9dffdaf99169b98ac6e46647aa9cca481f0df1",
+  "predictions_sha256": "114efba3736e518e20b8317a07f9670a22fa27952e03c221b11fc97f6e3f80a2",
+  "run_id": "upc2026-wp3-v1",
+  "selection_decision_sha256": "effa0fe85841e6990742b645052b2fb0d3cf397531cc6bcc3190aaa236c4acf2",
+  "split": "blind"
+}
