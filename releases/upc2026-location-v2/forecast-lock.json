@@ -1,0 +1,24 @@
+{
+  "run_id": "upc2026-location-v2",
+  "models": [
+    "M2",
+    "M1",
+    "B0"
+  ],
+  "seed": 812026,
+  "draw_budget": 2048,
+  "cases_sha256": "56255f4e8bbdbd6b5ff4729ce60a140074c4c2296efd730ee997178432c96056",
+  "scenario_sha256": "a35cd7888d648313ebea6b332b65b0f8963eafd5dde46488b0b554b006a3bcb5",
+  "python": "3.13.14",
+  "protocol_sha256": "9b421f4c5565309edfe9b9459552bcbb7d58838fd84caa67edc9a8f563e9a35c",
+  "predictions_sha256": "0d23964fd6d655400e214d885cf514325c32459b2990133850599105f6855895",
+  "diagnostics_sha256": "b28abc2afef6ea92fd1690ad54b8ba67f3b9f423b1ff082c480231e68df3c5b2",
+  "inference_source_sha256": {
+    "baseline.py": "b5e337c4d43254a6a7b4902e31a948615bd0368c3808616ca401614a0d1dc36f",
+    "forecast.py": "41c8545ec0215d2af9161950b01ce8f1b348ca53e4b3121a70490bdfab245217",
+    "likelihood.py": "beeb4d9420cdeef70f99ecf5cda825244aa4c66c0cb1d3f2dd7346e4ca21a3e5",
+    "m2.py": "0f4c62c73fbeb921556f3f88ea646750579a92ac2ea7672cd54e76bf3df54c6a",
+    "qa.py": "e674017004f896970437d7f1ff50cce37e8e5578049322ff81a07d17b7b5dca0",
+    "report.py": "7fa4913bd58027c9773d736666c85b8eda77d1fd9115f18914480889e1351cc7"
+  }
+}

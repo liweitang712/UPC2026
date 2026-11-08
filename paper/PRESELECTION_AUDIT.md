@@ -19,6 +19,7 @@ The location-v2 checkout provides a second supported layout. Run the checker wit
 ```sh
 python -B -m paper.check_release_consistency PATH_TO_LOCATION_RELEASE --abstract PATH_TO_00_SUMMARY_TEX
 python -B -m figures.render_paper_figures PATH_TO_LOCATION_CHECKOUT PRESENTATION_OUTPUT --location-v2-f4
+python -B -m figures.print_location_figures PRESENTATION_OUTPUT
 ```
 
 Use the location-v2 flag when preparing the current F4. Its sensitivity inputs differ from the original v1 archive. The v1 F5/F6 derivatives remain available for the historical reliability and coverage panels and use that release's own data.
@@ -27,6 +28,7 @@ The alternative region-width replay requires the sealed blind truth and case str
 
 ```sh
 python -B -m validation.region_grid_sensitivity --repository . --release releases/upc2026-wp3-v1 --private PRIVATE_RUN_DIR --draws LOCKED_DRAWS --point-status LOCKED_POINT_STATUS
+python -B -m validation.region_grid_sensitivity --repository . --release releases/upc2026-location-v2 --private V2_PRIVATE_RUN_DIR --draws V2_LOCKED_DRAWS
 ```
 
 The fixed-launch drag sweep is a physical sensitivity, not an arrival-time posterior. The rejected M3 Reynolds values are evaluated trial states, not latent truth. The trigger counts can be reproduced from the public selection forecast. Assignment of those triggers to core or challenge strata requires the custody join.

@@ -4,9 +4,11 @@
 
 **论文写作请从 [共享 LaTeX 入口与三人分工](PAPER_WRITING.md) 开始。**
 
-前向物理、两帧反演与独立盲测已交付。[冻结 v1](releases/upc2026-wp3-v1/) 是当前可复现的证据快照。团队正在修订 v2 的选型标准，正式题例结果待新的 `run_id` 冻结后统一更新。[复现入口](releases/README.md)
+当前论文采用 **M2** 预测入门位置与不确定性，M1 和 B0 用于对照。题例、位置优先的合成留出评估、图表和复现入口见 [upc2026-location-v2](releases/upc2026-location-v2/README.md)。
 
-复核环境使用 Python 3.13。求解、推断和评分使用 Python 标准库，制图另需 NumPy 和 Matplotlib（已核对 Matplotlib 3.10.8）。从仓库根目录运行：
+前向物理、两帧反演与独立验证均已交付。[v1](releases/upc2026-wp3-v1/) 保留原先的事件评分结果。[审查与对账](paper/PRESELECTION_AUDIT.md) 提供 v1、v2 复核入口。测试使用 Python 3.13，落点发布的复现另需 NumPy、SciPy 和 Matplotlib。
+
+从仓库根目录运行：
 
 ```sh
 python -B -m unittest discover -s physics/tests -v

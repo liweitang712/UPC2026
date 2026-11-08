@@ -1,5 +1,8 @@
 # WP3 validation
 
+The current manuscript uses the [M2 location study](../releases/upc2026-location-v2/README.md).
+The steps below reproduce the archived event-first release.
+
 WP3 owner is Wukong0515 ([Issue #3](https://github.com/liweitang712/UPC2026/issues/3)).
 This work follows the [validation protocol](../spec/validation.md) and
 [shared CSV fields](../spec/schema.md). Run the Python 3.10+ commands from the

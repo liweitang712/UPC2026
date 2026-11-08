@@ -1,2 +1,10 @@
 claim_id,run_id,manuscript,evidence,numeric_key,numeric_value,display_value
 location-f4-rounding-ess,upc2026-location-v2,F4 caption,T2-sensitivity.json,rounding.diagnostics.ess,141.58699579772102,about 142
+location-plane,upc2026-location-v2,T2 and conclusion,T2.json,p_reach,1.0,100.0%
+location-entry,upc2026-location-v2,summary T2 and conclusion,T2.json,p_goal,0.8982398112819144,89.8%
+location-clearance,upc2026-location-v2,T2,T2.json,p_clearance_goal,0.8298976225995465,83.0%
+location-mode-y,upc2026-location-v2,summary and conclusion,T2.json,entry_mode_assessment.recommended_mode_yz_m.0,2.8300000000000054,2.83 m
+location-mode-z,upc2026-location-v2,summary and conclusion,T2.json,entry_mode_assessment.recommended_mode_yz_m.1,1.9099999999999997,1.91 m
+location-time-low,upc2026-location-v2,conclusion,T2.json,plane_intervals.t_s.0,0.37809898456027524,0.378 s
+location-time-med,upc2026-location-v2,summary and conclusion,T2.json,plane_intervals.t_s.1,0.3975500024448112,0.398 s
+location-time-high,upc2026-location-v2,conclusion,T2.json,plane_intervals.t_s.2,0.4189587192652044,0.419 s

@@ -1,5 +1,9 @@
 # WP2 · 两帧反演
 
+# Current manuscript forecast
+
+The current paper uses the bounded M2 forecast and the [location release](../releases/upc2026-location-v2/README.md). M1 and B0 are comparators. Earlier outputs below document the original event-first benchmark and development runs.
+
 基线为 `e24d633`，工作分支为 `team/inference`。冻结题例使用
 `spec/case.json` v1，模型编号和交换字段沿用 `spec/models.csv` 与
 `spec/schema.md`。WP1 起始接口版本为 `e25b682`。

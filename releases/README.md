@@ -1,4 +1,10 @@
-# UPC2026 validation release
+# UPC2026 validation releases
+
+The current manuscript uses [upc2026-location-v2](upc2026-location-v2/README.md).
+It uses M2 for the supplied-kick location forecast and compares its location
+distribution with M1 and B0 on a fresh synthetic holdout.
+
+## Historical entry-event release
 
 The frozen WP3 results are in [upc2026-wp3-v1](upc2026-wp3-v1/).
 Start with [release.json](upc2026-wp3-v1/release.json) for revisions, model

@@ -1,5 +1,19 @@
 # Problem B validation protocol
 
+# Location-first manuscript release
+
+For the current manuscript, use the [M2 location protocol](../releases/upc2026-location-v2/protocol.json)
+and [release guide](../releases/upc2026-location-v2/README.md). M2 is the
+physics-motivated working forecast. Compare M2 against M1 and B0 on common
+supported true plane crossings using the energy score, with paired intervals.
+Report empirical coverage, region area and the total and supported crossing
+counts alongside the comparison. Event Brier loss is secondary for this study.
+Use a fresh holdout when the objective changes, and freeze predictions before
+opening the scoring truth.
+
+The remaining sections document the original event-first protocol. Their
+selection gates apply to the archived `upc2026-wp3-v1` release.
+
 Status: planned. This specification defines experiments and decision rules. It contains no new predictions, simulation results, or empirical performance claims.
 
 Use [`case.json`](case.json) for the supplied kick and [`schema.md`](schema.md) for the interface, field names, units and event definitions. Names in this protocol describe data roles. The schema controls serialization. Freeze the protocol before examining blind outcomes.

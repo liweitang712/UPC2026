@@ -69,6 +69,24 @@ def check_location_release(root, abstract_path):
         ),
         "location abstract display values": all(value in abstract for value in required),
     }
+    ledger = Path(__file__).with_name("preselection-evidence") / "location-claims.csv"
+    if ledger.is_file():
+        errors = []
+        for claim in load(ledger):
+            try:
+                source = (root / claim["evidence"]).resolve()
+                if claim["run_id"] != run_id or not source.is_relative_to(root):
+                    raise ValueError("wrong run or evidence path")
+                value = load(source)
+                for key in claim["numeric_key"].split("."):
+                    value = value[int(key)] if isinstance(value, list) else value[key]
+                if not close(value, claim["numeric_value"]):
+                    raise ValueError("value differs from the release")
+            except (ValueError, OSError, KeyError, IndexError, TypeError) as exc:
+                errors.append(f"{claim['claim_id']}: {exc}")
+        checks["location scalar claims"] = not errors
+        for error in errors:
+            print(f"  {error}")
     for label, passed in checks.items():
         print(f"{'PASS' if passed else 'FAIL'} {label}")
     for value in required:
