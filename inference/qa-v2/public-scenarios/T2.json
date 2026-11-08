@@ -10046,7 +10046,6 @@
       "median_time_given_reach_s": 0.39689945548772837
     },
     "draft_sampling_flags": [],
-    "f2_off_panel_weight": 0.0,
     "independent_repeat": {
       "diagnostics": {
         "inference_version": "wp2-revision-2-exploratory",
@@ -11929,8 +11928,67 @@
       "entry_mode_yz_m": [
         2.810000000000006,
         1.9499999999999997
-      ]
-    }
+      ],
+      "mode_shift_m": 0.1523154621172787,
+      "mode_stable": false
+    },
+    "entry_mode_assessment": {
+      "status": "unstable",
+      "tolerance_m": 0.1,
+      "repeat_shift_m": 0.1523154621172787,
+      "bandwidth_shifts_m": [
+        0.08246211251235329,
+        0.028284271247461613
+      ],
+      "estimates_yz_m": [
+        [
+          2.6700000000000053,
+          1.8899999999999997
+        ],
+        [
+          2.7500000000000053,
+          1.8699999999999997
+        ],
+        [
+          2.810000000000006,
+          1.9499999999999997
+        ],
+        [
+          2.8300000000000054,
+          1.9299999999999997
+        ]
+      ],
+      "recommended_mode_yz_m": null
+    },
+    "additional_mode_assessment": {
+      "status": "unstable",
+      "tolerance_m": 0.1,
+      "repeat_shift_m": 0.14560219778561026,
+      "bandwidth_shifts_m": [
+        0.044721359549995635,
+        0.08246211251235318
+      ],
+      "estimates_yz_m": [
+        [
+          2.810000000000006,
+          1.8499999999999996
+        ],
+        [
+          2.8300000000000054,
+          1.8899999999999997
+        ],
+        [
+          2.850000000000005,
+          1.9899999999999998
+        ],
+        [
+          2.8300000000000054,
+          1.9099999999999997
+        ]
+      ],
+      "recommended_mode_yz_m": null
+    },
+    "f2_off_panel_weight": 0.0
   },
   "rounded": {
     "p_reach": 1.0,
