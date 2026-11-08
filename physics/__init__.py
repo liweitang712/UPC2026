@@ -1,6 +1,7 @@
 """Public WP1 forward interface. Uses only the Python standard library."""
 
 from collections.abc import Mapping
+from dataclasses import replace
 from math import isfinite
 
 from .contracts import Case, EventResult, ForwardResult, SolverConfig, TracePoint, load_case
@@ -35,6 +36,7 @@ def _check_inputs(case, config, parameters):
 def solve(model_id, case, parameters=None, config=None, *, include_trace=False):
     """Evaluate the two model positions and the first physical event."""
     parameters = {} if parameters is None else parameters
+    curve_domains = set()
     try:
         if config is None:
             config = SolverConfig(
@@ -55,8 +57,18 @@ def solve(model_id, case, parameters=None, config=None, *, include_trace=False):
             if len(velocity) != 3 or not all(map(isfinite, velocity)):
                 raise ValueError("v0 must be a finite three-component velocity.")
             aero = build_aerodynamics(model_id, case, parameters, config)
-            return solve_flight(case, config, velocity, aero, include_trace)
+            def tracked_aero(velocity):
+                result = aero(velocity)
+                if result[4] is not None:
+                    curve_domains.add(result[4])
+                return result
+
+            # Include anchor-domain evaluations as well as integration stages.
+            curve_domains.update(aero.curve_domains)
+            result = solve_flight(case, config, velocity, tracked_aero, include_trace)
+            return replace(result, curve_domains=tuple(sorted(curve_domains)))
         raise ValueError(f"Unknown model ID: {model_id!r}.")
     except (ValueError, TypeError, KeyError, ArithmeticError) as error:
         reason = f"{type(error).__name__}: {error}"
-        return ForwardResult(None, (False, False), EventResult("NUMERICAL_FAILURE", reason=reason))
+        return ForwardResult(None, (False, False), EventResult("NUMERICAL_FAILURE", reason=reason),
+                             curve_domains=tuple(sorted(curve_domains)))

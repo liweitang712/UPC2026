@@ -37,6 +37,16 @@ Velocity and acceleration vectors follow x/y/z order. `frame_centers` is a pair 
 
 ## Experimental curves and F1 handoff
 
+`ForwardResult.curve_domains` reports curve-domain statuses even when
+`include_trace=False`; `curve_extrapolated` is true if any status is
+`clamped_low` or `clamped_high`. WP2 can sum the weights of these draws.
+The diagnostic conservatively includes the anchor, all evaluated RK stages,
+event probes and optional mathematical continuations, not only physical trace
+samples. It is not a measured fraction of flight outside the domain. An empty
+tuple means no successful curve evaluation was recorded, not proof of support;
+always inspect `NUMERICAL_FAILURE` separately. Existing event fields and CSV
+contracts are unchanged.
+
 M3 includes `goff2026_trionda_b` and `goff2026_jabulani_b`, digitized from the fixed, nonspinning orientation B traces in Figure 7. The JSON files under [curves/](curves/) identify the plotted data, calibration, units, source domain and transition. The default policy rejects out-of-domain evaluations. Explicit clamping is available as a separate sensitivity case and marked on the trace. The fitted drag anchor shifts the curve vertically, so an anchored flight coefficient is a model input informed by the measured shape. [Goff et al., 2026](https://doi.org/10.3390/app16062808)
 
 ```sh

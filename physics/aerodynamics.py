@@ -140,7 +140,7 @@ def build_aerodynamics(model_id, case, parameters, config=None):
         knots, drag = _registered_curve(curve) if isinstance(curve, str) else _curve_knots(curve)
         reynolds_per_speed = _number(density * (2 * radius / viscosity), "Reynolds scale")
         reference_re = _number(reynolds_per_speed * reference_speed, "reference Reynolds number")
-        reference_cd, _ = _reference_cd(reference_re, knots, drag, policy)
+        reference_cd, anchor_domain = _reference_cd(reference_re, knots, drag, policy)
         if anchor + (min(drag) - reference_cd) <= 0:
             raise ValueError("M3 anchor yields nonpositive drag over the curve domain")
 
@@ -176,4 +176,5 @@ def build_aerodynamics(model_id, case, parameters, config=None):
             raise ValueError("aerodynamic acceleration must be finite")
         return acceleration, speed, reynolds, cd, domain
 
+    aero.curve_domains = (anchor_domain,) if model_id == "M3" else ()
     return aero

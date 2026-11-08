@@ -69,6 +69,12 @@ class ForwardResult:
     observation_valid: tuple[bool, bool]
     event: EventResult
     trace: tuple[TracePoint, ...] = ()
+    curve_domains: tuple[str, ...] = ()
+
+    @property
+    def curve_extrapolated(self):
+        """Whether any evaluated curve argument required endpoint clamping."""
+        return any(domain.startswith("clamped_") for domain in self.curve_domains)
 
 
 def classify_plane(case, t_s, y_m, z_m):
