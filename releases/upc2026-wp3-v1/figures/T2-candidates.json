@@ -1,0 +1,2399 @@
+{
+  "drag-prior": {
+    "p_reach": 1.0,
+    "p_goal": 0.9077669922016757,
+    "p_clearance_goal": 0.839036403557593,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.0922330077983243,
+    "p_goal_given_reach": 0.9077669922016757,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.9077669922016757,
+        0.9077669922016757
+      ],
+      "p_clearance_goal": [
+        0.839036403557593,
+        0.839036403557593
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 1685.040892930049,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.38148011810930144,
+        0.4016291767725058,
+        0.4220108756856229
+      ],
+      "y_m": [
+        2.1714077479010463,
+        2.859094077497981,
+        3.6053735818640136
+      ],
+      "z_m": [
+        1.220606517119396,
+        1.9279635803196085,
+        2.624292201110213
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.874715806738678,
+          1.9280605443429806
+        ],
+        "axes": [
+          [
+            0.5878831988854449,
+            -0.8089458229499776
+          ],
+          [
+            -0.8089458229499776,
+            -0.5878831988854449
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.1250801614468701,
+          0.13597953556522827
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3447938766912808,
+          3.223410648968797,
+          6.076076980029904
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2814801181093014,
+        0.3016291767725058,
+        0.3220108756856229
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2579,
+      "weight": 0.9077669922016758,
+      "ess": 1447.6283303816383,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3811782164373046,
+        0.4009539284729497,
+        0.4205764071809983
+      ],
+      "y_m": [
+        2.1597369597587184,
+        2.848327736703937,
+        3.5103415338393402
+      ],
+      "z_m": [
+        1.2033703482576754,
+        1.8928582984170237,
+        2.388401917080227
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.85333771597669,
+          1.8720362123953942
+        ],
+        "axes": [
+          [
+            0.09132351452282657,
+            -0.9958212769845799
+          ],
+          [
+            -0.9958212769845799,
+            -0.09132351452282657
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.096393896398081,
+          0.1171799706507836
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.4493391506433548,
+          3.2048891812576454,
+          5.82052405584068
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.28117821643730456,
+        0.30095392847294966,
+        0.32057640718099834
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.8699999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.7100000000000053,
+      1.8899999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "drag-prior",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.35,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1685.040892930049,
+      "max_weight": 0.0015820460814906004,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.9077669922016757,
+      "p_clearance_goal": 0.839036403557593,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.40162918061018016
+    },
+    "draft_sampling_flags": []
+  },
+  "jabulani": {
+    "p_reach": 1.0,
+    "p_goal": 0.8985597633496345,
+    "p_clearance_goal": 0.8301211565226216,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.10144023665036556,
+    "p_goal_given_reach": 0.8985597633496345,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.8985597633496345,
+        0.8985597633496345
+      ],
+      "p_clearance_goal": [
+        0.8301211565226216,
+        0.8301211565226216
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 0.9999999999999999,
+      "ess": 1589.2107488534723,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37845902118453717,
+        0.3966953523342136,
+        0.41882153383462384
+      ],
+      "y_m": [
+        2.169404636939643,
+        2.8552825500880905,
+        3.6251188317812852
+      ],
+      "z_m": [
+        1.2213390501782544,
+        1.9296354581039579,
+        2.665429207088979
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.875355302288575,
+          1.9377699638033457
+        ],
+        "axes": [
+          [
+            0.3809111336284933,
+            -0.9246116526833609
+          ],
+          [
+            -0.9246116526833609,
+            -0.3809111336284933
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.12908123540472055,
+          0.1404019750459304
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.4010628886603729,
+          3.3103613138603283,
+          6.047436973870301
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27845902118453714,
+        0.2966953523342136,
+        0.31882153383462386
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2515,
+      "weight": 0.8985597633496345,
+      "ess": 1343.639277392452,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3781371501012634,
+        0.39606174520497844,
+        0.41711496788323593
+      ],
+      "y_m": [
+        2.1649185182868877,
+        2.84154736241246,
+        3.5218254599653296
+      ],
+      "z_m": [
+        1.2113438197905892,
+        1.8961730749010466,
+        2.3865882634777082
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.853213207151676,
+          1.8767588603911762
+        ],
+        "axes": [
+          [
+            0.07241488961133838,
+            -0.9973745955069128
+          ],
+          [
+            -0.9973745955069128,
+            -0.07241488961133838
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.09535284170532823,
+          0.1223533701999925
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.50057402544876,
+          3.2494201220202097,
+          5.711017836084196
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2781371501012634,
+        0.2960617452049784,
+        0.3171149678832359
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.8899999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.7500000000000053,
+      1.8699999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M3",
+      "scenario_id": "jabulani",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": "goff2026_jabulani_b",
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1589.2107488534728,
+      "max_weight": 0.0018007214928825984,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.8985597633496345,
+      "p_clearance_goal": 0.8301211565226216,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.39669616252183937
+    },
+    "draft_sampling_flags": []
+  },
+  "m1": {
+    "p_reach": 1.0,
+    "p_goal": 1.0,
+    "p_clearance_goal": 1.0,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.0,
+    "p_goal_given_reach": 1.0,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        1.0,
+        1
+      ],
+      "p_clearance_goal": [
+        1.0,
+        1
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 3112.588226264939,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.38221676078965144,
+        0.40027344774585544,
+        0.41987126941418873
+      ],
+      "y_m": [
+        3.1497747168645405,
+        3.2184534197226005,
+        3.2822306518456132
+      ],
+      "z_m": [
+        1.8104133381472771,
+        1.8901541541319784,
+        1.9675454442356037
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          3.2172873070969765,
+          1.890224732025477
+        ],
+        "axes": [
+          [
+            -0.9978308849805045,
+            0.06582951449785326
+          ],
+          [
+            0.06582951449785326,
+            0.9978308849805045
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.001165335872744083,
+          0.0016283561809493224
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3981537092842418,
+          3.1990250103772833,
+          6.008973522498638
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2822167607896514,
+        0.3002734477458554,
+        0.31987126941418875
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 3112.588226264939,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.38221676078965144,
+        0.40027344774585544,
+        0.41987126941418873
+      ],
+      "y_m": [
+        3.1497747168645405,
+        3.2184534197226005,
+        3.2822306518456132
+      ],
+      "z_m": [
+        1.8104133381472771,
+        1.8901541541319784,
+        1.9675454442356037
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          3.2172873070969765,
+          1.890224732025477
+        ],
+        "axes": [
+          [
+            -0.9978308849805045,
+            0.06582951449785326
+          ],
+          [
+            0.06582951449785326,
+            0.9978308849805045
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.001165335872744083,
+          0.0016283561809493224
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3981537092842418,
+          3.1990250103772833,
+          6.008973522498638
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2822167607896514,
+        0.3002734477458554,
+        0.31987126941418875
+      ]
+    },
+    "entry_mode_yz_m": [
+      3.210000000000006,
+      1.8899999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      3.210000000000006,
+      1.8899999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M1",
+      "scenario_id": "m1",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": null,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 3112.5882262649384,
+      "max_weight": 0.0005747587716281299,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 1.0,
+      "p_clearance_goal": 1.0,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.40027371197938943
+    },
+    "draft_sampling_flags": []
+  },
+  "m2": {
+    "p_reach": 1.0,
+    "p_goal": 0.8980198273357463,
+    "p_clearance_goal": 0.8301031732165003,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.10198017266425374,
+    "p_goal_given_reach": 0.8980198273357463,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.8980198273357463,
+        0.8980198273357463
+      ],
+      "p_clearance_goal": [
+        0.8301031732165003,
+        0.8301031732165003
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 1550.9508445479555,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37826293651269377,
+        0.3968963781695321,
+        0.4189158264039478
+      ],
+      "y_m": [
+        2.1692516372238355,
+        2.855288118075487,
+        3.6249381708852266
+      ],
+      "z_m": [
+        1.222085542404239,
+        1.9303779344723928,
+        2.665906898007074
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.875461060821802,
+          1.9380408779923293
+        ],
+        "axes": [
+          [
+            0.39190584960286473,
+            -0.9200053288144894
+          ],
+          [
+            -0.9200053288144894,
+            -0.39190584960286473
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.1289747261563124,
+          0.14045510464804034
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.4018261676565547,
+          3.3113740012306754,
+          6.043221478948681
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27826293651269374,
+        0.29689637816953207,
+        0.3189158264039478
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2513,
+      "weight": 0.8980198273357463,
+      "ess": 1310.5060905019313,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37802342110827786,
+        0.3961509278710503,
+        0.4173678470972727
+      ],
+      "y_m": [
+        2.164887668572535,
+        2.8416540915544686,
+        3.5220067279972485
+      ],
+      "z_m": [
+        1.2119768694759148,
+        1.8958512788538715,
+        2.3834638475728895
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.8532354477683968,
+          1.876689007098582
+        ],
+        "axes": [
+          [
+            0.07686189844596299,
+            -0.9970417486581405
+          ],
+          [
+            -0.9970417486581405,
+            -0.07686189844596299
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.09521719080464179,
+          0.12235016943959885
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.5014129490916241,
+          3.252540611567134,
+          5.7003634176702
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2780234211082778,
+        0.29615092787105024,
+        0.3173678470972727
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.8899999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.7500000000000053,
+      1.8699999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "gaussian-10mm",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1550.9508445479553,
+      "max_weight": 0.001912845104795806,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.8980198273357463,
+      "p_clearance_goal": 0.8301031732165003,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.39689945548772837
+    },
+    "draft_sampling_flags": [],
+    "f2_off_panel_weight": 0.0,
+    "independent_repeat": {
+      "diagnostics": {
+        "wp1_revision": "02b67b2",
+        "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+        "model_id": "M2",
+        "scenario_id": "gaussian-10mm",
+        "sigma_m": 0.01,
+        "rounding_width_m": 0,
+        "curve": null,
+        "wind_m_s": [
+          0.0,
+          0,
+          0.0
+        ],
+        "drag_mean": 0.27,
+        "drag_support": [
+          0.08,
+          0.55
+        ],
+        "transverse_sigma": 0.22,
+        "seed": 2027,
+        "attempted": 8000,
+        "finite_weights": 8000,
+        "rejected": {
+          "velocity_prior": 0,
+          "observation_domain": 0,
+          "zero_likelihood": 0
+        },
+        "ess": 3212.2706381095586,
+        "max_weight": 0.0009144106569303978,
+        "p_reach": 1.0,
+        "solver_config": {
+          "max_step_s": 0.01,
+          "horizon_s": 2.0,
+          "tie_tolerance_s": 1e-06,
+          "spatial_tie_tolerance_m": 1e-06,
+          "root_tolerance_s": 1e-09
+        },
+        "failure_reasons": {},
+        "p_goal": 0.8948293956113599,
+        "p_clearance_goal": 0.8170266263718888,
+        "p_failure": 0.0,
+        "median_time_given_reach_s": 0.3972613820433619
+      },
+      "p_goal": 0.8948293956113599,
+      "p_clearance_goal": 0.8170266263718888,
+      "plane_intervals": {
+        "condition": "plane",
+        "count": 8000,
+        "weight": 1.0,
+        "ess": 3212.2706381095586,
+        "quantile_levels": [
+          0.025,
+          0.5,
+          0.975
+        ],
+        "t_s": [
+          0.37797185479180606,
+          0.397260643579194,
+          0.419222622375888
+        ],
+        "y_m": [
+          2.170929434836717,
+          2.8657531008463413,
+          3.6230200910471178
+        ],
+        "z_m": [
+          1.2354175758480026,
+          1.9360626397350358,
+          2.659600816396633
+        ],
+        "joint_region": {
+          "method": "weighted covariance and empirical Mahalanobis quantiles",
+          "center_yz_m": [
+            2.874152343583905,
+            1.9414042794306805
+          ],
+          "axes": [
+            [
+              -0.7269833265632016,
+              0.686655112046143
+            ],
+            [
+              0.686655112046143,
+              0.7269833265632016
+            ]
+          ],
+          "eigenvalues_m2": [
+            0.12980005954008494,
+            0.13698515170225106
+          ],
+          "levels": [
+            0.5,
+            0.8,
+            0.95
+          ],
+          "squared_radii": [
+            1.382767443657861,
+            3.2395859702630805,
+            6.0889664216862505
+          ]
+        },
+        "time_after_last_frame_s": [
+          0.2779718547918061,
+          0.297260643579194,
+          0.31922262237588794
+        ]
+      },
+      "entry_mode_yz_m": [
+        2.810000000000006,
+        1.9499999999999997
+      ]
+    }
+  },
+  "rounded": {
+    "p_reach": 1.0,
+    "p_goal": 0.8896303125175996,
+    "p_clearance_goal": 0.8193011107181173,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.11036968748240045,
+    "p_goal_given_reach": 0.8896303125175996,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.8896303125175996,
+        0.8896303125175996
+      ],
+      "p_clearance_goal": [
+        0.8193011107181173,
+        0.8193011107181173
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 1650.186945255728,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37808855977541256,
+        0.3968233231407537,
+        0.4190956580197904
+      ],
+      "y_m": [
+        2.169220413180849,
+        2.8689487895456796,
+        3.666932764582278
+      ],
+      "z_m": [
+        1.2048700721381105,
+        1.929745564122345,
+        2.670615145025807
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.887905433651555,
+          1.9366818600374986
+        ],
+        "axes": [
+          [
+            0.39451640922906867,
+            -0.9188888958133088
+          ],
+          [
+            -0.9188888958133088,
+            -0.39451640922906867
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.13547243954794758,
+          0.14794398755580654
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.393094186871037,
+          3.303259933239049,
+          6.008719102030737
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2780885597754126,
+        0.29682332314075366,
+        0.31909565801979034
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2514,
+      "weight": 0.8896303125175997,
+      "ess": 1376.2592289394497,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37791402189619416,
+        0.39603744131884416,
+        0.4175381966590703
+      ],
+      "y_m": [
+        2.157018271527177,
+        2.851517990617495,
+        3.529805532775554
+      ],
+      "z_m": [
+        1.1924549872828059,
+        1.892017384984299,
+        2.386124339920882
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.8611771154521497,
+          1.8708805351852098
+        ],
+        "axes": [
+          [
+            0.07495736451608107,
+            -0.9971867395351802
+          ],
+          [
+            -0.9971867395351802,
+            -0.07495736451608107
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.09898981322690588,
+          0.12650993755094844
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.5150264923996657,
+          3.244846212802784,
+          5.684135216232866
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2779140218961942,
+        0.29603744131884413,
+        0.31753819665907035
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.8899999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.7900000000000054,
+      1.8899999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "rounded",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0.01,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1650.1869452557285,
+      "max_weight": 0.001766732794945439,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.8896303125175996,
+      "p_clearance_goal": 0.8193011107181173,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.3968339887261393
+    },
+    "draft_sampling_flags": []
+  },
+  "rounding": {
+    "p_reach": 1.0,
+    "p_goal": 1.0,
+    "p_clearance_goal": 1.0,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.0,
+    "p_goal_given_reach": 1.0,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        1.0,
+        1
+      ],
+      "p_clearance_goal": [
+        1.0,
+        1
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 249,
+      "weight": 1.0,
+      "ess": 141.586995797721,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.391564004016412,
+        0.4002702803835125,
+        0.40922351386025696
+      ],
+      "y_m": [
+        2.421837569838201,
+        2.674786347454162,
+        2.910598246120111
+      ],
+      "z_m": [
+        1.7247249392629829,
+        1.9378151135148498,
+        2.217875507461417
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.6692381608716516,
+          1.952459488956979
+        ],
+        "axes": [
+          [
+            -0.9970550442059999,
+            0.07668923538131886
+          ],
+          [
+            0.07668923538131886,
+            0.9970550442059999
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.01529107605906372,
+          0.017951636935677
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.5936644447505774,
+          2.9886701143327428,
+          5.252578056710719
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.291564004016412,
+        0.30027028038351244,
+        0.3092235138602569
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 249,
+      "weight": 1.0,
+      "ess": 141.586995797721,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.391564004016412,
+        0.4002702803835125,
+        0.40922351386025696
+      ],
+      "y_m": [
+        2.421837569838201,
+        2.674786347454162,
+        2.910598246120111
+      ],
+      "z_m": [
+        1.7247249392629829,
+        1.9378151135148498,
+        2.217875507461417
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.6692381608716516,
+          1.952459488956979
+        ],
+        "axes": [
+          [
+            -0.9970550442059999,
+            0.07668923538131886
+          ],
+          [
+            0.07668923538131886,
+            0.9970550442059999
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.01529107605906372,
+          0.017951636935677
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.5936644447505774,
+          2.9886701143327428,
+          5.252578056710719
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.291564004016412,
+        0.30027028038351244,
+        0.3092235138602569
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.8899999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.6700000000000053,
+      1.9299999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "rounding-10mm",
+      "sigma_m": 0.0,
+      "rounding_width_m": 0.01,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 16000,
+      "finite_weights": 249,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0,
+        "zero_likelihood": 15751
+      },
+      "ess": 141.58699579772102,
+      "max_weight": 0.03973783951767257,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 1.0,
+      "p_clearance_goal": 1.0,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.4003901311755183
+    },
+    "draft_sampling_flags": [
+      "ess_below_10_percent_of_attempts",
+      "max_weight_above_1_percent"
+    ]
+  },
+  "sigma20": {
+    "p_reach": 1.0,
+    "p_goal": 0.7387103093058945,
+    "p_clearance_goal": 0.65918281631613,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.2612896906941055,
+    "p_goal_given_reach": 0.7387103093058945,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.7387103093058945,
+        0.7387103093058945
+      ],
+      "p_clearance_goal": [
+        0.65918281631613,
+        0.65918281631613
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 2954.8542527580366,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37602557958402877,
+        0.3972132970589838,
+        0.42378286930326836
+      ],
+      "y_m": [
+        2.136699720296528,
+        3.0702077108681505,
+        4.147783122113247
+      ],
+      "z_m": [
+        0.9955473814090859,
+        1.9128322829724813,
+        2.8842600404901853
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          3.09145300802152,
+          1.9145620775344796
+        ],
+        "axes": [
+          [
+            0.35194556405165717,
+            -0.936020469831916
+          ],
+          [
+            -0.936020469831916,
+            -0.35194556405165717
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.23299332061405015,
+          0.27052366839854264
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.4253333539052364,
+          3.2535369567281913,
+          5.81565847252642
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27602557958402874,
+        0.2972132970589838,
+        0.3237828693032684
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2491,
+      "weight": 0.7387103093058947,
+      "ess": 1984.1340845262769,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3752179623544533,
+        0.394611532474931,
+        0.4182657750098584
+      ],
+      "y_m": [
+        2.095424955800103,
+        2.968993513438253,
+        3.5987678457715435
+      ],
+      "z_m": [
+        0.969174960784095,
+        1.8209100081462903,
+        2.3808579101553407
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.946215885898466,
+          1.7799482606700916
+        ],
+        "axes": [
+          [
+            0.03749738096271162,
+            -0.999296725913248
+          ],
+          [
+            -0.999296725913248,
+            -0.03749738096271162
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.15041975742940328,
+          0.16464243817624413
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.5603103207172944,
+          3.088818836350167,
+          5.454554335596613
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2752179623544533,
+        0.294611532474931,
+        0.3182657750098584
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.9900000000000055,
+      1.7899999999999998
+    ],
+    "entry_mode_check_yz_m": [
+      2.9100000000000055,
+      1.8699999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "sigma20",
+      "sigma_m": 0.02,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 2954.854252758037,
+      "max_weight": 0.0007285513137585159,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.7387103093058945,
+      "p_clearance_goal": 0.65918281631613,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.39721782416105295
+    },
+    "draft_sampling_flags": []
+  },
+  "sigma5": {
+    "p_reach": 1.0,
+    "p_goal": 0.9864611987535422,
+    "p_clearance_goal": 0.9596581787458858,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.01353880124645779,
+    "p_goal_given_reach": 0.9864611987535422,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.9864611987535422,
+        0.9864611987535422
+      ],
+      "p_clearance_goal": [
+        0.9596581787458858,
+        0.9596581787458858
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 361.6906315008104,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3846742222502669,
+        0.3980243045185047,
+        0.41313885517866994
+      ],
+      "y_m": [
+        2.308812842369091,
+        2.714660599072409,
+        3.1338700943857005
+      ],
+      "z_m": [
+        1.5356658220082895,
+        1.926122627266968,
+        2.3683138742073977
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.722352627449007,
+          1.945413647517226
+        ],
+        "axes": [
+          [
+            0.47112803505705597,
+            -0.8820648358160965
+          ],
+          [
+            -0.8820648358160965,
+            -0.47112803505705597
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.042038568727557624,
+          0.04540185838603702
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.2757112748516855,
+          3.160164077934785,
+          6.482539972941147
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.28467422225026684,
+        0.2980243045185047,
+        0.3131388551786699
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2523,
+      "weight": 0.9864611987535423,
+      "ess": 352.49174208562516,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3846306545487135,
+        0.3978791393620199,
+        0.4130345249520417
+      ],
+      "y_m": [
+        2.308577755824854,
+        2.7146536717343,
+        3.133864990502362
+      ],
+      "z_m": [
+        1.534927655960755,
+        1.9247513446433069,
+        2.3386868749010166
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.7223975371618567,
+          1.9376138388552664
+        ],
+        "axes": [
+          [
+            0.22671632352497814,
+            -0.9739608352738406
+          ],
+          [
+            -0.9739608352738406,
+            -0.22671632352497814
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.03847124127277219,
+          0.045025718326550314
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3162099889300665,
+          3.1536061648982776,
+          6.088644080854096
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2846306545487135,
+        0.29787913936201993,
+        0.31303452495204165
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.9099999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.690000000000005,
+      1.8899999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "sigma5",
+      "sigma_m": 0.005,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 361.69063150081035,
+      "max_weight": 0.009027627437316589,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.9864611987535422,
+      "p_clearance_goal": 0.9596581787458858,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.39802458018064524
+    },
+    "draft_sampling_flags": [
+      "ess_below_10_percent_of_attempts"
+    ]
+  },
+  "transverse-prior": {
+    "p_reach": 0.9999999999999999,
+    "p_goal": 0.9637678425867601,
+    "p_clearance_goal": 0.9165635471223056,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.03623215741323987,
+    "p_goal_given_reach": 0.9637678425867602,
+    "probability_bounds": {
+      "p_reach": [
+        0.9999999999999999,
+        0.9999999999999999
+      ],
+      "p_goal": [
+        0.9637678425867601,
+        0.9637678425867601
+      ],
+      "p_clearance_goal": [
+        0.9165635471223056,
+        0.9165635471223056
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 2153.8906174060103,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37975717220219946,
+        0.39860915907121325,
+        0.4193315551777843
+      ],
+      "y_m": [
+        2.4662598917960126,
+        3.0206979334128916,
+        3.5818297614459715
+      ],
+      "z_m": [
+        1.3998036671938143,
+        1.919191132724479,
+        2.431590500018236
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          3.028929764524705,
+          1.9123739779029032
+        ],
+        "axes": [
+          [
+            0.09007509408136881,
+            -0.9959349765051092
+          ],
+          [
+            -0.9959349765051092,
+            -0.09007509408136881
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.06826127341961144,
+          0.07964688751156968
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3592287732283619,
+          3.2409891596385303,
+          6.1014100661528055
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2797571722021994,
+        0.2986091590712132,
+        0.31933155517778433
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 3418,
+      "weight": 0.9637678425867602,
+      "ess": 2029.8463258163713,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3796208804701744,
+        0.3984195115986873,
+        0.4190096781544044
+      ],
+      "y_m": [
+        2.4653508794977363,
+        3.014669476802757,
+        3.532622719397363
+      ],
+      "z_m": [
+        1.3964169663172072,
+        1.9129644232796836,
+        2.3437817081334953
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          3.0175920494156587,
+          1.897152011192914
+        ],
+        "axes": [
+          [
+            -0.009190183515855026,
+            -0.9999577693717593
+          ],
+          [
+            -0.9999577693717593,
+            0.009190183515855026
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.060057263920053124,
+          0.07288398877099171
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.44982238829009,
+          3.336720865463044,
+          5.681344168359644
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2796208804701744,
+        0.2984195115986873,
+        0.3190096781544044
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.9500000000000055,
+      1.9499999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.970000000000006,
+      1.9499999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "transverse-prior",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.12,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 2153.8906174060103,
+      "max_weight": 0.0012589626908897469,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.9637678425867601,
+      "p_clearance_goal": 0.9165635471223056,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.3986098918318751
+    },
+    "draft_sampling_flags": []
+  },
+  "trionda": {
+    "p_reach": 1.0,
+    "p_goal": 0.8962436329946436,
+    "p_clearance_goal": 0.8285032877641542,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.10375636700535641,
+    "p_goal_given_reach": 0.8962436329946436,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.8962436329946436,
+        0.8962436329946436
+      ],
+      "p_clearance_goal": [
+        0.8285032877641542,
+        0.8285032877641542
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 1507.0781780921595,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37797922604219814,
+        0.3965857065889534,
+        0.4181374989027149
+      ],
+      "y_m": [
+        2.1691349316766373,
+        2.855248514386416,
+        3.6243702323120157
+      ],
+      "z_m": [
+        1.2242356364188633,
+        1.9316955689397295,
+        2.666892687547354
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.875433269954693,
+          1.9389710822623822
+        ],
+        "axes": [
+          [
+            0.4059058885227436,
+            -0.9139148809722719
+          ],
+          [
+            -0.9139148809722719,
+            -0.4059058885227436
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.1289558522830629,
+          0.14058213690421822
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.4060454637816513,
+          3.315213458715531,
+          6.0447927046656
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27797922604219816,
+        0.29658570658895345,
+        0.3181374989027149
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2509,
+      "weight": 0.8962436329946436,
+      "ess": 1270.873826585296,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3776134835964821,
+        0.39593412685847323,
+        0.41645525136325595
+      ],
+      "y_m": [
+        2.1649823506830868,
+        2.8412683598517696,
+        3.522299290053087
+      ],
+      "z_m": [
+        1.211217339804417,
+        1.896361168137507,
+        2.3823001584230616
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.853065282259315,
+          1.8764593743779177
+        ],
+        "axes": [
+          [
+            0.07911011505804914,
+            -0.996865883504648
+          ],
+          [
+            -0.996865883504648,
+            -0.07911011505804914
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.09488875380403401,
+          0.12258786215757354
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.495733471979381,
+          3.2385257980369175,
+          5.674800765721219
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.2776134835964821,
+        0.2959341268584732,
+        0.3164552513632559
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.6700000000000053,
+      1.9099999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.7500000000000053,
+      1.8699999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M3",
+      "scenario_id": "trionda",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": "goff2026_trionda_b",
+      "wind_m_s": [
+        0.0,
+        0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1507.0781780921595,
+      "max_weight": 0.0020389036020079542,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.8962436329946436,
+      "p_clearance_goal": 0.8285032877641542,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.3965862527489665
+    },
+    "draft_sampling_flags": []
+  },
+  "wind": {
+    "p_reach": 1.0,
+    "p_goal": 0.8974857365961539,
+    "p_clearance_goal": 0.8240727825994377,
+    "p_ground_first": 0.0,
+    "p_no_reach": 0.0,
+    "p_failure": 0.0,
+    "p_plane_wide": 0.10251426340384613,
+    "p_goal_given_reach": 0.8974857365961539,
+    "probability_bounds": {
+      "p_reach": [
+        1.0,
+        1
+      ],
+      "p_goal": [
+        0.8974857365961539,
+        0.8974857365961539
+      ],
+      "p_clearance_goal": [
+        0.8240727825994377,
+        0.8240727825994377
+      ],
+      "p_ground_first": [
+        0.0,
+        0.0
+      ],
+      "p_no_reach": [
+        0.0,
+        0.0
+      ]
+    },
+    "plane_intervals": {
+      "condition": "plane",
+      "count": 4000,
+      "weight": 1.0,
+      "ess": 1486.594813013091,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.37877615460251335,
+        0.3967026224082748,
+        0.41789272564788604
+      ],
+      "y_m": [
+        2.208837617190654,
+        2.8920397506511044,
+        3.6456276714253217
+      ],
+      "z_m": [
+        1.2281119247366146,
+        1.9319318024016148,
+        2.658371545463892
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.9141398021841236,
+          1.9388353467223565
+        ],
+        "axes": [
+          [
+            0.5377608626575611,
+            -0.8430974170247443
+          ],
+          [
+            -0.8430974170247443,
+            -0.5377608626575611
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.12656966395791883,
+          0.13561251690247028
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.3671554529588303,
+          3.2927173890926715,
+          6.0430979853617774
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27877615460251337,
+        0.29670262240827483,
+        0.31789272564788607
+      ]
+    },
+    "goal_intervals": {
+      "condition": "goal",
+      "count": 2450,
+      "weight": 0.8974857365961539,
+      "ess": 1255.7275755405958,
+      "quantile_levels": [
+        0.025,
+        0.5,
+        0.975
+      ],
+      "t_s": [
+        0.3784425532453118,
+        0.3960200749341226,
+        0.41625495782895794
+      ],
+      "y_m": [
+        2.2014044197775435,
+        2.8816824895960425,
+        3.5434817695206373
+      ],
+      "z_m": [
+        1.2176656518347078,
+        1.8990705811626756,
+        2.386244975269661
+      ],
+      "joint_region": {
+        "method": "weighted covariance and empirical Mahalanobis quantiles",
+        "center_yz_m": [
+          2.8907201497326453,
+          1.8782480828863406
+        ],
+        "axes": [
+          [
+            0.06405346840809126,
+            -0.997946468095806
+          ],
+          [
+            -0.997946468095806,
+            -0.06405346840809126
+          ]
+        ],
+        "eigenvalues_m2": [
+          0.09455029272933148,
+          0.11732774801224256
+        ],
+        "levels": [
+          0.5,
+          0.8,
+          0.95
+        ],
+        "squared_radii": [
+          1.460938234303822,
+          3.2835726722223915,
+          5.88796534180488
+        ]
+      },
+      "time_after_last_frame_s": [
+        0.27844255324531175,
+        0.29602007493412263,
+        0.31625495782895796
+      ]
+    },
+    "entry_mode_yz_m": [
+      2.770000000000005,
+      1.9099999999999997
+    ],
+    "entry_mode_check_yz_m": [
+      2.810000000000006,
+      1.8899999999999997
+    ],
+    "diagnostics": {
+      "wp1_revision": "02b67b2",
+      "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+      "model_id": "M2",
+      "scenario_id": "wind",
+      "sigma_m": 0.01,
+      "rounding_width_m": 0,
+      "curve": null,
+      "wind_m_s": [
+        0.0,
+        3.0,
+        0.0
+      ],
+      "drag_mean": 0.27,
+      "drag_support": [
+        0.08,
+        0.55
+      ],
+      "transverse_sigma": 0.22,
+      "seed": 2026,
+      "attempted": 4000,
+      "finite_weights": 4000,
+      "rejected": {
+        "velocity_prior": 0,
+        "observation_domain": 0
+      },
+      "ess": 1486.5948130130905,
+      "max_weight": 0.0019125903535082717,
+      "p_reach": 1.0,
+      "solver_config": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "failure_reasons": {},
+      "p_goal": 0.8974857365961539,
+      "p_clearance_goal": 0.8240727825994377,
+      "p_failure": 0.0,
+      "median_time_given_reach_s": 0.39670760184526466
+    },
+    "draft_sampling_flags": []
+  }
+}

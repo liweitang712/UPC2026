@@ -1,0 +1,2 @@
+case_id,split,stratum,scenario_id,t1_s,x1_m,y1_m,z1_m,t2_s,x2_m,y2_m,z2_m
+upc2026-b,public,supplied,nominal_gaussian_10mm,0.05,1.5,0.45,0.44,0.1,2.96,0.86,0.74

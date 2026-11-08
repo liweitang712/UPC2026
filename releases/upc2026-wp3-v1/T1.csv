@@ -1,0 +1,17 @@
+assumption,variable_or_model,value_or_range,units,scope,source
+Initial ball center,r0,"(0, 0, 0.11)",m,public kick,spec/case.json
+First observed ball center,r1,"(1.50, 0.45, 0.44)",m,public kick,spec/case.json
+Second observed ball center,r2,"(2.96, 0.86, 0.74)",m,public kick,spec/case.json
+Observation times,t1 and t2,"0.05; 0.10",s,public kick,spec/case.json
+Goal geometry,x and strict y/z bounds,"11; (-3.66, 3.66); (0, 2.44)",m,all models,spec/case.json and spec/schema.md
+Ball radius,R,0.11,m,all models,spec/case.json
+Ball mass,m,0.43,kg,M1–M3,spec/case.json
+Air density,rho,1.225,kg/m³,M1–M3,spec/case.json
+Gravity,g,9.80665,m/s²,time domain models,spec/case.json
+Gaussian coordinate SD,sigma,5 to 20,mm,registered public sensitivity scenarios,modeling choice
+Rounding bin,width,10,mm,rounded scenarios,spec/case.json
+Velocity prior,vx0/vy0/vz0,"uniform (8,48)/(-20,20)/(0,20)",m/s,M1–M3,spec/inference.md
+Drag prior,CD or anchor,"normal mean 0.27 SD 0.14 truncated to (0.08,0.55); mean 0.35 sensitivity",1,M1–M3 with curve admissibility for M3,spec/inference.md and modeling choice
+Transverse prior,Cy and Cz,"independent centered normals SD 0.22 conditioned on radial norm <0.55; SD 0.12 sensitivity",1,M2–M3,spec/inference.md and modeling choice
+Wind,v_air,"zero; +3 along y in the wind sensitivity",m/s,M1–M3,modeling choice
+Variable drag curves,M3,"Trionda B and Jabulani B; anchor at 30 m/s",m/s for anchor speed,public ball-type sensitivity,WP1 physics/curves at 02b67b2

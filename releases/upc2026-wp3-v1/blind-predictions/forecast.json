@@ -1,0 +1,61 @@
+{
+  "input_revision": "c5f3e5ef2073b2cce25a09ba0e82ded242dca2b7",
+  "input_run_id": "upc2026-wp3-v1",
+  "input_sha256": "17cef584731195978af3b66399a3db111fca16530e3cf00d8f0f76b927f14bf7",
+  "locked_forecast_sha256": "8443892120b079e82a263c12d024cc0ce121401d83193d6424f404f3cff07ce7",
+  "models": {
+    "B0": {
+      "draw_budget": 1024,
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "prior": "flat velocity",
+      "retry": "none",
+      "scenario_id": "nominal_gaussian_10mm",
+      "sigma_m": 0.01,
+      "solver": {
+        "horizon_s": 2.0,
+        "max_step_s": 0.01,
+        "root_tolerance_s": 1e-09,
+        "spatial_tie_tolerance_m": 1e-06,
+        "tie_tolerance_s": 1e-06
+      },
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ]
+    },
+    "B2": {
+      "draw_budget": 1024,
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "prior": "flat latent coordinates",
+      "retry": "none",
+      "scenario_id": "nominal_gaussian_10mm",
+      "sigma_m": 0.01,
+      "solver": {
+        "horizon_s": 2.0,
+        "max_step_s": 0.01,
+        "root_tolerance_s": 1e-09,
+        "spatial_tie_tolerance_m": 1e-06,
+        "tie_tolerance_s": 1e-06
+      },
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "point_status_rule": "available when positive goal mass has conditional ESS at least the locked minimum",
+  "point_status_sha256": "852e2016545238c85e9c8a78ce9dffdaf99169b98ac6e46647aa9cca481f0df1",
+  "predictions_sha256": "114efba3736e518e20b8317a07f9670a22fa27952e03c221b11fc97f6e3f80a2",
+  "python_version": "3.13.14",
+  "reproduce": "python -B -m validation.wp2_bridge blind --wp2 WP2_CHECKOUT --wp1 WP1_EXPORT --selection-config WP2_CHECKOUT/inference/selection-v1/forecast.json --cases validation/frozen/v1/blind/cases.csv --freeze validation/frozen/v1/freeze.json --output BLIND_OUTPUT --models B0 B2 --seed 2028 --workers 12",
+  "scenario_sha256": "a35cd7888d648313ebea6b332b65b0f8963eafd5dde46488b0b554b006a3bcb5",
+  "seed": 2028,
+  "source_commit": "98d6970b05220c26e725a7550313acb703753efb",
+  "split": "blind",
+  "workers": 12,
+  "wp1_revision": "02b67b2a8e1e7fda974385c98b76f66b33dbfaa0"
+}

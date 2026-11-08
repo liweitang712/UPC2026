@@ -1,0 +1,9 @@
+{
+  "cases_sha256": "898df22b8365b03d9194191bc20bc89c575eddb612b7f4b53f6eae08afa00d16",
+  "forecast_sha256": "595bb73e31f1af2065bd41fda8ba968b52dd629ca7169fd4b9e516fcace0ef21",
+  "point_status_sha256": null,
+  "predictions_sha256": "435bff7844b395dc6fb4bae6e51fa47910558fd921d5a068b5e28d66b4b3881a",
+  "run_id": "upc2026-wp3-v1",
+  "selection_decision_sha256": null,
+  "split": "selection"
+}
