@@ -1,0 +1,272 @@
+{
+  "id": "goff2026_jabulani_b",
+  "ball": "Adidas Jabulani (2010)",
+  "orientation": "B, a fixed source-specific panel orientation",
+  "spin": "zero, mechanically fixed in the wind tunnel",
+  "data_type": "digitized plotted wind-tunnel means",
+  "source": {
+    "title": "Trionda: Enhanced Surface Roughness Relative to Previous FIFA World Cup Match Balls",
+    "authors": [
+      "John Eric Goff",
+      "Sungchan Hong",
+      "Richong Liu",
+      "Takeshi Asai"
+    ],
+    "journal": "Applied Sciences 16(6), 2808 (2026)",
+    "doi": "10.3390/app16062808",
+    "url": "https://www.mdpi.com/2076-3417/16/6/2808",
+    "figure": "Figure 7 (orientation B); Table 1 (critical conditions)",
+    "figure_url": "https://pub.mdpi-res.com/applsci/applsci-16-02808/article_deploy/html/images/applsci-16-02808-g007.png",
+    "figure_license": "CC BY 4.0"
+  },
+  "source_data_note": "Figure 7 reproduces the predecessor wind-tunnel data and suppresses its error bars. See its reference 8, https://doi.org/10.1177/17543371221140497.",
+  "measurement_domain_speed_m_s": [
+    7.04,
+    34.93
+  ],
+  "measurement_domain_reynolds": [
+    99900,
+    495800
+  ],
+  "critical_speed_m_s": 26.9,
+  "critical_reynolds_approx": 381800,
+  "transition_speed_m_s_approx": [
+    13.9,
+    26.9
+  ],
+  "transition_reynolds_approx": [
+    197300,
+    381800
+  ],
+  "transition_definition": "Graphical end of the pre-crisis plateau to the drag minimum. This interval is a guide derived from Figure 7, not a reported statistical interval.",
+  "interpolation": "piecewise linear in Reynolds number",
+  "default_out_of_domain": "error",
+  "digitization": {
+    "method": "Manually picked marker centers after resizing the published 2949 by 2181 px image to 1856 by 1372 px. Linear calibration from tick coordinates. Numbers represent approximate plotted means and do not include instrument or between-shot uncertainty.",
+    "pixel_axes": {
+      "speed_x_at_5_m_s": 203,
+      "speed_x_at_35_m_s": 1809,
+      "cd_y_at_0": 1220,
+      "cd_y_at_0_6": 97
+    },
+    "marker_xy_px": [
+      [
+        312,
+        312
+      ],
+      [
+        357,
+        327
+      ],
+      [
+        412,
+        344
+      ],
+      [
+        465,
+        349
+      ],
+      [
+        518,
+        350
+      ],
+      [
+        572,
+        349
+      ],
+      [
+        626,
+        347
+      ],
+      [
+        681,
+        350
+      ],
+      [
+        735,
+        434
+      ],
+      [
+        783,
+        614
+      ],
+      [
+        841,
+        702
+      ],
+      [
+        893,
+        723
+      ],
+      [
+        946,
+        753
+      ],
+      [
+        998,
+        784
+      ],
+      [
+        1051,
+        814
+      ],
+      [
+        1106,
+        868
+      ],
+      [
+        1160,
+        908
+      ],
+      [
+        1214,
+        933
+      ],
+      [
+        1269,
+        961
+      ],
+      [
+        1323,
+        978
+      ],
+      [
+        1376,
+        988
+      ],
+      [
+        1429,
+        958
+      ],
+      [
+        1481,
+        968
+      ],
+      [
+        1537,
+        943
+      ],
+      [
+        1592,
+        958
+      ],
+      [
+        1645,
+        956
+      ],
+      [
+        1699,
+        937
+      ],
+      [
+        1754,
+        921
+      ],
+      [
+        1805,
+        908
+      ]
+    ],
+    "approximate_picking_tolerance_speed_m_s": 0.1,
+    "approximate_picking_tolerance_cd": 0.005,
+    "reference_diameter_m": 0.22,
+    "reference_density_kg_m3": 1.2,
+    "reference_kinematic_viscosity_m2_s": 1.55e-05,
+    "reference_dynamic_viscosity_pa_s": 1.86e-05,
+    "viscosity_note": "The conversion follows the explicit reference kinematic viscosity in section 2.1. The Reynolds numbers reported in Table 1 differ from this conversion. This file records them separately and uses the section 2.1 conversion consistently for all curve knots. Flight Reynolds numbers use the case density and dynamic viscosity."
+  },
+  "reynolds": [
+    99900,
+    111800,
+    126300,
+    140400,
+    154400,
+    168800,
+    183100,
+    197700,
+    212100,
+    224700,
+    240200,
+    253900,
+    268000,
+    281700,
+    295800,
+    310400,
+    324700,
+    339100,
+    353600,
+    367900,
+    381900,
+    396000,
+    409800,
+    424700,
+    439300,
+    453300,
+    467700,
+    482200,
+    495800
+  ],
+  "cd": [
+    0.485,
+    0.477,
+    0.468,
+    0.465,
+    0.465,
+    0.465,
+    0.466,
+    0.465,
+    0.42,
+    0.324,
+    0.277,
+    0.266,
+    0.25,
+    0.233,
+    0.217,
+    0.188,
+    0.167,
+    0.153,
+    0.138,
+    0.129,
+    0.124,
+    0.14,
+    0.135,
+    0.148,
+    0.14,
+    0.141,
+    0.151,
+    0.16,
+    0.167
+  ],
+  "sample_speed_m_s": [
+    7.04,
+    7.88,
+    8.9,
+    9.89,
+    10.88,
+    11.89,
+    12.9,
+    13.93,
+    14.94,
+    15.83,
+    16.92,
+    17.89,
+    18.88,
+    19.85,
+    20.84,
+    21.87,
+    22.88,
+    23.89,
+    24.91,
+    25.92,
+    26.91,
+    27.9,
+    28.87,
+    29.92,
+    30.95,
+    31.94,
+    32.95,
+    33.97,
+    34.93
+  ],
+  "critical_reynolds_table1": 400000
+}
