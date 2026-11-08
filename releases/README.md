@@ -35,6 +35,8 @@ python -B -m unittest discover -s figures/tests -v
 
 Compare the prediction and point-status SHA-256 digests to
 [the blind lock](upc2026-wp3-v1/blind-predictions/lock.json).
+The public blind forecast JSON uses a portable reproduction command. Its
+`locked_forecast_sha256` refers to the unchanged forecast JSON held by WP3.
 The WP3 scoring custody directory holds the true events, per-case strata,
 generation seeds and raw locked blind draws. WP3 can rerun the scores and
 figures after checking their locks:

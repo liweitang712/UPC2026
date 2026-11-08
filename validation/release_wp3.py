@@ -141,6 +141,21 @@ def kick_summary(args, output, case, protocol, models, nominal):
     return results["primary"], results["repeat"], manifest
 
 
+def public_blind_forecast(forecast, lock):
+    """Use portable paths while retaining the original custody hash."""
+    models = " ".join(forecast["models"])
+    return dict(
+        forecast,
+        locked_forecast_sha256=lock["forecast_sha256"],
+        reproduce=(
+            "python -B -m validation.wp2_bridge blind --wp2 WP2_CHECKOUT --wp1 WP1_EXPORT "
+            "--selection-config WP2_CHECKOUT/inference/selection-v1/forecast.json "
+            "--cases validation/frozen/v1/blind/cases.csv --freeze validation/frozen/v1/freeze.json "
+            f"--output BLIND_OUTPUT --models {models} --seed {forecast['seed']} --workers {forecast['workers']}"
+        ),
+    )
+
+
 def build(args, output):
     protocol = read_json(PROTOCOL_PATH)
     case = read_json(CASE_PATH)
@@ -215,8 +230,12 @@ def build(args, output):
     write_csv(output / "figures" / "figures_manifest.csv", FIGURE_FIELDS,
               [{field: row[field] for field in FIGURE_FIELDS} for row in sorted(figures, key=lambda row: row["asset_id"])])
     for split in ("selection", "blind"):
-        for filename in ("forecast.json", "lock.json"):
-            copy_relative(private, f"{split}-predictions/{filename}", output)
+        copy_relative(private, f"{split}-predictions/lock.json", output)
+        if split == "selection":
+            copy_relative(private, f"{split}-predictions/forecast.json", output)
+        else:
+            write_json(output / "blind-predictions" / "forecast.json",
+                       public_blind_forecast(split_forecast[split], split_metadata[split]))
     seeds = {
         "inference": {split: forecast["seed"] for split, forecast in split_forecast.items()},
         "bootstrap": protocol["decision"]["bootstrap_seed"],
