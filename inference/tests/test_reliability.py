@@ -10,10 +10,28 @@ from inference.baseline import ballistic_fit
 from inference.likelihood import (gaussian_log_likelihood,
                                   correlated_gaussian_log_likelihood,
                                   rounded_log_likelihood)
-from inference.report import summarize, grid_region
+from inference.report import summarize, grid_region, mode_repeat_status
 
 
 class ReliabilityTests(unittest.TestCase):
+    def test_unstable_mode_is_not_a_point_recommendation(self):
+        first = dict(entry_mode_yz_m=[2.81, 1.85], entry_mode_check_yz_m=[2.83, 1.89])
+        second = dict(entry_mode_yz_m=[2.85, 1.99], entry_mode_check_yz_m=[2.83, 1.91])
+        result = mode_repeat_status(first, second)
+        self.assertEqual(result['status'], 'unstable')
+        self.assertIsNone(result['recommended_mode_yz_m'])
+        self.assertEqual(len(result['estimates_yz_m']), 4)
+        self.assertEqual(mode_repeat_status(first, first)['status'], 'stable')
+
+    def test_absent_curve_support_is_reported_explicitly(self):
+        case = load_case()
+        fast = replace(case, observations=((2.0, .4, .44), (4.0, .8, .74)))
+        _, rows, diagnostic = forecast_group(('fast', 'strict',
+            dict(sigma_m=.01, curve='goff2026_trionda_b'), fast, 'M3', 24, 2026))
+        self.assertEqual(diagnostic['p_failure'], 1)
+        self.assertEqual(rows[0][2].reason, 'curve_support_not_found_within_budget')
+        self.assertEqual(diagnostic['sampling']['unresolved_likelihood_failures'], 0)
+
     def test_analytic_reference(self):
         case = load_case()
         velocity, scale = ballistic_fit(case)
