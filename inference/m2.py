@@ -16,6 +16,21 @@ from .baseline import CASE_PATH, ballistic_fit, predict
 from .likelihood import gaussian_log_likelihood, rounded_log_likelihood
 
 
+class SamplingFailure(RuntimeError):
+    """An unresolved likelihood has unknown posterior mass; do not drop it."""
+    def __init__(self, message, diagnostics):
+        super().__init__(message)
+        self.diagnostics = diagnostics
+
+
+def curve_support_failure(result, model):
+    # WP1 reports strict empirical-curve support through this documented reason.
+    # Do not classify unrelated ValueErrors as zero prior density.
+    reason = result.event.reason or ""
+    return (model == "M3" and reason.startswith("ValueError: Reynolds number ")
+            and " is outside [" in reason)
+
+
 def aerodynamics(rng, model, lower, drag_mean, transverse_sigma):
     cd = rng.gauss(drag_mean, 0.14)
     while not lower < cd < 0.55:
@@ -28,7 +43,8 @@ def aerodynamics(rng, model, lower, drag_mean, transverse_sigma):
     return {"cd": cd, "cy": cy, "cz": cz}
 
 
-def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse_sigma):
+def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse_sigma,
+           diagnostics=None):
     rng = Random(seed)
     initial, time_scale = ballistic_fit(case)
     config = SolverConfig(horizon_s=case.times[-1])
@@ -52,8 +68,14 @@ def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse
         if lower >= 0.55:
             raise ValueError("No admissible drag anchor in the reference prior.")
     draws = []
-    rejected = {"velocity_prior": 0, "observation_domain": 0, "zero_likelihood": 0}
+    rejected = {"velocity_prior": 0, "observation_domain": 0, "zero_likelihood": 0,
+                "curve_support": 0}
+    audit = diagnostics if diagnostics is not None else {}
+    audit.update(attempted=0, finite_weights=0, rejected=rejected, proposal_center_failures=0,
+                 likelihood_retries=0, recovered_likelihood_failures=0,
+                 unresolved_likelihood_failures=0, failure_reasons={})
     for draw_id in range(budget):
+        audit["attempted"] += 1
         parameters = aerodynamics(rng, model, lower, drag_mean, transverse_sigma)
         if curve:
             parameters.update(cd_anchor=parameters.pop("cd"), curve=curve, reference_speed_m_s=30)
@@ -61,6 +83,7 @@ def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse
         for _ in range(3):
             result = solve(model, case, dict(parameters, v0=center), config)
             if result.observations is None or any(p is None for p in result.observations):
+                audit["proposal_center_failures"] += 1
                 break
             center = tuple(
                 center[k] + fsum(t * (q[k] - mu[k])
@@ -75,7 +98,17 @@ def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse
         parameters["v0"] = velocity
         result = solve(model, case, parameters, config)
         if result.event.event == "NUMERICAL_FAILURE":
-            raise RuntimeError(f"Likelihood solver failure for proposal {draw_id}: {result.event.reason}")
+            if curve_support_failure(result, model):
+                rejected["curve_support"] += 1
+                continue
+            audit["likelihood_retries"] += 1
+            original_reason = result.event.reason
+            result = solve(model, case, parameters, replace(config, max_step_s=config.max_step_s / 2))
+            if result.event.event == "NUMERICAL_FAILURE":
+                audit["unresolved_likelihood_failures"] += 1
+                audit["failure_reasons"][original_reason] = audit["failure_reasons"].get(original_reason, 0) + 1
+                raise SamplingFailure(f"Unresolved likelihood failure at proposal {draw_id}: {result.event.reason}", audit)
+            audit["recovered_likelihood_failures"] += 1
         if not all(result.observation_valid):
             rejected["observation_domain"] += 1
             continue
@@ -88,6 +121,7 @@ def sample(case, sigma, budget, seed, model, curve, width, drag_mean, transverse
             continue
         log_weight += 0.5 * fsum(((v - m) / proposal_sigma)**2 for v, m in zip(velocity, center))
         draws.append((draw_id, log_weight, parameters))
+        audit["finite_weights"] += 1
     return draws, rejected, lower
 
 
@@ -113,7 +147,7 @@ def main():
     parser.add_argument("--drag-mean", type=float, default=0.27)
     parser.add_argument("--transverse-sigma", type=float, default=0.22)
     parser.add_argument("--scenario", default="gaussian-10mm")
-    parser.add_argument("--wp1-revision", default="02b67b2")
+    parser.add_argument("--wp1-revision", help="Optional Git revision of the imported WP1 package")
     args = parser.parse_args()
     if (args.draws < 1 or not isfinite(args.sigma_mm) or args.sigma_mm < 0
             or (args.sigma_mm == 0 and not args.rounded)
@@ -127,8 +161,9 @@ def main():
     case = replace(case, wind=(case.wind[0], args.wind_y, case.wind[2]))
     sigma = args.sigma_mm / 1000
     width = data["protocol_defaults"]["rounding_bin_width_m"] if args.rounded else 0
+    audit = {}
     draws, rejected, lower = sample(case, sigma, args.draws, args.seed, args.model,
-                                    args.curve, width, args.drag_mean, args.transverse_sigma)
+                                    args.curve, width, args.drag_mean, args.transverse_sigma, audit)
     weights = normalize(draws)
 
     args.output.mkdir(parents=True, exist_ok=True)
@@ -157,7 +192,9 @@ def main():
             median_time = time
             break
     diagnostics = {
+        "inference_version": "wp2-revision-2-exploratory", "sampling": audit,
         "wp1_revision": args.wp1_revision, "case_sha256": hashlib.sha256(raw).hexdigest(),
+        "wp1_interface_sha256": hashlib.sha256(Path(__import__('physics').__file__).read_bytes()).hexdigest(),
         "model_id": args.model, "scenario_id": args.scenario, "sigma_m": sigma,
         "rounding_width_m": width, "curve": args.curve, "wind_m_s": case.wind,
         "drag_mean": args.drag_mean, "drag_support": [lower, 0.55],

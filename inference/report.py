@@ -16,6 +16,26 @@ from physics import SolverConfig, load_case, solve
 from .baseline import CASE_PATH
 from .m2 import sample
 
+MINIMUM_CONDITIONAL_ESS = 100
+
+
+def grid_region(points, weights, width=.1):
+    """Frozen highest-mass cells, origin anchored, including cutoff ties."""
+    cells = {}
+    for point, weight in zip(points, weights / weights.sum()):
+        key = tuple(int(x) for x in np.floor(point / width))
+        cells[key] = cells.get(key, 0.) + float(weight)
+    ordered = sorted(cells, key=lambda key: (-cells[key], key))
+    masses = np.array([cells[key] for key in ordered])
+    regions = []
+    for level in (.5, .8, .95):
+        index = min(int(np.searchsorted(np.cumsum(masses), level)), len(masses)-1)
+        cutoff = masses[index]
+        selected = [key for key in ordered if cells[key] >= cutoff]
+        regions.append(dict(level=level, cells=selected, mass=sum(cells[key] for key in selected)))
+    return dict(method="weighted highest-mass square cells including cutoff ties",
+                width_m=width, origin_yz_m=[0, 0], regions=regions)
+
 
 def quantile(values, weights, levels):
     order = np.argsort(values)
@@ -74,24 +94,23 @@ def summarize(rows, case):
         ess = weights.sum()**2 / (weights @ weights) if len(weights) and weights.any() else 0
         stats = dict(condition=label, count=len(weights), weight=float(weights.sum()), ess=float(ess))
         summary[f"{label}_intervals"] = stats
-        if ess < 50:
-            stats["reason"] = "conditional_ess_below_50"
+        if ess < MINIMUM_CONDITIONAL_ESS and not np.isclose(ess, MINIMUM_CONDITIONAL_ESS, rtol=1e-12):
+            stats["reason"] = "conditional_ess_below_100"
             continue
         stats["quantile_levels"] = [.025, .5, .975]
         for key in ("t_s", "y_m", "z_m"):
             if all(r[key] for r in subset):
                 stats[key] = quantile(np.array([float(r[key]) for r in subset]),
                                       weights, stats["quantile_levels"]).tolist()
-        joint = ellipse(points, weights)
-        if joint is not None:
-            center, axes, eigenvalues, levels = joint
-            stats["joint_region"] = dict(method="weighted covariance and empirical Mahalanobis quantiles",
-                                         center_yz_m=center.tolist(), axes=axes.tolist(),
-                                         eigenvalues_m2=eigenvalues.tolist(),
-                                         levels=[.5, .8, .95], squared_radii=levels.tolist())
+        stats["joint_region"] = grid_region(points, weights)
         if label == "goal":
             summary["entry_mode_yz_m"] = mode(points, weights, case, .05)
             summary["entry_mode_check_yz_m"] = mode(points, weights, case, .10)
+            summary["entry_mode_method"] = dict(kernel="Gaussian", bandwidth_m=.05,
+                grid_m=.02, boundary="density restricted to goal interior", tie="first y then z",
+                bandwidth_check_m=.10, minimum_conditional_ess=100)
+            summary["entry_mode_bandwidth_stable"] = bool(np.linalg.norm(
+                np.array(summary["entry_mode_yz_m"]) - summary["entry_mode_check_yz_m"]) <= .10)
         if "t_s" in stats:
             stats["time_after_last_frame_s"] = [t - case.times[-1] for t in stats["t_s"]]
     summary.setdefault("entry_mode_yz_m", None)
@@ -118,13 +137,12 @@ def figure2(output, case, rows, summary):
     r = case.radius
     ax.add_patch(Rectangle((case.y_min+r, r), case.y_max-case.y_min-2*r, case.z_max-2*r,
                            fill=False, edgecolor="black", linestyle="--"))
-    joint = ellipse(points, weights)
+    joint = summary["plane_intervals"].get("joint_region")
     if joint is not None:
-        center, axes, eigenvalues, levels = joint
-        angle = np.linspace(0, 2*np.pi, 160)
-        outline = center[:, None] + axes @ (np.sqrt(eigenvalues * levels[-1])[:, None]
-                                            * np.array([np.cos(angle), np.sin(angle)]))
-        ax.plot(*outline, color="tab:orange", label="Joint 95% region | plane")
+        for index, (iy, iz) in enumerate(joint["regions"][-1]["cells"]):
+            ax.add_patch(Rectangle((iy*.1, iz*.1), .1, .1, fill=False,
+                         edgecolor="tab:orange", linewidth=.4,
+                         label="Joint 95% grid region | plane" if index == 0 else None))
     for model, marker in zip(("B0", "B1", "B2"), ("x", "+", "1")):
         event = solve(model, case).event
         if event.y_m is not None:
@@ -258,6 +276,12 @@ def main():
             "p_goal": repeat["p_goal"], "p_clearance_goal": repeat["p_clearance_goal"],
             "plane_intervals": repeat["plane_intervals"], "entry_mode_yz_m": repeat["entry_mode_yz_m"],
         }
+        first_mode = t2["m2"]["entry_mode_yz_m"]
+        second_mode = repeat["entry_mode_yz_m"]
+        shift = (float(np.linalg.norm(np.array(first_mode) - second_mode))
+                 if first_mode is not None and second_mode is not None else None)
+        t2["m2"]["independent_repeat"]["mode_shift_m"] = shift
+        t2["m2"]["independent_repeat"]["mode_stable"] = shift is not None and shift <= .10
     figure4(args.run, t2)
     f3 = figure3(args.run, case)
     (args.run / "F3-data.json").write_text(json.dumps(f3, indent=2) + "\n", encoding="utf-8")

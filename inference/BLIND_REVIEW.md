@@ -1,5 +1,8 @@
 # Independent blind reproduction
 
+This note documents frozen v1. See [the separate v2 review](REVIEW-V2.md)
+for post-freeze implementation checks.
+
 The independent run uses WP2 source `98d6970b05220c26e725a7550313acb703753efb`,
 WP1 `02b67b2a8e1e7fda974385c98b76f66b33dbfaa0`, and the public input and
 bridge from WP3 release `f0f6b618d16be223f38724826b898d1a85f4653f`.

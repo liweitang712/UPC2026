@@ -1,8 +1,12 @@
 param(
-    [string]$Output = 'inference/wp2-public',
+    [string]$Output = 'inference/wp2-public-v2',
     [int]$Draws = 4000,
     [int]$Seed = 2026
 )
+
+if (Test-Path -LiteralPath $Output) {
+    throw "Choose a new output directory to preserve existing results: $Output"
+}
 
 $scenarios = [ordered]@{
     m2 = @('--scenario', 'gaussian-10mm')

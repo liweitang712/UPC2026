@@ -87,6 +87,13 @@ M3 锚定速度为 30 m/s，超出曲线范围时使用 WP1 的拒绝策略。�
 
 ## WP3 预测接口
 
+当前批量入口使用有界批次，支持 Python 3.10+；本次复核在 Python
+3.14 上运行。输出含每组尝试数、有限权重、支持域与先验拒绝、
+似然重试及传播失败权重。M3 严格曲线在观测窗内的域外参数是
+零支持提议，传播中离开曲线仍记为未解析预测。其他似然数值失败
+以半步重试一次，仍未解析时整组失败，因为其后验权重未知。
+有限支持未采到也会显式失败。详见 [复核记录](REVIEW-V2.md)。
+
 ```sh
 python -B -m inference.forecast cases.csv scenarios.json output --draws 4000 --seed 2026
 ```
@@ -100,6 +107,8 @@ python -B -m inference.forecast cases.csv scenarios.json output --draws 4000 --s
 输出附两份输入的 SHA-256。预测入口仅从
 `cases.csv` 读取题例观测，固定物理常量来自版本化公共题例。
 
+以下命令属于历史 WP3 v1，须在 `98d6970` 的独立检出目录运行，并使用
+冻结 WP1 版本；当前入口不得覆盖 `selection-v1` 或盲测发布产物。
 WP3 v1 选择集使用 `selection-scenarios.json`，固定为 10 mm 独立高斯误差、
 零风和 Trionda B 曲线。并行运行使用 Python 3.14。选择集输入取自 WP3 冻结
 提交 `c5f3e5ef2073b2cce25a09ba0e82ded242dca2b7` 的

@@ -7,13 +7,14 @@ import csv
 from dataclasses import asdict, replace
 import hashlib
 import json
+import platform
 from math import fsum, isfinite, sqrt
 from pathlib import Path
 from random import Random
 
-from physics import EventResult, load_case, solve
+from physics import EventResult, SolverConfig, load_case, solve
 from .baseline import ballistic_fit, predict
-from .m2 import normalize, sample
+from .m2 import normalize, sample, SamplingFailure
 from .likelihood import rounded_log_likelihood
 
 
@@ -26,20 +27,26 @@ def forecast_group(job):
     digest = hashlib.sha256(f"{run_seed}:{case_id}:{scenario}".encode()).digest()
     seed = int.from_bytes(digest[:8], "big")
     key = dict(case_id=case_id, model_id=model, scenario_id=scenario)
+    sampling = {}
     try:
-        draws = list(forecast(case, model, settings, budget, seed))
+        draws = list(forecast(case, model, settings, budget, seed, sampling))
     except RuntimeError as exc:
+        if isinstance(exc, SamplingFailure):
+            sampling.update(exc.diagnostics)
         draws = [(0, 1.0, EventResult("NUMERICAL_FAILURE", reason=str(exc)))]
     failures = Counter(event.reason for _, _, event in draws if event.event == "NUMERICAL_FAILURE")
     weights = [weight for _, weight, _ in draws]
     diagnostic = dict(**key, seed=seed, budget=budget, rows=len(draws),
                       ess=1/fsum(w*w for w in weights), max_weight=max(weights),
                       failure_reasons=dict(failures),
-                      p_failure=fsum(w for _, w, event in draws if event.event == "NUMERICAL_FAILURE"))
+                      p_failure=fsum(w for _, w, event in draws if event.event == "NUMERICAL_FAILURE"),
+                      sampling=sampling)
     return key, draws, diagnostic
 
 
-def forecast(case, model, settings, budget, seed):
+def forecast(case, model, settings, budget, seed, sampling=None):
+    sampling = sampling if sampling is not None else {}
+    sampling.update(attempted=0, finite_weights=0, rejected={})
     sigma = float(settings["sigma_m"])
     width = float(settings.get("rounding_width_m", 0))
     if not isfinite(sigma) or not isfinite(width) or min(sigma, width) < 0 or sigma + width == 0:
@@ -51,6 +58,7 @@ def forecast(case, model, settings, budget, seed):
             scale = 1.25 * sqrt(sigma*sigma + width*width/12) / time_scale
             draws = []
             for index in range(budget):
+                sampling["attempted"] += 1
                 velocity = tuple(rng.gauss(v, scale) for v in v0)
                 params = {"v0": velocity}
                 fit = solve(model, case, params)
@@ -60,6 +68,10 @@ def forecast(case, model, settings, budget, seed):
                 log_weight += 0.5 * fsum(((v - m)/scale)**2 for v, m in zip(velocity, v0))
                 if all(fit.observation_valid) and isfinite(log_weight):
                     draws.append((index, log_weight, params))
+                    sampling["finite_weights"] += 1
+                else:
+                    reason = "observation_domain" if not all(fit.observation_valid) else "zero_likelihood"
+                    sampling["rejected"][reason] = sampling["rejected"].get(reason, 0) + 1
             for (index, _, params), weight in zip(draws, normalize(draws)):
                 yield index, weight, predict(model, case, params)
             return
@@ -75,6 +87,8 @@ def forecast(case, model, settings, budget, seed):
                     raise RuntimeError("No B0 velocity satisfies both rounding cells")
                 bounds.append((lower, upper))
         for index in range(budget):
+            sampling["attempted"] += 1
+            sampling["finite_weights"] += 1
             if model == "B0":
                 velocity = (tuple(rng.uniform(lo, hi) for lo, hi in bounds) if width
                             else tuple(rng.gauss(v, sigma / time_scale) for v in v0))
@@ -89,7 +103,7 @@ def forecast(case, model, settings, budget, seed):
     if model == "M3" and curve is None:
         raise RuntimeError("M3 curve missing from scenario registry")
     draws, _, _ = sample(case, sigma, budget, seed, model, curve, width,
-                         settings.get("drag_mean", .27), settings.get("transverse_sigma", .22))
+                         settings.get("drag_mean", .27), settings.get("transverse_sigma", .22), sampling)
     for (index, _, params), weight in zip(draws, normalize(draws)):
         yield index, weight, predict(model, case, params)
 
@@ -132,6 +146,8 @@ def main():
         ) or not all(map(isfinite, case.times)):
             parser.error(f"Invalid observation times or coordinates for {row['case_id']}")
         inputs.append((row["case_id"], scenario, settings, case))
+    if any((args.output / name).exists() for name in ("predictions.csv", "diagnostics.json")):
+        parser.error("Choose an unused output directory; existing prediction artifacts are immutable.")
     args.output.mkdir(parents=True, exist_ok=True)
     diagnostics = []
     jobs = [(*row, model, args.draws, args.seed) for row in inputs for model in args.models]
@@ -140,7 +156,10 @@ def main():
     ) as stream:
         writer = csv.DictWriter(stream, fieldnames=FIELDS)
         writer.writeheader()
-        for key, draws, diagnostic in pool.map(forecast_group, jobs, buffersize=2 * args.workers):
+        # Submit bounded batches on every supported Python version (3.10+).
+        results = (result for start in range(0, len(jobs), 2 * args.workers)
+                   for result in pool.map(forecast_group, jobs[start:start + 2 * args.workers]))
+        for key, draws, diagnostic in results:
             diagnostics.append(diagnostic)
             for draw_id, weight, event in draws:
                 record = asdict(event)
@@ -149,7 +168,11 @@ def main():
                 writer.writerow(dict(**key, draw_id=draw_id, weight=weight, **record))
     manifest = dict(cases_sha256=hashlib.sha256(args.cases.read_bytes()).hexdigest(),
                     scenario_sha256=hashlib.sha256(args.scenarios.read_bytes()).hexdigest(),
-                    seed=args.seed, diagnostics=diagnostics)
+                    seed=args.seed, diagnostics=diagnostics, python=platform.python_version(),
+                    inference_version="wp2-revision-2-exploratory", models=args.models,
+                    draw_budget=args.draws, solver_config=asdict(SolverConfig()),
+                    source_sha256={p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                                   for p in Path(__file__).parent.glob('*.py')})
     (args.output / "diagnostics.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
 
