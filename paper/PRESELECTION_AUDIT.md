@@ -14,6 +14,15 @@ python -B -m figures.render_paper_figures . PRESENTATION_OUTPUT
 
 The consistency check tests the v1 abstract's display values, probability identities, T2 and T3 reconciliation, and claim source selectors. Existing broad ledger entries index source groups. Numerical comparisons at the individual claim level require a scalar `numeric_key` and `numeric_value` in the ledger.
 
+The location-v2 checkout provides a second supported layout. Run the checker with its release directory and the matching online abstract. The v2 checks cover the forecast lock's run ID, event identities, T3 stratum totals, claim source files, figure hashes and the abstract's key values.
+
+```sh
+python -B -m paper.check_release_consistency PATH_TO_LOCATION_RELEASE --abstract PATH_TO_00_SUMMARY_TEX
+python -B -m figures.render_paper_figures PATH_TO_LOCATION_CHECKOUT PRESENTATION_OUTPUT --location-v2-f4
+```
+
+Use the location-v2 flag when preparing the current F4. Its sensitivity inputs differ from the original v1 archive. The v1 F5/F6 derivatives remain available for the historical reliability and coverage panels and use that release's own data.
+
 The alternative region-width replay requires the sealed blind truth and case strata. The custody owner can run the following command. It checks the input hashes and verifies the frozen-width replay before reporting the exploratory grid results. The original scoring protocol remains the reference.
 
 ```sh

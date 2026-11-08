@@ -12,13 +12,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("repo", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--location-v2-f4", action="store_true",
+                        help="Render only the F4 derivative from the frozen location-v2 sensitivity data")
     args = parser.parse_args()
     sys.path.insert(0, str(args.repo.resolve()))
 
     from figures.render_wp3 import coverage_figure, plt, reliability_figure
 
-    release = args.repo / "releases/upc2026-wp3-v1"
-    manifest = json.loads((release / "release.json").read_text(encoding="utf-8"))
+    if args.location_v2_f4:
+        release = args.repo / "releases/upc2026-location-v2"
+        manifest = {
+            "run_id": "upc2026-location-v2",
+            "artifact_sha256": {
+                "T2-sensitivity.json": "29504df5073eb677bbf404f25dc86399d6e4146668d7e9618322207c639f307a",
+            },
+        }
+    else:
+        release = args.repo / "releases/upc2026-wp3-v1"
+        manifest = json.loads((release / "release.json").read_text(encoding="utf-8"))
     used = {}
 
     def locked(name):
@@ -53,7 +64,15 @@ def main():
         fig.savefig(args.output / f"{name}.png", dpi=200)
         plt.close(fig)
 
-    candidates = json.loads(locked("T2-candidates.json").read_text(encoding="utf-8"))
+    def save_manifest():
+        (args.output / "presentation-manifest.json").write_text(json.dumps({
+            "run_id": manifest["run_id"],
+            "kind": "presentation derivatives",
+            "inputs_sha256": used,
+        }, indent=2) + "\n", encoding="utf-8")
+
+    sensitivity = "T2-sensitivity.json" if args.location_v2_f4 else "T2-candidates.json"
+    candidates = json.loads(locked(sensitivity).read_text(encoding="utf-8"))
     fig = plt.figure(figsize=(6.5, 4.1), layout="constrained")
     spec = fig.add_gridspec(2, 2, height_ratios=(1.2, 1))
     measured = fig.add_subplot(spec[0, :])
@@ -69,7 +88,7 @@ def main():
                  xlabel="Gaussian coordinate SD (mm)", ylabel="Entry probability (%)")
     measured.legend(loc="lower left", ncol=2, frameon=False)
     variants = ("m2", "trionda", "jabulani", "wind", "transverse-prior")
-    labels = ("M2 reference", "Trionda", "Jabulani", "Wind +3 m/s in Y", "Transverse SD 0.12")
+    labels = ("M2 nominal", "Trionda", "Jabulani", "Wind +3 m/s in Y", "Transverse SD 0.12")
     axes = [fig.add_subplot(spec[1, i]) for i in range(2)]
     for ax, coordinate, axis in zip(axes, ("z_m", "y_m"), ("Z", "Y")):
         for i, key in enumerate(variants):
@@ -81,6 +100,9 @@ def main():
         ax.invert_yaxis()
     axes[0].axvline(2.44, color="#6C7379", linestyle=":")
     save(fig, "F4")
+    if args.location_v2_f4:
+        save_manifest()
+        return
 
     rel = rows("F5_reliability", ("n", "n_exact", "n_truth"),
                ("bin_lo", "bin_hi", "mean_forecast", "observed_rate", "lo", "hi"))
@@ -139,9 +161,7 @@ def main():
             group = group.replace("single_factor", "single factor")
             f.write(" & ".join([target.capitalize(), group.capitalize(), model, *map(str, values)]) + r" \\" "\n")
         f.write(r"\bottomrule\end{tabular}\end{table}" "\n")
-    (args.output / "presentation-manifest.json").write_text(json.dumps({
-        "run_id": manifest["run_id"], "kind": "presentation derivatives", "inputs_sha256": used,
-    }, indent=2) + "\n", encoding="utf-8")
+    save_manifest()
 
 
 if __name__ == "__main__":

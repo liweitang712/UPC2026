@@ -1,0 +1,7 @@
+{
+  "run_id": "upc2026-location-v2",
+  "kind": "presentation derivatives",
+  "inputs_sha256": {
+    "T2-sensitivity.json": "29504df5073eb677bbf404f25dc86399d6e4146668d7e9618322207c639f307a"
+  }
+}

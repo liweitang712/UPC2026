@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -28,6 +29,54 @@ def resolves(data, selector):
     return True
 
 
+def check_location_release(root, abstract_path):
+    run_id = load(root / "forecast-lock.json")["run_id"]
+    t2 = load(root / "T2.json")
+    t3 = load(root / "T3.csv")
+    reach, goal, ground, no_reach, failure = (
+        t2[key] for key in ("p_reach", "p_goal", "p_ground_first", "p_no_reach", "p_failure")
+    )
+    mode = t2["entry_mode_assessment"]["recommended_mode_yz_m"]
+    arrival = t2["plane_intervals"]["t_s"][1]
+    counts = [row for row in t3 if row["group"] == "core"]
+    figure_rows = load(root / "figures/figures_manifest.csv")
+    claims = load(root / "claims.csv")
+    abstract = re.sub(r"(?m)^%.*$", "", abstract_path.read_text(encoding="utf-8-sig"))
+    required = [f"({mode[0]:.2f},{mode[1]:.2f})", f"{arrival:.3f}",
+                f"{100 * goal:.1f}\\%"]
+    required.extend(f"{row['n_hit_95']} of {row['n_supported']}" for row in counts)
+    for axis in ("y_m", "z_m"):
+        lo, _, hi = t2["goal_intervals"][axis]
+        required.append(f"[{lo:.2f},{hi:.2f}]")
+    checks = {
+        "location run IDs": all(row["run_id"] == run_id for row in t3 + figure_rows + claims),
+        "T2 event mass and conditional identity": (
+            all(0 <= value <= 1 for value in (reach, goal, ground, no_reach, failure))
+            and 0 <= t2["p_clearance_goal"] <= goal <= reach
+            and close(reach + ground + no_reach + failure, 1)
+            and (close(goal, reach * t2["p_goal_given_reach"]) if reach
+                 else t2["p_goal_given_reach"] is None)
+        ),
+        "T3 core counts sum from strata": all(
+            sum(int(row[field]) for row in t3 if row["model"] == core["model"]
+                and row["group"] not in {"core", "challenge"}) == int(core[field])
+            for core in counts for field in ("n_eligible", "n_truth_plane", "n_supported", "n_hit_95")
+        ),
+        "claim ledger sources exist": all((root / row["evidence"]).is_file() for row in claims),
+        "figure hashes": len(figure_rows) == 6 and all(
+            hashlib.sha256((root / "figures" / f"{row['figure']}.pdf").read_bytes()).hexdigest()
+            == row["pdf_sha256"] for row in figure_rows
+        ),
+        "location abstract display values": all(value in abstract for value in required),
+    }
+    for label, passed in checks.items():
+        print(f"{'PASS' if passed else 'FAIL'} {label}")
+    for value in required:
+        if value not in abstract:
+            print(f"  Missing abstract value: {value}")
+    return not all(checks.values())
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("release", type=Path)
@@ -35,6 +84,8 @@ def main():
                         help="00-summary.tex in the manuscript to audit")
     args = parser.parse_args()
     root = args.release.resolve()
+    if (root / "T2.json").is_file() and (root / "forecast-lock.json").is_file():
+        return check_location_release(root, args.abstract)
     failed = []
 
     def report(label, errors):
