@@ -35,6 +35,18 @@ print(solve("B1", new_case).event)
 
 Velocity and acceleration vectors follow x/y/z order. `frame_centers` is a pair of latent positions in the same order as `case.times`. Keep the official times for the contest case. Use `dataclasses.replace` for an alternative case or integration configuration. Omit `include_trace` during fitting to avoid computing unused trace fields.
 
+## Experimental curves and F1 handoff
+
+M3 includes `goff2026_trionda_b` and `goff2026_jabulani_b`, digitized from the fixed, nonspinning orientation B traces in Figure 7. The JSON files under [curves/](curves/) identify the plotted data, calibration, units, source domain and transition. The default policy rejects out-of-domain evaluations. Explicit clamping is available as a separate sensitivity case and marked on the trace. The fitted drag anchor shifts the curve vertically, so an anchored flight coefficient is a model input informed by the measured shape. [Goff et al., 2026](https://doi.org/10.3390/app16062808)
+
+```sh
+python -B -m physics.demo
+```
+
+This regenerates [traces.csv](examples/public_case/traces.csv) and [events.json](examples/public_case/events.json). The traces contain the launch, available observed times, and terminal event, with the M3 Reynolds and drag values. F1 can read them directly and add WP2's posterior samples after the main-model run is frozen.
+
+The demo uses the exact point observations for B0–B2. For M1–M3 it holds the historical M2 launch velocity and drag anchor fixed to isolate changes in force law. M1 omits transverse force, and the two M3 scenarios use a 30 m/s reference speed. These demonstrations use fixed parameters, and the ball model in the contest case is unknown. The nominal trace Reynolds range is about 389,000–483,000, within both measured curve domains. The Jabulani trace approaches the upper edge of the transition estimated from Figure 7 and brackets the critical Reynolds number reported in Table 1. The Trionda trace stays above both transition references. Comparisons between refitted ball-type scenarios belong to WP2.
+
 ## Acceptance checks
 
 ```sh

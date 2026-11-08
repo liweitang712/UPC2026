@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 DEFAULT_VISCOSITY_PA_S = 1.81e-5
-REGISTERED_CURVES = ("asai2013_tango12", "asai2013_jabulani")
+REGISTERED_CURVES = ("goff2026_trionda_b", "goff2026_jabulani_b")
 
 
 def _number(value, label):

@@ -5,6 +5,7 @@ import math
 import unittest
 
 from physics import SolverConfig, load_case, solve
+from physics.aerodynamics import REGISTERED_CURVES
 
 
 PLANE_GOAL = "PLANE_GOAL"
@@ -140,6 +141,17 @@ class ForwardAcceptanceTests(unittest.TestCase):
                     self.assertIsNone(result.event.z_m)
                     self.assertIsNone(result.event.clearance_goal)
 
+    def test_competing_ground_event_just_past_step_boundary(self):
+        for ground_time, expected in ((0.2000004, GROUND_FIRST), (0.200002, PLANE_GOAL)):
+            with self.subTest(ground_time=ground_time):
+                case = replace(self.case, initial=(0, 0, self.case.radius + ground_time),
+                               goal_x=2.0, gravity=0.0)
+                result = solve("M1", case, {"v0": (10, 0, -1), "cd": 0}, include_trace=True)
+                self.assertEqual(result.event.event, expected)
+                event_time = ground_time if expected == GROUND_FIRST else 0.2
+                self.assertAlmostEqual(result.event.t_s, event_time, delta=1e-8)
+                self.assertEqual(result.trace[-1].t_s, result.event.t_s)
+
     def test_ground_departure_and_observation_validity(self):
         case = replace(self.case, gravity=10.0)
         departing = solve("B0", case, {"v0": (10.0, 0.0, 0.4)})
@@ -252,6 +264,25 @@ class ForwardAcceptanceTests(unittest.TestCase):
             self.assertAlmostEqual(point.relative_speed_m_s, relative_speed, delta=1e-10)
             reynolds = self.case.density * (2.0 * self.case.radius) * relative_speed / viscosity
             self.assertAlmostEqual(point.reynolds, reynolds, delta=1e-6)
+
+    def test_registered_curves_report_domain_and_reject_unapproved_extrapolation(self):
+        self.assertTrue(REGISTERED_CURVES)
+        for curve in REGISTERED_CURVES:
+            with self.subTest(curve=curve):
+                parameters = {
+                    "v0": (30, 8, 6), "cd_anchor": 0.31, "curve": curve,
+                    "reference_speed_m_s": 30.0,
+                }
+                result = solve("M3", self.case, parameters, include_trace=True)
+                self.assertEqual(result.event.event, PLANE_GOAL)
+                self.assertEqual({point.curve_domain for point in result.trace}, {"in_domain"})
+                too_fast = {**parameters, "v0": (45, 0, 5)}
+                strict = solve("M3", self.case, too_fast)
+                clamped = solve("M3", self.case, {**too_fast, "curve_policy": "clamp"}, include_trace=True)
+                self.assertEqual(strict.event.event, NUMERICAL_FAILURE)
+                self.assertIn("outside", strict.event.reason)
+                self.assertNotEqual(clamped.event.event, NUMERICAL_FAILURE)
+                self.assertEqual(clamped.trace[0].curve_domain, "clamped_high")
 
     def test_m2_observations_and_crossing_converge(self):
         parameters = {"v0": (30.3, 9.2, 6.8), "cd": 0.27, "cy": -0.18, "cz": 0.05}
