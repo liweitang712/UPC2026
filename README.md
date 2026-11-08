@@ -15,3 +15,5 @@
 新实现以 `case.json`、`schema.md` 和 `models.csv` 的机器口径为准。中文任务书解释整体设计。历史结果供复现和比较。保留旧稿的正负方向文字、噪声情景和筛选条件作为历史记录，正式稿采用本仓库的新定义。
 
 [2026 题面](https://university-physics-competition.com/2026-competition) · [竞赛规则](https://university-physics-competition.com/contest-rules)
+
+<!-- 本地验证：确认克隆后的仓库可以在测试分支上编辑。 -->
