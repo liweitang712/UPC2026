@@ -1,0 +1,20 @@
+{
+  "wp1_revision": "e25b682",
+  "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+  "scenario_id": "gaussian-10mm",
+  "sigma_m": 0.01,
+  "seed": 2026,
+  "attempted": 10000,
+  "finite_weights": 10000,
+  "rejected": {
+    "velocity_prior": 0,
+    "observation_domain": 0
+  },
+  "ess": 3984.5034931849223,
+  "max_weight": 0.0007431278678785132,
+  "p_reach": 0.9999999999999999,
+  "p_goal": 0.8972726679429756,
+  "p_clearance_goal": 0.8286737975393893,
+  "p_failure": 0.0,
+  "median_time_given_reach_s": 0.39713270574808146
+}

@@ -1,0 +1,27 @@
+{
+  "cases": 260,
+  "groups": 1560,
+  "rows": 1499225,
+  "event_rows": {
+    "PLANE_WIDE": 732000,
+    "PLANE_GOAL": 526810,
+    "NUMERICAL_FAILURE": 2283,
+    "NO_REACH": 14125,
+    "GROUND_FIRST": 224007
+  },
+  "fully_failed_groups": {
+    "M3": 86,
+    "M1": 5,
+    "M2": 5
+  },
+  "partly_failed_groups": {
+    "B1": 5,
+    "B2": 9
+  },
+  "resolved_groups_with_total_ess_below_100": {
+    "M2": 19,
+    "M3": 9,
+    "M1": 1
+  },
+  "predictions_sha256": "435bff7844b395dc6fb4bae6e51fa47910558fd921d5a068b5e28d66b4b3881a"
+}
