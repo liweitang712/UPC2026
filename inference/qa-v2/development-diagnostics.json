@@ -646,7 +646,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -2368,7 +2368,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -2502,7 +2502,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -3692,7 +3692,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -3826,7 +3826,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -5284,7 +5284,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -6474,7 +6474,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -7877,7 +7877,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -7906,7 +7906,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -7935,7 +7935,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -8069,7 +8069,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -8284,7 +8284,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -8313,7 +8313,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -8342,7 +8342,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9140,7 +9140,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9354,7 +9354,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9383,7 +9383,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9412,7 +9412,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "velocity_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9546,7 +9546,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -9816,7 +9816,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -10082,7 +10082,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -10480,7 +10480,7 @@
       "ess": 1.0,
       "max_weight": 1.0,
       "failure_reasons": {
-        "No proposals with finite posterior weight.": 1
+        "curve_support_not_found_within_budget": 1
       },
       "p_failure": 1.0,
       "sampling": {
@@ -11184,10 +11184,10 @@
   },
   "source_sha256": {
     "baseline.py": "f2c57c8c9a8abccaf2f07510679f9e2b3404e3fdcc9fd461e1d89b057b91a4d3",
-    "forecast.py": "14abe97e424eedb45f06f6087218c8bbca292c04eba34c24577fcae10dcee0d3",
+    "forecast.py": "e96627a462d1694a3ce5818440d2fb86c1bd81edd10aedf2f11a5d4deb7e41eb",
     "likelihood.py": "5c7ea6f1920365d28a14e5ba7afbae4a2a04d6571f255fb255e9344bb22dd297",
-    "m2.py": "4c382a8dd223f54bf5a11b8d6eb6dc17b0f0260de5c3e4819314b38530df098b",
+    "m2.py": "d6c9ef308dd79d7440239b61b7818bedb1a79d441f4852a8eb66b09280011d5f",
     "qa.py": "c20a08a5f580a2e3f67f1f2c4b36a3145ef1c45b35a04dc6ea8ddc727c537121",
-    "report.py": "18a7cc5b82b2f7912fcf2af18bdbb4351786036225d764dc58e6764f8bb27eef"
+    "report.py": "acb330a931ce8ae5f92a8c2c7cdad5c80ad4d9b524ef03b32b4452d1e924ef17"
   }
 }
