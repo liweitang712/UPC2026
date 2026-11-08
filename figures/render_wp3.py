@@ -130,7 +130,7 @@ def coverage_figure(coverage, comparisons, models, demo):
         for index, (model, color, marker) in enumerate(zip(models, COLORS, MARKERS)):
             rows = [r for r in coverage if r["group"] == group and r["model"] == model]
             n, total = rows[0]["n_available"], rows[0]["n_truth_plane"]
-            ax.text(index * .5, 1.035, f"{n}/{total} supported", transform=ax.transAxes,
+            ax.text(index * .54, 1.035, f"{n}/{total}", transform=ax.transAxes,
                     color=color, fontsize=8)
             if n:
                 error = [[max(0, r["observed"] - r["lo"]) for r in rows],
