@@ -1,0 +1,207 @@
+{
+  "source_commit": "98d6970b05220c26e725a7550313acb703753efb",
+  "wp1_revision": "02b67b2a8e1e7fda974385c98b76f66b33dbfaa0",
+  "input_run_id": "upc2026-wp3-v1",
+  "input_revision": "c5f3e5ef2073b2cce25a09ba0e82ded242dca2b7",
+  "input_sha256": "898df22b8365b03d9194191bc20bc89c575eddb612b7f4b53f6eae08afa00d16",
+  "scenario_sha256": "a35cd7888d648313ebea6b332b65b0f8963eafd5dde46488b0b554b006a3bcb5",
+  "split": "selection",
+  "seed": 2026,
+  "models": {
+    "B0": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "prior": "flat velocity"
+    },
+    "B1": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "prior": "flat latent coordinates"
+    },
+    "B2": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "prior": "flat latent coordinates"
+    },
+    "M1": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "velocity_prior_bounds": [
+        [
+          8,
+          48
+        ],
+        [
+          -20,
+          20
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "drag_mean": 0.27,
+      "drag_sd": 0.14,
+      "drag_nominal_bounds": [
+        0.08,
+        0.55
+      ],
+      "proposal_velocity_scale": 1.25
+    },
+    "M2": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "velocity_prior_bounds": [
+        [
+          8,
+          48
+        ],
+        [
+          -20,
+          20
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "drag_mean": 0.27,
+      "drag_sd": 0.14,
+      "drag_nominal_bounds": [
+        0.08,
+        0.55
+      ],
+      "proposal_velocity_scale": 1.25,
+      "transverse_sd": 0.22,
+      "transverse_radius": 0.55
+    },
+    "M3": {
+      "draw_budget": 1024,
+      "sigma_m": 0.01,
+      "scenario_id": "nominal_gaussian_10mm",
+      "wind_m_s": [
+        0,
+        0,
+        0
+      ],
+      "joint_region": "weighted highest-mass 0.10 m square cells anchored at (0,0), including cutoff ties",
+      "minimum_conditional_ess": 100,
+      "retry": "none",
+      "solver": {
+        "max_step_s": 0.01,
+        "horizon_s": 2.0,
+        "tie_tolerance_s": 1e-06,
+        "spatial_tie_tolerance_m": 1e-06,
+        "root_tolerance_s": 1e-09
+      },
+      "velocity_prior_bounds": [
+        [
+          8,
+          48
+        ],
+        [
+          -20,
+          20
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "drag_mean": 0.27,
+      "drag_sd": 0.14,
+      "drag_nominal_bounds": [
+        0.08,
+        0.55
+      ],
+      "proposal_velocity_scale": 1.25,
+      "transverse_sd": 0.22,
+      "transverse_radius": 0.55,
+      "curve": "goff2026_trionda_b",
+      "reference_speed_m_s": 30,
+      "curve_policy": "error",
+      "dynamic_viscosity_pa_s": 1.81e-05
+    }
+  },
+  "reproduce": "python -B -m inference.forecast cases.csv inference/selection-scenarios.json inference/selection-v1 --draws 1024 --seed 2026 --workers 12"
+}

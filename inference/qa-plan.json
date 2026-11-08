@@ -1,0 +1,22 @@
+{
+  "run_id": "wp2-qa-v2",
+  "purpose": "Post-freeze implementation QA; not selection or blind revalidation",
+  "models": ["M1", "M2", "M3"],
+  "cases_per_model": 64,
+  "draw_budget": 4096,
+  "recovery_budget": 16384,
+  "minimum_ess": 100,
+  "generation_seed": 418019,
+  "inference_seed": 618019,
+  "sigma_m": 0.01,
+  "rank_family_alpha": 0.01,
+  "prior_draws_for_contraction": 20000,
+  "public_draws": 16000,
+  "public_repeat_draws": 32000,
+  "public_seed": 718019,
+  "profile_grid": [-2, -1, -0.5, 0, 0.5, 1, 2],
+  "event_tolerance": 0.01,
+  "quantile_tolerance_m": 0.03,
+  "mode_tolerance_m": 0.10,
+  "scope": "Proper aerodynamic priors conditioned on free flight through observations and strict M3 curve support. B0 flat prior has no prior-predictive SBC; test its exact Gaussian pivot separately. No held-out truth is read."
+}

@@ -1,0 +1,42 @@
+{
+  "wp1_revision": "02b67b2",
+  "case_sha256": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+  "model_id": "M2",
+  "scenario_id": "sigma20",
+  "sigma_m": 0.02,
+  "rounding_width_m": 0,
+  "curve": null,
+  "wind_m_s": [
+    0.0,
+    0,
+    0.0
+  ],
+  "drag_mean": 0.27,
+  "drag_support": [
+    0.08,
+    0.55
+  ],
+  "transverse_sigma": 0.22,
+  "seed": 2026,
+  "attempted": 4000,
+  "finite_weights": 4000,
+  "rejected": {
+    "velocity_prior": 0,
+    "observation_domain": 0
+  },
+  "ess": 2954.854252758037,
+  "max_weight": 0.0007285513137585159,
+  "p_reach": 1.0,
+  "solver_config": {
+    "max_step_s": 0.01,
+    "horizon_s": 2.0,
+    "tie_tolerance_s": 1e-06,
+    "spatial_tie_tolerance_m": 1e-06,
+    "root_tolerance_s": 1e-09
+  },
+  "failure_reasons": {},
+  "p_goal": 0.7387103093058945,
+  "p_clearance_goal": 0.65918281631613,
+  "p_failure": 0.0,
+  "median_time_given_reach_s": 0.39721782416105295
+}

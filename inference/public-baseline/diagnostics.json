@@ -1,0 +1,42 @@
+{
+  "case_schema_version": 1,
+  "scenario_id": "gaussian-10mm",
+  "sigma_m": 0.01,
+  "seed": 2026,
+  "draws_per_model": 10000,
+  "model_interface_revision": "e25b682",
+  "reference_prior": {
+    "B0": "flat velocity",
+    "B1/B2": "flat latent frame coordinates"
+  },
+  "event_counts": {
+    "B0": {
+      "PLANE_GOAL": 10000
+    },
+    "B1": {
+      "PLANE_GOAL": 7922,
+      "PLANE_WIDE": 2052,
+      "GROUND_FIRST": 25,
+      "NO_REACH": 1
+    },
+    "B2": {
+      "PLANE_GOAL": 7999,
+      "PLANE_WIDE": 2000,
+      "GROUND_FIRST": 1
+    }
+  },
+  "b0_velocity_m_s": [
+    29.679999999999993,
+    8.68,
+    6.801299249999999
+  ],
+  "b0_log_likelihood": 18.88732251530988,
+  "b1_point_event": {
+    "event": "PLANE_GOAL",
+    "t_s": 0.405008361227395,
+    "y_m": 2.4948244142247114,
+    "z_m": 1.9203670564844255,
+    "clearance_goal": true,
+    "reason": null
+  }
+}

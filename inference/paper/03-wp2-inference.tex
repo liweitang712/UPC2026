@@ -1,0 +1,61 @@
+% Target shared-project file: sections/03-wp2-inference.tex
+% Evidence: upc2026-wp3-v1, WP2 source 98d6970 and WP1 02b67b2.
+\section{Inference from two early observations}
+We stack the two measured ball centers into a six-dimensional vector
+$\mathbf q=(x_1,y_1,z_1,x_2,y_2,z_2)$ and evaluate the same quantities
+$F(\theta)$ with the forward model. The nominal measurement model uses
+independent Gaussian coordinate errors with standard deviation
+$\sigma=0.010\,\mathrm m$ and exact observation times. Thus
+\[
+ \log L(\theta)=-\frac{\|\mathbf q-F(\theta)\|^2}{2\sigma^2}
+                 -6\log(\sqrt{2\pi}\sigma).
+\]
+The known launch center is held fixed. The coordinate-error scale is a
+modeling assumption. Separate sensitivity runs use rounding cells of width
+$0.010\,\mathrm m$, either alone or after Gaussian error.
+The rounding-after-Gaussian cell probability is evaluated by integrating
+the Gaussian density over each observed cell. Tail differences are evaluated
+on a logarithmic scale.
+
+For B0, a flat initial-velocity reference prior gives an analytic Gaussian
+posterior. Its mean is
+\[
+ \widehat{\mathbf v}_0=
+ \frac{\sum_i t_i(\mathbf q_i-\mathbf r_0+
+                 \tfrac12gt_i^2\mathbf e_z)}{\sum_i t_i^2},
+ \qquad
+ \operatorname{Cov}(\mathbf v_0\mid\mathbf q)
+ =\frac{\sigma^2}{\sum_i t_i^2}I.
+\]
+B1 and B2 propagate jointly sampled latent frame centers under a flat
+coordinate reference prior. B2 supplies spatial crossing positions without
+an arrival-time estimate.
+
+The aerodynamic candidates use bounded velocity priors and a truncated
+normal drag prior. M2 and M3 also use centered normal transverse coefficients
+restricted to a disk. We sample aerodynamic parameters from their prior,
+construct a conditional Gaussian velocity proposal from the two-frame
+residuals, and correct each draw by its full likelihood-to-proposal ratio.
+The aerodynamic prior cancels its matching proposal density.
+The frozen public-run diagnostics include attempted draws and effective
+sample size. The original batch runner omitted proposal rejection counts;
+these are restored in a separately versioned exploratory revision. Its
+additional calibration diagnostics must not be attributed to the frozen run.
+Reference-curve and wind sensitivities are separately refitted to the same
+early observations.
+
+Each weighted draw is propagated to its first terminal event. Goal entry,
+plane arrival, ground-first and physical non-arrival probabilities use the
+entire assigned weight. Unresolved numerical weight is retained and adds
+to each event-probability upper bound. Crossing intervals condition on
+plane arrival, while the reported entry mode conditions on the ball center
+entering the goal. The mode uses a Gaussian kernel evaluated on an interior
+$0.02\,\mathrm m$ grid, with $0.05\,\mathrm m$ bandwidth and a
+$0.10\,\mathrm m$ sensitivity check.
+
+The frozen validation protocol uses highest-mass $0.10\,\mathrm m$ square
+cells anchored at the origin for joint regions, including cells tied at the
+mass cutoff. Conditional statistics require effective support of at least
+100. B0 was retained by the frozen selection rules, with B2 as a descriptive
+blind comparator. All final numerical statements refer to
+\texttt{upc2026-wp3-v1}.

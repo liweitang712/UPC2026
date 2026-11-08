@@ -1,0 +1,58 @@
+{
+  "plan": {
+    "run_id": "wp2-qa-v2",
+    "purpose": "Post-freeze implementation QA; not selection or blind revalidation",
+    "models": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "cases_per_model": 64,
+    "draw_budget": 4096,
+    "recovery_budget": 16384,
+    "minimum_ess": 100,
+    "generation_seed": 418019,
+    "inference_seed": 618019,
+    "sigma_m": 0.01,
+    "rank_family_alpha": 0.01,
+    "prior_draws_for_contraction": 20000,
+    "public_draws": 16000,
+    "public_repeat_draws": 32000,
+    "public_seed": 718019,
+    "profile_grid": [
+      -2,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "event_tolerance": 0.01,
+    "quantile_tolerance_m": 0.03,
+    "mode_tolerance_m": 0.1,
+    "scope": "Proper aerodynamic priors conditioned on free flight through observations and strict M3 curve support. B0 flat prior has no prior-predictive SBC; test its exact Gaussian pivot separately. No held-out truth is read."
+  },
+  "plan_sha256": "d3c0cdf5c97550365168638bba2162dff91cf229824740bf8fc94cf963b160b2",
+  "python": "3.14.6",
+  "source_sha256": {
+    "inference\\baseline.py": "f2c57c8c9a8abccaf2f07510679f9e2b3404e3fdcc9fd461e1d89b057b91a4d3",
+    "inference\\forecast.py": "c0279ffd9196daa49f1e3f14eb20bc11831db0531aaffe55a532fb62e53745f4",
+    "inference\\likelihood.py": "5c7ea6f1920365d28a14e5ba7afbae4a2a04d6571f255fb255e9344bb22dd297",
+    "inference\\m2.py": "6aae590168e22c2364b5863052aed6956d31987a26f3709de62f75bc33257b4a",
+    "inference\\qa.py": "1827680f9cfd75dab87bedc4dc6b12f7625a335a968c9f0da571a1124592bd86",
+    "inference\\report.py": "18a7cc5b82b2f7912fcf2af18bdbb4351786036225d764dc58e6764f8bb27eef",
+    "physics\\aerodynamics.py": "3ebe611f1921a4b3e5356dabc2297a3759e525406825c4a9358ac9b0b945106d",
+    "physics\\baselines.py": "f9b3d525eee0b7efffdc663a3e5175c55e2ffec4577580709a2cdcad03669c0b",
+    "physics\\contracts.py": "8f7ad45577264fd79ca4091e47ca0e90b3f4260cbc115369e92d4ef205944609",
+    "physics\\demo.py": "7755769f24a89d9d8b11d8e9b6d5d7d9340426a02c603146807ca9b7a007a531",
+    "physics\\integration.py": "ad105ad9e48e1e0776a5c8e8346947a8b68f845c2d7211db50056a52a18e9d5c",
+    "physics\\__init__.py": "f9a8a0f00e5dd9c8a8b611e17654f8b14d60f976e047e807c8fffc96afa11960"
+  },
+  "public_stability": {
+    "max_event_difference": 0.0020628060562858375,
+    "max_interval_difference_m": 0.03199894618104748,
+    "mode_difference_m": 0.0600000000000005,
+    "passed": false
+  }
+}
