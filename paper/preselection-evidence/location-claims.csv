@@ -6,5 +6,9 @@ location-clearance,upc2026-location-v2,T2,T2.json,p_clearance_goal,0.82989762259
 location-mode-y,upc2026-location-v2,summary and conclusion,T2.json,entry_mode_assessment.recommended_mode_yz_m.0,2.8300000000000054,2.83 m
 location-mode-z,upc2026-location-v2,summary and conclusion,T2.json,entry_mode_assessment.recommended_mode_yz_m.1,1.9099999999999997,1.91 m
 location-time-low,upc2026-location-v2,conclusion,T2.json,plane_intervals.t_s.0,0.37809898456027524,0.378 s
-location-time-med,upc2026-location-v2,summary and conclusion,T2.json,plane_intervals.t_s.1,0.3975500024448112,0.398 s
+location-time-med,upc2026-location-v2,summary and conclusion,T2.json,plane_intervals.t_s.1,0.3975500024448112,0.398 s from launch
+location-time-remaining,upc2026-location-v2,physics timing comparison and conclusion,T2.json,plane_intervals.time_after_last_frame_s.1,0.2975500024448112,0.298 s after second frame
 location-time-high,upc2026-location-v2,conclusion,T2.json,plane_intervals.t_s.2,0.4189587192652044,0.419 s
+location-physics-b0-time,upc2026-location-v2,physics timing comparison,figures/F1-traces.json,baselines.0.trace.-1.t_s,0.3706199460916443,0.371 s from launch and 0.271 s after second frame
+location-physics-b1-time,upc2026-location-v2,physics timing comparison,figures/F1-traces.json,baselines.1.trace.-1.t_s,0.405008361227395,0.405 s from launch and 0.305 s after second frame
+location-physics-m1-time,upc2026-location-v2,physics timing comparison,T2-sensitivity.json,m1.plane_intervals.t_s.1,0.40027344774585544,0.400 s from launch and 0.300 s after second frame
