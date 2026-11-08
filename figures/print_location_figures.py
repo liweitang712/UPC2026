@@ -19,6 +19,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
+    if args.output.resolve().is_relative_to(location.RELEASE.parent.resolve()):
+        parser.error("choose an output directory outside the releases tree")
     args.output.mkdir(parents=True, exist_ok=True)
     release = location.RELEASE
     case_file = release / "../upc2026-wp3-v1/case.json"
@@ -35,6 +37,7 @@ def main():
             legend.get_texts()[0].set_text("Launch and observations")
         if name == "F3":
             left, right = fig.axes
+            left.set_yticks([1, 10, 100], labels=["1", "10", "100"])
             left.get_legend().get_texts()[1].set_text("Aero, velocity removed")
             for text in right.get_legend().get_texts():
                 text.set_text(text.get_text().replace(": PLANE_", " / ").replace("_", " ").lower().capitalize())

@@ -20,6 +20,7 @@ The location-v2 checkout provides a second supported layout. Run the checker wit
 python -B -m paper.check_release_consistency PATH_TO_LOCATION_RELEASE --abstract PATH_TO_00_SUMMARY_TEX
 python -B -m figures.render_paper_figures PATH_TO_LOCATION_CHECKOUT PRESENTATION_OUTPUT --location-v2-f4
 python -B -m figures.print_location_figures PRESENTATION_OUTPUT
+python -B -m figures.print_location_f2 F2_PRESENTATION_OUTPUT
 ```
 
 Use the location-v2 flag when preparing the current F4. Its sensitivity inputs differ from the original v1 archive. The v1 F5/F6 derivatives remain available for the historical reliability and coverage panels and use that release's own data.
