@@ -31,9 +31,15 @@ The 32k/64k comparison passed the probability and endpoint tolerances
 0.146 m (limit 0.10 m). The exploratory M2 mode is unstable and should
 not be used as a point recommendation. See [the repeat](qa-v2/repeat/public-manifest.json).
 
-The review does not clear the revised candidate for a new frozen release.
-A fresh holdout belongs to WP3. Inference, physics, validation and figures
-passed 41 local unit tests in total; the frozen release files were not edited.
+The revised runner explicitly distinguishes exhaustion of curve support
+(13 of the M3 cases) from exhaustion of velocity support (3). This is an
+observed proposal-budget outcome, not proof that the posterior support is
+empty. The M2 report retains all four seed/bandwidth peak estimates and
+suppresses the point recommendation when the repeat gate fails. This
+closes the WP2 reporting handoff for the existing B0 release. Promoting
+an aerodynamic candidate remains outside the scope of this merge and
+requires a fresh WP3 holdout. Inference, physics, validation and figures
+passed 43 local unit tests; the frozen release files were not edited.
 
 Run from the repository root on the integrated WP1 interface:
 
@@ -48,6 +54,8 @@ python -B -m inference.forecast releases/upc2026-wp3-v1/cases/development/cases.
 The revised reporting script uses conditional ESS 100 and origin-anchored
 0.10 m square cells including cutoff ties. Run
 `./inference/run_public.ps1 NEW_PUBLIC` for exploratory figure assets;
+then rerun `python -B -m inference.report NEW_PUBLIC --repeat NEW_PUBLIC-repeat
+--mode-audit NEW_REPEAT/identifiability.json` to apply the large-budget mode check.
 the committed `wp2-public/` files are archival v1 drafts.
 
 For the integrator: [section 03](paper/03-wp2-inference.tex) and

@@ -19,6 +19,20 @@ from .m2 import sample
 MINIMUM_CONDITIONAL_ESS = 100
 
 
+def mode_repeat_status(first, second, tolerance=.10):
+    points = [s.get(k) for s in (first, second)
+              for k in ("entry_mode_yz_m", "entry_mode_check_yz_m")]
+    if any(p is None for p in points):
+        return dict(status="unavailable", recommended_mode_yz_m=None, estimates_yz_m=points)
+    primary, alternate, repeat, repeat_alternate = points
+    distances = [float(np.linalg.norm(np.asarray(a) - b)) for a, b in
+                 ((primary, repeat), (primary, alternate), (repeat, repeat_alternate))]
+    stable = max(distances) <= tolerance
+    return dict(status="stable" if stable else "unstable", tolerance_m=tolerance,
+                repeat_shift_m=distances[0], bandwidth_shifts_m=distances[1:],
+                estimates_yz_m=points, recommended_mode_yz_m=primary if stable else None)
+
+
 def grid_region(points, weights, width=.1):
     """Frozen highest-mass cells, origin anchored, including cutoff ties."""
     cells = {}
@@ -147,8 +161,9 @@ def figure2(output, case, rows, summary):
         event = solve(model, case).event
         if event.y_m is not None:
             ax.scatter(event.y_m, event.z_m, marker=marker, label=model)
-    if summary["entry_mode_yz_m"]:
-        ax.scatter(*summary["entry_mode_yz_m"], marker="*", c="black", label="Mode | goal")
+    recommendation = summary.get("entry_mode_assessment", {}).get("recommended_mode_yz_m")
+    if recommendation is not None:
+        ax.scatter(*recommendation, marker="*", c="black", label="Mode | goal")
     off = summary["p_reach"] * max(0, 1 - histogram.sum()/100)
     summary["f2_off_panel_weight"] = off
     ax.set(xlabel="Y (m)", ylabel="Z (m)", aspect="equal",
@@ -249,6 +264,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run", type=Path)
     parser.add_argument("--repeat", type=Path)
+    parser.add_argument("--mode-audit", type=Path,
+                        help="Additional same-scenario independent stability evidence")
     args = parser.parse_args()
     case = load_case(CASE_PATH)
     t2 = {}
@@ -266,7 +283,7 @@ def main():
             ) if triggered
         ]
         if key == "m2":
-            figure2(args.run, case, rows, stats)
+            m2_rows = rows
         t2[key] = stats
     if args.repeat:
         with (args.repeat / "predictions.csv").open(encoding="utf-8", newline="") as stream:
@@ -282,6 +299,17 @@ def main():
                  if first_mode is not None and second_mode is not None else None)
         t2["m2"]["independent_repeat"]["mode_shift_m"] = shift
         t2["m2"]["independent_repeat"]["mode_stable"] = shift is not None and shift <= .10
+        t2["m2"]["entry_mode_assessment"] = mode_repeat_status(t2["m2"], repeat)
+    else:
+        t2["m2"]["entry_mode_assessment"] = mode_repeat_status(t2["m2"], {})
+    if args.mode_audit:
+        audit = json.loads(args.mode_audit.read_text(encoding="utf-8"))
+        additional = mode_repeat_status(audit["first"], audit["repeat"])
+        t2["m2"]["additional_mode_assessment"] = additional
+        if additional["status"] != "stable":
+            t2["m2"]["entry_mode_assessment"].update(
+                status=additional["status"], recommended_mode_yz_m=None)
+    figure2(args.run, case, m2_rows, t2["m2"])
     figure4(args.run, t2)
     f3 = figure3(args.run, case)
     (args.run / "F3-data.json").write_text(json.dumps(f3, indent=2) + "\n", encoding="utf-8")

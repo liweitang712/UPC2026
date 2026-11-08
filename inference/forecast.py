@@ -14,7 +14,7 @@ from random import Random
 
 from physics import EventResult, SolverConfig, load_case, solve
 from .baseline import ballistic_fit, predict
-from .m2 import normalize, sample, SamplingFailure
+from .m2 import normalize, sample, SamplingFailure, require_finite_draws
 from .likelihood import rounded_log_likelihood
 
 
@@ -104,6 +104,7 @@ def forecast(case, model, settings, budget, seed, sampling=None):
         raise RuntimeError("M3 curve missing from scenario registry")
     draws, _, _ = sample(case, sigma, budget, seed, model, curve, width,
                          settings.get("drag_mean", .27), settings.get("transverse_sigma", .22), sampling)
+    require_finite_draws(draws, sampling)
     for (index, _, params), weight in zip(draws, normalize(draws)):
         yield index, weight, predict(model, case, params)
 

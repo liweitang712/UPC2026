@@ -134,6 +134,20 @@ def normalize(draws):
     return [w / total for w in weights]
 
 
+def require_finite_draws(draws, audit):
+    if draws:
+        return
+    attempted = audit["attempted"]
+    reasons = audit["rejected"]
+    if attempted and reasons.get("curve_support") == attempted:
+        reason = "curve_support_not_found_within_budget"
+    elif attempted and reasons.get("velocity_prior") == attempted:
+        reason = "velocity_support_not_found_within_budget"
+    else:
+        reason = "no_finite_posterior_weight_within_budget"
+    raise SamplingFailure(reason, audit)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
