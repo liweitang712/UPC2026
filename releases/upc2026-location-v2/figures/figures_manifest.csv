@@ -1,0 +1,7 @@
+run_id,figure,source_evidence,pdf_sha256
+upc2026-location-v2,F1,figures/F1-traces.json,daaf67009473ebe85107c92eb5f3ed7e4260ea652db1017a31710b36eb2d2ded
+upc2026-location-v2,F2,T2.json,83fc26007e1373f148040c9dadd3427082aa9958bdc671b3e18a31f456527769
+upc2026-location-v2,F3,inference/qa-v2/public-scenarios/F3-data.json,fb36b254056fa80be23a15cc542fb3d0987c6a20ee1b18b68d6909548d6872c1
+upc2026-location-v2,F4,T2-sensitivity.json,007f0d20aa8de1f1efc1182c79e456de46306852e4ba6487363e6c7b1c4c2b5e
+upc2026-location-v2,F5,T3.csv,7b9d8a49b6dc04a76e9f2e95d1f82c76255d842ef095cfc110d2bad3d3cfe1a2
+upc2026-location-v2,F6,T3.csv and paired-energy.csv,af56b40525ce611385aed839b552a79f7c7e21ce497986cdb93a55de3527beff

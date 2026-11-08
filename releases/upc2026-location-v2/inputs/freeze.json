@@ -1,0 +1,16 @@
+{
+  "case_spec_sha256": "102ed4b68d4ce032aa8764b227c2a568f43cc0cedd539665628065ad7172bb27",
+  "generator_sha256": "4a131923271f00d69f164a620799074bdcd83b1c93c00a62048503c201f23c04",
+  "hash_algorithm": "sha256",
+  "protocol_sha256": "9b421f4c5565309edfe9b9459552bcbb7d58838fd84caa67edc9a8f563e9a35c",
+  "run_id": "upc2026-location-v2",
+  "splits": {
+    "blind": {
+      "n_cases": 260,
+      "public_cases_sha256": "56255f4e8bbdbd6b5ff4729ce60a140074c4c2296efd730ee997178432c96056",
+      "scoring_cases_sha256": "e7141a3f3239f2d5e80ad9e8bdfbab40216345fa09f7b07101ccba9a6c58d3a6",
+      "truth_sha256": "a1815116d5b89343d5d8e1bd9ccb8216e9548dabfa8bd1148dc5028eca336eca"
+    }
+  },
+  "status": "inputs_frozen"
+}

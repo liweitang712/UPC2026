@@ -2,6 +2,8 @@
 
 **[打开 SJTU LaTeX 共享项目](https://latex.sjtu.edu.cn/project/6aefd43ba226e7cf9f8fcd94)**。主文档为 `main.tex`。登录后先读项目根目录的 `AGENTS.md`，再认领下面的章节。共享项目保存唯一的论文正文。GitHub 保存代码、复现命令、结果发布、证据索引和交接记录。
 
+当前稿件使用 [M2 落点发布](releases/upc2026-location-v2/README.md)。落点评估以共同真值过线案例上的配对 energy score 为主，同时报告二维区域覆盖、面积和有效分母。进球概率评分作为补充。
+
 | 工作包 | LaTeX 正文 | 图表交付 |
 |---|---|---|
 | [WP1 · 物理模型 #1](https://github.com/liweitang712/UPC2026/issues/1) | `sections/01-problem.tex`、`sections/02-wp1-physics.tex` | T1 的物理假设与来源，F1 的基线轨迹。与 WP2 核对 F1 的预测叠加及 F4 的气动依据 |

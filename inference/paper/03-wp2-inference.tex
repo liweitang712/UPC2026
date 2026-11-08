@@ -1,61 +1,33 @@
-% Target shared-project file: sections/03-wp2-inference.tex
-% Evidence: upc2026-wp3-v1, WP2 source 98d6970 and WP1 02b67b2.
-\section{Inference from two early observations}
-We stack the two measured ball centers into a six-dimensional vector
-$\mathbf q=(x_1,y_1,z_1,x_2,y_2,z_2)$ and evaluate the same quantities
-$F(\theta)$ with the forward model. The nominal measurement model uses
-independent Gaussian coordinate errors with standard deviation
-$\sigma=0.010\,\mathrm m$ and exact observation times. Thus
+\section{Inference from two frames}\label{sec:inference}
+
+\subsection{Likelihood and parameter constraints}
+Stack the measured coordinates into $D=(x_1,y_1,z_1,x_2,y_2,z_2)$, and let $\mu(\theta)$ be the corresponding model prediction at the two recorded times. The reference likelihood treats the six errors as independent Gaussians with $\sigma=0.010\,\mathrm{m}$, so $\log L$ equals $-\|D-\mu(\theta)\|^2/(2\sigma^2)$ up to a constant. The stated decimal precision defines a separate rounding width $h=0.010\,\mathrm{m}$. For rounding alone, the likelihood is one if every $\mu_i$ lies in $[D_i-h/2,D_i+h/2)$ and zero otherwise. For Gaussian error followed by rounding, each factor is
 \[
- \log L(\theta)=-\frac{\|\mathbf q-F(\theta)\|^2}{2\sigma^2}
-                 -6\log(\sqrt{2\pi}\sigma).
+\Phi\!\left(\frac{D_i+h/2-\mu_i}{\sigma}\right)-
+\Phi\!\left(\frac{D_i-h/2-\mu_i}{\sigma}\right),
 \]
-The known launch center is held fixed. The coordinate-error scale is a
-modeling assumption. Separate sensitivity runs use rounding cells of width
-$0.010\,\mathrm m$, either alone or after Gaussian error.
-The rounding-after-Gaussian cell probability is evaluated by integrating
-the Gaussian density over each observed cell. Tail differences are evaluated
-on a logarithmic scale.
+where $\Phi$ is the standard normal cumulative distribution. The tracking error scale is a scenario assumption. We also refit at $\sigma=0.005$ and $0.020\,\mathrm{m}$.
 
-For B0, a flat initial-velocity reference prior gives an analytic Gaussian
-posterior. Its mean is
+For the nominal B0 forecast we use a flat initial-velocity reference prior. The two-frame Gaussian likelihood gives
 \[
- \widehat{\mathbf v}_0=
- \frac{\sum_i t_i(\mathbf q_i-\mathbf r_0+
-                 \tfrac12gt_i^2\mathbf e_z)}{\sum_i t_i^2},
- \qquad
- \operatorname{Cov}(\mathbf v_0\mid\mathbf q)
- =\frac{\sigma^2}{\sum_i t_i^2}I.
+\widehat{\mathbf v}_0=\frac{\sum_{i=1}^2 t_i(\mathbf r_i-\mathbf r_0+\tfrac12gt_i^2\mathbf e_z)}{\sum_{i=1}^2 t_i^2},
+\qquad
+\operatorname{Cov}(\mathbf v_0\mid D)=\frac{\sigma^2}{\sum_{i=1}^2 t_i^2}I_3.
 \]
-B1 and B2 propagate jointly sampled latent frame centers under a flat
-coordinate reference prior. B2 supplies spatial crossing positions without
-an arrival-time estimate.
+We sample velocities from this Gaussian and propagate each draw to its first event. For B1 and B2 we sample the two latent frame centers under a flat coordinate reference prior and apply their respective interpolation rules.
 
-The aerodynamic candidates use bounded velocity priors and a truncated
-normal drag prior. M2 and M3 also use centered normal transverse coefficients
-restricted to a disk. We sample aerodynamic parameters from their prior,
-construct a conditional Gaussian velocity proposal from the two-frame
-residuals, and correct each draw by its full likelihood-to-proposal ratio.
-The aerodynamic prior cancels its matching proposal density.
-The frozen public-run diagnostics include attempted draws and effective
-sample size. The original batch runner omitted proposal rejection counts;
-these are restored in a separately versioned exploratory revision. Its
-additional calibration diagnostics must not be attributed to the frozen run.
-Reference-curve and wind sensitivities are separately refitted to the same
-early observations.
+M2 is our working location forecast. Its transverse coefficients are centered at zero so the prior allows trajectories close to the drag-only limit. For the aerodynamic models, the velocity prior is uniform on $(8,48)\times(-20,20)\times(0,20)\,\mathrm{m\,s^{-1}}$. For constant drag we use a Gaussian with mean 0.27 and standard deviation 0.14, truncated to $(0.08,0.55)$. M2 and M3 use independent zero-mean Gaussian transverse coefficients with standard deviation 0.22 before truncating the pair to $C_y^2+C_z^2<0.55^2$. All aerodynamic coefficients are dimensionless. M3 uses the same drag prior for its anchor at $30\,\mathrm{m\,s^{-1}}$, with the lower bound raised when needed to keep the shifted curve positive. These are modeling choices for the reference fit. We check their influence by raising the drag prior mean to 0.35 and separately reducing the transverse standard deviation to 0.12.
 
-Each weighted draw is propagated to its first terminal event. Goal entry,
-plane arrival, ground-first and physical non-arrival probabilities use the
-entire assigned weight. Unresolved numerical weight is retained and adds
-to each event-probability upper bound. Crossing intervals condition on
-plane arrival, while the reported entry mode conditions on the ball center
-entering the goal. The mode uses a Gaussian kernel evaluated on an interior
-$0.02\,\mathrm m$ grid, with $0.05\,\mathrm m$ bandwidth and a
-$0.10\,\mathrm m$ sensitivity check.
+\subsection{Identifiability and propagation}
+We draw aerodynamic coefficients from their priors. For each draw, three residual corrections to the gravity-only initial velocity give the center of a Gaussian velocity proposal. The proposal uses an isotropic scale of $1.25\sqrt{\sigma^2+h^2/12}/\sqrt{t_1^2+t_2^2}$, with $h=0$ for Gaussian observations without rounding. Within the uniform velocity support, the unnormalized importance weight is the likelihood divided by the velocity proposal density because the aerodynamic prior cancels its proposal. We normalize on the log scale and propagate each retained draw to the first event. Proposals outside the prior or observation support receive zero weight. A numerical error in evaluating the likelihood invalidates the fit. A failed propagation retains its assigned weight as unresolved mass, which is reported separately and added to the resolved event estimate to obtain its upper bound.
 
-The frozen validation protocol uses highest-mass $0.10\,\mathrm m$ square
-cells anchored at the origin for joint regions, including cells tied at the
-mass cutoff. Conditional statistics require effective support of at least
-100. B0 was retained by the frozen selection rules, with B2 as a descriptive
-blind comparator. All final numerical statements refer to
-\texttt{upc2026-wp3-v1}.
+We record the number of nonzero weights, the largest normalized weight and the effective sample size \(1/\sum_i w_i^2\). Event probabilities use all assigned weight. For a conditional statistic, we renormalize the weights within its conditioning event and require an effective sample size of at least 100 in the frozen release. We compute crossing intervals conditional on plane arrival and on entry separately. The entry mode uses only draws entering the goal. We locate the maximum of a Gaussian kernel estimate on a \(0.02\,\metre\) grid inside the goal, compare bandwidths of 0.05 and 0.10\,m, and check the peak in an independent repeat. Section~\ref{sec:case} reports the coarser peak because the finer estimate moved across repeats.
+
+To assess local identifiability, we divide the position Jacobian by the 10 mm noise scale and scale the columns by $(11.55,11.55,5.77)\,\mathrm{m\,s^{-1}}$ for velocity and $(0.14,0.22,0.22)$ for the aerodynamic coefficients. After projecting out the velocity columns, the aerodynamic singular values are about 1.31, 1.24 and 0.83. Thus a perturbation on the scale of a prior standard deviation along one of these aerodynamic directions changes the early positions by about one noise unit after adjusting the launch velocity. Figure~\ref{fig:wp2-f3} shows how two trajectories compatible with both frames can diverge later.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/F3.pdf}
+\renewcommand{\thefigure}{F3}
+\caption{Supplied-kick M2 sensitivity analysis. The left panel shows local observation sensitivity at a 10 mm coordinate noise scale. The trajectory pair satisfies a whitened residual norm of at most 2.5 across both frames. The pair illustrates extrapolation sensitivity.}\label{fig:wp2-f3}
+\end{figure}
