@@ -1,0 +1,5 @@
+run_id,manuscript,evidence,fields
+upc2026-public-audit-v1,"launch Reynolds and holdout kinematic ranges",nominal.json,"b0_launch: speed_m_s, reynolds, azimuth_deg, elevation_deg, curve_upper_speed_m_s, fractional_gap, anchor_reynolds"
+upc2026-public-audit-v1,"T2 disjoint center misses",nominal.json,"outcomes: above_only, wide_only, above_and_wide; zero low_or_boundary and non-plane events"
+upc2026-public-audit-v1,"Cd-prior center 0.18 sensitivity",cd018.json,"drag_mean, t_given_plane_s, time_after_last_frame_s, outcomes.entry"
+upc2026-public-audit-v1,"Cd-prior center 0.18 independent repeat",cd018-repeat.json,"drag_mean, t_given_plane_s, outcomes.entry"
