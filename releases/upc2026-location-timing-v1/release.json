@@ -1,0 +1,15 @@
+{
+  "run_id": "upc2026-location-timing-v1",
+  "source_run_id": "upc2026-location-v2",
+  "scoring_code_commit": "5437e0080c090fff79f2b8eb625b832dddd765bd",
+  "python": "3.13.14",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "forecast_sha256": "0d23964fd6d655400e214d885cf514325c32459b2990133850599105f6855895",
+  "protocol_sha256": "9b421f4c5565309edfe9b9459552bcbb7d58838fd84caa67edc9a8f563e9a35c",
+  "formal_t3_text_sha256": "3824da64f4fff46693539beaae2002d24fb18a459c6c087836286e4e8c2a557a",
+  "artifact_sha256": {
+    "timing-ellipse.json": "8c94d645b997e2884bf5f5611c1771a8a81cd38b994f34b67e60a73072b15332"
+  },
+  "check": "Reproduced all formal T3 50/80/95 grid hits and support counts for 24 group/model rows."
+}

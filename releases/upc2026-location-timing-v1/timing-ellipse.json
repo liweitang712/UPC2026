@@ -1,0 +1,396 @@
+{
+  "run_id": "upc2026-location-v2",
+  "forecast_sha256": "0d23964fd6d655400e214d885cf514325c32459b2990133850599105f6855895",
+  "exploratory": true,
+  "ellipse_levels": [
+    0.5,
+    0.8,
+    0.95
+  ],
+  "results": [
+    {
+      "group": "matched",
+      "model": "M2",
+      "truth_plane": 36,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -3.8742276382259226,
+      "time_rmse_ms": 9.97192630726942,
+      "time_hits_95": 35,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        17,
+        28,
+        33
+      ]
+    },
+    {
+      "group": "matched",
+      "model": "M1",
+      "truth_plane": 36,
+      "supported": 36,
+      "timed": 36,
+      "time_bias_ms": -5.833230500558295,
+      "time_rmse_ms": 10.50790362772404,
+      "time_hits_95": 35,
+      "ellipse_supported": 36,
+      "ellipse_hits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "matched",
+      "model": "B0",
+      "truth_plane": 36,
+      "supported": 36,
+      "timed": 36,
+      "time_bias_ms": -38.2181837903258,
+      "time_rmse_ms": 40.661162347268395,
+      "time_hits_95": 0,
+      "ellipse_supported": 36,
+      "ellipse_hits": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "group": "wind",
+      "model": "M2",
+      "truth_plane": 37,
+      "supported": 36,
+      "timed": 36,
+      "time_bias_ms": -3.0521299798767205,
+      "time_rmse_ms": 13.047151703025682,
+      "time_hits_95": 33,
+      "ellipse_supported": 36,
+      "ellipse_hits": [
+        26,
+        33,
+        36
+      ]
+    },
+    {
+      "group": "wind",
+      "model": "M1",
+      "truth_plane": 37,
+      "supported": 36,
+      "timed": 36,
+      "time_bias_ms": -3.2953976280393267,
+      "time_rmse_ms": 12.796714178213058,
+      "time_hits_95": 33,
+      "ellipse_supported": 36,
+      "ellipse_hits": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "group": "wind",
+      "model": "B0",
+      "truth_plane": 37,
+      "supported": 37,
+      "timed": 37,
+      "time_bias_ms": -36.65818971926271,
+      "time_rmse_ms": 39.4379182989056,
+      "time_hits_95": 0,
+      "ellipse_supported": 37,
+      "ellipse_hits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "drag",
+      "model": "M2",
+      "truth_plane": 35,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -5.118050535865378,
+      "time_rmse_ms": 14.845851210644105,
+      "time_hits_95": 34,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        24,
+        33,
+        34
+      ]
+    },
+    {
+      "group": "drag",
+      "model": "M1",
+      "truth_plane": 35,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -8.755779556633495,
+      "time_rmse_ms": 18.228335931402764,
+      "time_hits_95": 31,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "group": "drag",
+      "model": "B0",
+      "truth_plane": 35,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -41.63768837138853,
+      "time_rmse_ms": 48.24715674324583,
+      "time_hits_95": 0,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "lift",
+      "model": "M2",
+      "truth_plane": 38,
+      "supported": 38,
+      "timed": 38,
+      "time_bias_ms": -3.258661888021686,
+      "time_rmse_ms": 11.779394626608374,
+      "time_hits_95": 38,
+      "ellipse_supported": 38,
+      "ellipse_hits": [
+        25,
+        34,
+        36
+      ]
+    },
+    {
+      "group": "lift",
+      "model": "M1",
+      "truth_plane": 38,
+      "supported": 38,
+      "timed": 38,
+      "time_bias_ms": -5.348050547825897,
+      "time_rmse_ms": 10.784408015996076,
+      "time_hits_95": 37,
+      "ellipse_supported": 38,
+      "ellipse_hits": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "group": "lift",
+      "model": "B0",
+      "truth_plane": 38,
+      "supported": 38,
+      "timed": 38,
+      "time_bias_ms": -37.75241349202021,
+      "time_rmse_ms": 39.823434159620795,
+      "time_hits_95": 0,
+      "ellipse_supported": 38,
+      "ellipse_hits": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "group": "sensor",
+      "model": "M2",
+      "truth_plane": 34,
+      "supported": 32,
+      "timed": 32,
+      "time_bias_ms": -1.9668903532036146,
+      "time_rmse_ms": 11.514759334301248,
+      "time_hits_95": 31,
+      "ellipse_supported": 32,
+      "ellipse_hits": [
+        12,
+        21,
+        29
+      ]
+    },
+    {
+      "group": "sensor",
+      "model": "M1",
+      "truth_plane": 34,
+      "supported": 34,
+      "timed": 34,
+      "time_bias_ms": -5.256281014520284,
+      "time_rmse_ms": 10.285412294279586,
+      "time_hits_95": 34,
+      "ellipse_supported": 34,
+      "ellipse_hits": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "group": "sensor",
+      "model": "B0",
+      "truth_plane": 34,
+      "supported": 34,
+      "timed": 34,
+      "time_bias_ms": -37.970412137604065,
+      "time_rmse_ms": 40.05118063404936,
+      "time_hits_95": 0,
+      "ellipse_supported": 34,
+      "ellipse_hits": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "group": "combined",
+      "model": "M2",
+      "truth_plane": 36,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -5.92498169140941,
+      "time_rmse_ms": 19.719367357580687,
+      "time_hits_95": 32,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        21,
+        27,
+        31
+      ]
+    },
+    {
+      "group": "combined",
+      "model": "M1",
+      "truth_plane": 36,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -8.23039806276156,
+      "time_rmse_ms": 21.53193998312381,
+      "time_hits_95": 30,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "group": "combined",
+      "model": "B0",
+      "truth_plane": 36,
+      "supported": 35,
+      "timed": 35,
+      "time_bias_ms": -45.87701684381616,
+      "time_rmse_ms": 52.79084449902403,
+      "time_hits_95": 0,
+      "ellipse_supported": 35,
+      "ellipse_hits": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "group": "challenge",
+      "model": "M2",
+      "truth_plane": 10,
+      "supported": 10,
+      "timed": 10,
+      "time_bias_ms": 1.4829837263125203,
+      "time_rmse_ms": 13.121690083269007,
+      "time_hits_95": 10,
+      "ellipse_supported": 10,
+      "ellipse_hits": [
+        6,
+        9,
+        10
+      ]
+    },
+    {
+      "group": "challenge",
+      "model": "M1",
+      "truth_plane": 10,
+      "supported": 10,
+      "timed": 10,
+      "time_bias_ms": -5.078275261503807,
+      "time_rmse_ms": 12.357856609802543,
+      "time_hits_95": 10,
+      "ellipse_supported": 10,
+      "ellipse_hits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "challenge",
+      "model": "B0",
+      "truth_plane": 10,
+      "supported": 10,
+      "timed": 10,
+      "time_bias_ms": -37.68415354417918,
+      "time_rmse_ms": 40.37807704659781,
+      "time_hits_95": 0,
+      "ellipse_supported": 10,
+      "ellipse_hits": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "core",
+      "model": "M2",
+      "truth_plane": 216,
+      "supported": 211,
+      "timed": 211,
+      "time_bias_ms": -3.8803337327745333,
+      "time_rmse_ms": 13.845450817268773,
+      "time_hits_95": 203,
+      "ellipse_supported": 211,
+      "ellipse_hits": [
+        125,
+        176,
+        199
+      ]
+    },
+    {
+      "group": "core",
+      "model": "M1",
+      "truth_plane": 216,
+      "supported": 214,
+      "timed": 214,
+      "time_bias_ms": -6.098534133735584,
+      "time_rmse_ms": 14.620264129745838,
+      "time_hits_95": 200,
+      "ellipse_supported": 214,
+      "ellipse_hits": [
+        4,
+        7,
+        10
+      ]
+    },
+    {
+      "group": "core",
+      "model": "B0",
+      "truth_plane": 216,
+      "supported": 215,
+      "timed": 215,
+      "time_bias_ms": -39.63166532079962,
+      "time_rmse_ms": 43.716033247354844,
+      "time_hits_95": 0,
+      "ellipse_supported": 215,
+      "ellipse_hits": [
+        1,
+        2,
+        7
+      ]
+    }
+  ]
+}

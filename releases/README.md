@@ -33,6 +33,8 @@ WP1 revision into a separate directory on the Python import path. The
 bridge runs WP2's original forecast logic, with bounded process scheduling
 on Python 3.13.
 
+Download the three ordered parts from the [WP2 reproduction release](https://github.com/liweitang712/UPC2026/releases/tag/wp2-reproduction-bundle-v1). Concatenate `wp2-bundle-01.bin`, `wp2-bundle-02.bin` and `wp2-bundle-03.bin` in that order. The resulting bundle has SHA-256 `9a813591e0baf83a86d70c7e4dc094a850ef0b9f185ccbb4738c9284164ba30b`. Keep the original component filenames when using the commands in the issue.
+
 ```sh
 python -B -m validation.wp2_bridge blind --wp2 WP2_CHECKOUT --wp1 WP1_EXPORT --selection-config WP2_CHECKOUT/inference/selection-v1/forecast.json --cases validation/frozen/v1/blind/cases.csv --freeze validation/frozen/v1/freeze.json --output BLIND_OUTPUT --models B0 B2 --seed 2028 --workers 12
 python -B -m unittest discover -s validation/tests -v

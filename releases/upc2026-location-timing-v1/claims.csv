@@ -1,0 +1,5 @@
+run_id,manuscript,evidence,fields
+upc2026-location-timing-v1,"T5 core and challenge arrival times",timing-ellipse.json,"results[group in {core,challenge}]: model, truth_plane, timed, time_bias_ms, time_rmse_ms, time_hits_95"
+upc2026-location-timing-v1,"Summary and discussion arrival interval",timing-ellipse.json,"results[group=core, model=M2]: time_hits_95 / timed"
+upc2026-location-timing-v1,"Results text combined-stress timing",timing-ellipse.json,"results[group=combined, model=M2]: time_rmse_ms"
+upc2026-location-timing-v1,"Validation core, sensor, and challenge ellipses",timing-ellipse.json,"results[group in {core,sensor,challenge}]: model, ellipse_supported, ellipse_hits ordered by ellipse_levels"

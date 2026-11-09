@@ -1,0 +1,20 @@
+{
+  "run_id": "upc2026-location-v2",
+  "inputs_sha256": {
+    "releases/upc2026-wp3-v1/case.json": "12ad4b76cd991bba333f15a6767cc2bda3f028ddf67650cd1d733d72c78817ea",
+    "releases/upc2026-location-v2/figures/F1-traces.json": "c103d272cc0d5eab28d98636473e902bd52b81f51bb7765b051d48560cb2f029",
+    "inference/qa-v2/public-scenarios/F3-data.json": "5ab9104a281587fdea8a0d7d2f43555a2d5cdfd0929c9496f9fa12c66f2ff896",
+    "releases/upc2026-location-v2/T3.csv": "21f0ddd0178bd9b87f7035166306d76e31d4e0883bc4ecf22bb9626cf701e823",
+    "releases/upc2026-location-v2/paired-energy.csv": "0d9bdb4035a224dbdb645737d0fc402c5cbd989816fd911322f62d3313bba20e",
+    "releases/upc2026-location-v2/T2.json": "85e33e33f62d241e896b8e932545c4c2fa19c45dc43df9b8098b73d5f637884f",
+    "inference/qa-v2/repeat/public-manifest.json": "8a15460b1526e087eaa9a5888e209c1077ad29fe4fc9764cb89fda53609d9a2c",
+    "inference/qa-v2/repeat/identifiability.json": "34ad80ca5bffc3c85a3cae6c704329b6778244b6c62bc210f27de943d7e12386"
+  },
+  "pdf_sha256": {
+    "F1": "c3d585046f5e58e115af4288b694060e0065e3c89b96b2317f0f828d8d9c0ba1",
+    "F3": "f96c2de15ba1fb6562a1c78d48a0cc52596af0cb97e38c91e93a3722c9407ead",
+    "F5": "b9a7912214a5324961b2b5ad3505a1a3a667a96c10ec4c26959f29eaa79e676f",
+    "F6": "fa9f49f676921631d498729391fa1510431e98c184c59c61ddc14fb0cc4e5b2a",
+    "F2": "3b5c01d09ea54b6096c4b7821c740f60cd9b6fa160bd2e958536435b361b35fa"
+  }
+}

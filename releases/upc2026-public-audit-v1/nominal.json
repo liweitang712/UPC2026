@@ -1,0 +1,41 @@
+{
+  "run_id": "upc2026-public-audit-v1",
+  "t2_sha256": "855a133ca8ef41c3cdce811ac0752fba7ff851d8cf6e4f7b05a62bec756578ed",
+  "model": "M2",
+  "gaussian_sd_m": 0.01,
+  "drag_mean": 0.27,
+  "seed": 718020,
+  "proposals": 64000,
+  "accepted": 64000,
+  "ess": 25612.066983299504,
+  "arrival": 0.9999999999999999,
+  "outcomes": {
+    "entry": 0.8982398112819143,
+    "above_only": 0.08186466823617225,
+    "wide_only": 0.017682467265245555,
+    "above_and_wide": 0.0022130532166677462,
+    "low_or_boundary": 0.0,
+    "ground_first": 0.0,
+    "no_reach": 0.0,
+    "numerical_failure": 0.0
+  },
+  "t_given_plane_s": [
+    0.37809898456027524,
+    0.3975500024448112,
+    0.4189587192652044
+  ],
+  "time_after_last_frame_s": [
+    0.27809898456027526,
+    0.2975500024448112,
+    0.31895871926520436
+  ],
+  "b0_launch": {
+    "speed_m_s": 31.66231942685264,
+    "reynolds": 471436.1925710932,
+    "azimuth_deg": 16.301708344307382,
+    "elevation_deg": 12.404225793328502,
+    "curve_upper_speed_m_s": 33.29862708719851,
+    "fractional_gap": 0.049140394168831696,
+    "anchor_reynolds": 446685.08287292824
+  }
+}
